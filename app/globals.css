@@ -126,7 +126,7 @@ section{padding:clamp(4rem,9vw,7.5rem) 0}
 .mode:not(.active):hover{opacity:.85}
 .modes .stage{position:sticky;top:calc(var(--nav-h) + 1.5rem)}
 .modes .stage .frame img{transition:opacity .4s ease}
-.stage .layer{position:absolute;inset:38px 0 0;opacity:0;transition:opacity .45s ease}
+.stage .layer{position:absolute;inset:38px 0 0;width:100%;height:calc(100% - 38px);object-fit:cover;object-position:left top;opacity:0;transition:opacity .45s ease}
 .stage .layer.on{opacity:1}
 .stage .frame{aspect-ratio:1919/1065}
 .stage .frame .base{visibility:hidden}
@@ -241,10 +241,19 @@ section{padding:clamp(4rem,9vw,7.5rem) 0}
 .faq details p + p{padding-top:0}
 
 /* ── final banner ── */
-.banner{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(2rem,5vw,3.5rem);
-  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.banner{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(2rem,5vw,3.5rem) 0 0 clamp(2rem,5vw,3.5rem);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:end;gap:2rem;overflow:hidden}
+.banner .copy{padding:0 0 clamp(2rem,5vw,3.5rem)}
 .banner h2{font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:600;letter-spacing:-.02em}
-.banner p{color:var(--muted);margin-top:.35rem}
+.banner p{color:var(--muted);margin:.35rem 0 1.5rem}
+.banner .frame{border-radius:var(--r-lg) 0 0 0;border-right:0;border-bottom:0;box-shadow:none}
+@media (max-width:760px){.banner{grid-template-columns:1fr;padding-right:clamp(2rem,5vw,3.5rem)}.banner .copy{padding-bottom:0}.banner .frame{border-right:1px solid var(--line);border-radius:var(--r-lg) var(--r-lg) 0 0}}
+
+/* RAM aside inside the weight card */
+.ram{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1.5rem;align-items:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)}
+.ram h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+.ram p{color:var(--muted);font-size:.95rem}
+@media (max-width:760px){.ram{grid-template-columns:1fr}}
 
 /* ── footer ── */
 footer{border-top:1px solid var(--line);padding:3.5rem 0 2rem;font-size:.9rem}

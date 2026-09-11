@@ -27,7 +27,7 @@ export default function Hero({ t }: { t: Dict["hero"] }) {
           <button className={`copy${copied ? " done" : ""}`} type="button" aria-label={t.copyLabel} onClick={copy}>{copied ? t.copied : t.copy}</button>
         </div>
         <div className="hero-visual">
-          <Frame addr={t.frameAddr} shot={{ src: asset("hero-app.png"), alt: t.imgAlt, width: 1919, height: 1027, eager: true }} />
+          <Frame addr={t.frameAddr} shot={{ src: asset("hero-plan.png"), alt: t.imgAlt, width: 1920, height: 1140, eager: true }} />
         </div>
       </div>
     </div>

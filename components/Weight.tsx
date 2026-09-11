@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
 import type { Dict } from "@/lib/i18n";
+import { asset } from "@/lib/site";
+import Frame from "./ui/Frame";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
 
@@ -48,6 +50,10 @@ export default function Weight({ t }: { t: Dict["weight"] }) {
         ))}
       </div>
       <Rich className="bench-foot" text={t.foot} />
+      <div className="ram">
+        <Frame addr={t.ram.addr} shot={{ src: asset("ram-taskmgr.png"), alt: t.ram.alt, width: 1165, height: 633 }} />
+        <div><h3>{t.ram.title}</h3><p>{t.ram.body}</p></div>
+      </div>
       <div className="kpis">
         {t.kpis.map((k, i) => (
           <div className="kpi" key={k.k}>

@@ -13,7 +13,10 @@ const PICS: ({ src: string; width: number; height: number } | null)[] = [
   { src: asset("cap-browser.png"), width: 1919, height: 1029 },
   null,
   { src: asset("cap-automation.png"), width: 1916, height: 1027 },
-  { src: asset("cap-memory.png"), width: 1062, height: 520 },
+  { src: asset("git-split.png"), width: 1920, height: 1140 },
+  { src: asset("code-map.png"), width: 1920, height: 1136 },
+  { src: asset("habits.png"), width: 1920, height: 1137 },
+  { src: asset("video-make.png"), width: 1919, height: 1029 },
 ];
 
 // Numbers from the CRM job of 15 Aug 2026 — the same four the old page

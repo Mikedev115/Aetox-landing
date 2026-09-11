@@ -4,11 +4,10 @@ import type { Dict } from "@/lib/i18n";
 import { asset } from "@/lib/site";
 import { useLightbox } from "./dialogs/Lightbox";
 
-// Screenshot per mode. The Code door has no dedicated capture yet, so it
-// borrows the n8n one — a systems job done from that door.
+// Screenshot per mode, in the order of t.items.
 const SHOTS = [
   { src: asset("hero-app.png"), width: 1919, height: 1027 },
-  { src: asset("cap-automation.png"), width: 1916, height: 1027 },
+  { src: asset("code-desk.png"), width: 1920, height: 1155 },
   { src: asset("cap-parallel.png"), width: 1115, height: 856 },
 ];
 

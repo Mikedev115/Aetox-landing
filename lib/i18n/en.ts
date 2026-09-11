@@ -38,8 +38,8 @@ export const en = {
     copied: "copied",
     copyLabel: "Copy the winget command",
     imgAlt:
-      "The Aetox window at work — on the left a value comparison of three models drawn in the chat, on the right a summary web page it wrote as a file and opened in its own browser",
-    frameAddr: "Aetox · assistant",
+      "The Aetox window after a job — on the left the chat, on the right the plan card showing 2 of 2 steps done and the session's artifacts panel listing the real files it wrote: a CSV, two Markdown documents and an HTML mock-up",
+    frameAddr: "Aetox · plan 2/2 · 5 artifacts",
   },
   modes: {
     items: [
@@ -55,7 +55,7 @@ export const en = {
         lead: "For reading code, building systems and debugging.",
         body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
         addr: "Aetox · code",
-        alt: "Code door — an eleven-node n8n workflow it wired up, opened in the app window, with a report of what passed and what could not be verified",
+        alt: "Code door — the chat on the left reporting a release check, and on the right tabs for a tool card, Git, PowerShell 7, the project's file tree and an open Go file",
       },
       {
         title: "Agents",
@@ -97,9 +97,24 @@ export const en = {
         alt: "An eleven-node n8n workflow Aetox built on its own",
       },
       {
+        title: "Git",
+        body: "Twenty-five changed files, one sentence: it groups them into commits that belong together, writes each message, and you tick what goes in. Or commit by hand — the panel shows every diff either way.",
+        alt: "The Git panel splitting 25 changed files into 3 commit groups, each with a written message and per-file tick boxes",
+      },
+      {
+        title: "Code map",
+        body: "Open a project of 741 files and see it as a map — every dot a file sized by how much it is imported, every line an import. Ask which file is the largest and it opens it on the desk.",
+        alt: "A force-directed map of 150 of a project's 741 files, dots sized by import count, beside the chat listing the largest source files",
+      },
+      {
         title: "Memory",
-        body: "It remembers across days — but never on its own. Every memory is a request you approve or discard, kept as a plain text file you can open and edit. One switch turns the whole thing off.",
-        alt: "A memory approval card — what it will remember, why, with decline and approve buttons",
+        body: "It notices what you ask for again and again — and never keeps it on its own. Each habit waits in Settings for you to turn it into a skill, a prompt, or throw it away. One switch turns the whole thing off.",
+        alt: "Settings → Learning → Habits: nine repeated requests, each with buttons to build a skill, turn it into a prompt, or discard",
+      },
+      {
+        title: "Video",
+        body: "Ask for a short clip and it designs, renders and opens it beside the chat. Say the 3.8-second cut is too short and it stretches it to 8 seconds, checks the file's real duration, and renders again.",
+        alt: "The chat reporting an 8-second hero clip re-rendered from 3.8 seconds, with the mp4 playing in the tab beside it",
       },
     ],
     researchStats: {
@@ -148,6 +163,12 @@ export const en = {
     aetoxType: "AI agent",
     cometType: "AI assistant",
     foot: "Smaller than Claude Code **5×** · Cursor **18×** · VS Code **24×**. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 25 Aug 2026 on v1.5.7 — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md).",
+    ram: {
+      addr: "Task Manager · Processes",
+      alt: "Windows Task Manager while Aetox is working: Aetox 64.2 MB of memory, beside Antigravity IDE at 1,757 MB, Google Chrome 531 MB and Discord 473 MB",
+      title: "And while it works",
+      body: "Task Manager on a real afternoon: the Aetox process at 64 MB while an IDE next to it sat at 1.7 GB. Straight talk, as before — Task Manager files the WebView2 that draws our window under Microsoft Edge WebView2, not under Aetox, so add that in your head. What wins is that you are not keeping a second copy of a browser.",
+    },
     kpis: [
       { unit: "MB", k: "Disk on your machine", s: "Single file · installer 21.3 MB" },
       { unit: "tests", k: "Pass before release", s: "Go 2,479 · UI 1,054" },
@@ -265,6 +286,8 @@ export const en = {
     h2: "Try Aetox today",
     p: "Install and run your first job within two minutes. No card, no subscription, nothing left behind if you uninstall.",
     btn: "Get it from Microsoft Store",
+    imgAlt: "A fresh Aetox chat asking “what shall I get done for you today?” with four suggested jobs",
+    frameAddr: "Aetox · new chat",
   },
   footer: {
     tag: "Built by one person who uses it for real work every day.",
