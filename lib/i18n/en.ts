@@ -19,6 +19,7 @@ export const en = {
     safety: "Safety",
     work: "Real work",
     faq: "FAQ",
+    privacy: "Privacy",
     get: "Get it free",
     menu: "Menu",
     theme: "Toggle light/dark theme",

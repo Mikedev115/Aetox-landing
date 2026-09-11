@@ -17,6 +17,7 @@ export const th: Dict = {
     safety: "ความปลอดภัย",
     work: "งานจริง",
     faq: "คำถาม",
+    privacy: "นโยบาย",
     get: "ติดตั้งฟรี",
     menu: "เมนู",
     theme: "สลับธีมสว่าง/มืด",

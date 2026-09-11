@@ -70,6 +70,7 @@ nav.primary a:hover{color:var(--text);background:var(--bg-card)}
 :root[data-theme="light"] .icon-btn .moon{display:none}
 :root:not([data-theme="light"]) .icon-btn .sun{display:none}
 .menu-btn{display:none}
+@media (max-width:420px){.lockup span{display:none}.bar .pill.solid{padding:0 .9rem;height:38px;font-size:.88rem}.bar{gap:.5rem}}
 @media (max-width:900px){
   nav.primary{display:none}
   .ver{display:none}
@@ -147,16 +148,19 @@ section{padding:clamp(4rem,9vw,7.5rem) 0}
 .carousel{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 1rem;margin:0 calc(-1 * var(--pad));scrollbar-width:none}
 .carousel::-webkit-scrollbar{display:none}
 .ucard{flex:0 0 min(78vw,420px);scroll-snap-align:start;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-xl);
-  min-height:520px;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s}
+  min-height:460px;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s}
 .ucard:hover{transform:translateY(-2px)}
-.ucard .txt{padding:1.75rem 1.75rem 1rem}
+.ucard .txt{padding:1.75rem 1.75rem 1.25rem}
 .ucard h3{font-size:1.25rem;font-weight:600;margin-bottom:.5rem}
 .ucard p{color:var(--muted);font-size:.95rem}
-.ucard .pic{margin-top:auto;padding:0 0 0 1.75rem;position:relative}
-.ucard .pic .frame{border-radius:var(--r-md) 0 0 0;border-right:0;border-bottom:0;box-shadow:none}
+/* the app window sits in the bottom of the card, zoomed into one half so the
+   work is legible at card size; the frame bleeds off the right and bottom */
+.ucard .pic{margin-top:auto;padding:0 0 0 1.5rem}
+.ucard .pic .frame{border-radius:var(--r-md) 0 0 0;border-right:0;border-bottom:0;box-shadow:none;aspect-ratio:5/4;overflow:hidden}
 .ucard .pic .frame .chrome{height:28px;padding:0 .7rem}
 .ucard .pic .frame .chrome i{width:8px;height:8px}
-.ucard .pic .frame img{aspect-ratio:16/9;object-fit:cover;object-position:left top}
+.ucard .pic .frame img{width:150%;max-width:none;height:auto;aspect-ratio:auto}
+.ucard .pic.right .frame img{margin-left:-50%}
 .ucard .stat-pic{margin-top:auto;padding:0 1.75rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
 .ucard .stat-pic div{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:.9rem 1rem}
 .ucard .stat-pic b{display:block;font-size:1.5rem;font-weight:600;letter-spacing:-.02em;line-height:1.1}
@@ -268,6 +272,22 @@ a.u:hover{color:var(--text)}
 .foot-bottom .lang:hover{color:var(--text)}
 @media (max-width:820px){.foot{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.foot{grid-template-columns:1fr}}
+
+/* ── document page (privacy) ── */
+.doc{max-width:720px;margin:0 auto;padding:clamp(3rem,7vw,5rem) var(--pad) clamp(4rem,8vw,6rem)}
+.doc .eyebrow{text-align:left;margin-bottom:.5rem}
+.doc h1{font-size:clamp(2rem,4.5vw,3rem);line-height:1.15;font-weight:600;letter-spacing:-.02em}
+.doc .date{color:var(--dim);font-size:.9rem;margin-top:.5rem}
+.doc .lede{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.25rem 1.5rem;margin:2rem 0}
+.doc .lede p{margin:0}
+.doc h2{font-size:1.35rem;font-weight:600;letter-spacing:-.01em;margin:2.75rem 0 .75rem;padding-top:1.75rem;border-top:1px solid var(--line)}
+.doc h3{font-size:1.05rem;font-weight:600;margin:1.75rem 0 .35rem}
+.doc p{margin:0 0 1rem;color:var(--muted)}
+.doc ul{margin:0 0 1rem 1.25rem;color:var(--muted)}
+.doc li{margin:0 0 .5rem}
+.doc li b,.doc p b{color:var(--text)}
+.doc code{background:var(--bg-card);border:1px solid var(--line);border-radius:6px;padding:.1em .4em;font-size:.88em}
+.doc .store-note{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--dim)}
 
 /* ── dialogs ── */
 dialog{border:0;padding:0;background:transparent;color:var(--text);max-width:min(96vw,1400px);max-height:94vh}

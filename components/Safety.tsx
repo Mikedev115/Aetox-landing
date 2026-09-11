@@ -1,10 +1,10 @@
-import type { Dict } from "@/lib/i18n";
-import { PRIVACY_URL } from "@/lib/site";
+import type { Dict, Lang } from "@/lib/i18n";
+import { privacyPath } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
 
-export default function Safety({ t }: { t: Dict["safety"] }) {
+export default function Safety({ t, lang }: { t: Dict["safety"]; lang: Lang }) {
   return (
     <section id="safety">
       <div className="wrap">
@@ -15,7 +15,7 @@ export default function Safety({ t }: { t: Dict["safety"] }) {
             <Reveal as="article" className="scard" key={c.title}>
               <h3>{c.title}</h3>
               <Rich text={c.body} />
-              <PillLink variant="soft" trail="chev" href={PRIVACY_URL}>{t.more}</PillLink>
+              <PillLink variant="soft" trail="chev" href={privacyPath(lang)}>{t.more}</PillLink>
             </Reveal>
           ))}
         </div>

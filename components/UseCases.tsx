@@ -5,18 +5,21 @@ import { asset } from "@/lib/site";
 import Frame from "./ui/Frame";
 import Reveal from "./ui/Reveal";
 
-// One capture per card, in the order of t.cards. The research card has no
-// screenshot: it shows the numbers from the run instead (see ResearchStats).
-const PICS: ({ src: string; width: number; height: number } | null)[] = [
-  { src: asset("cap-image-ocr.png"), width: 1536, height: 960 },
-  { src: asset("cap-clip.png"), width: 1536, height: 960 },
-  { src: asset("cap-browser.png"), width: 1919, height: 1029 },
+// One capture per card, in the order of t.cards. `focus` says which half of
+// the app window the card zooms into — "right" for the desk panel where the
+// work shows, "left" for the chat. The research card has no screenshot: it
+// shows the numbers from the run instead (see ResearchStats).
+type Pic = { src: string; width: number; height: number; focus: "left" | "right" };
+const PICS: (Pic | null)[] = [
+  { src: asset("cap-image-ocr.png"), width: 1536, height: 960, focus: "left" },
+  { src: asset("cap-clip.png"), width: 1536, height: 960, focus: "left" },
+  { src: asset("cap-browser.png"), width: 1919, height: 1029, focus: "right" },
   null,
-  { src: asset("cap-automation.png"), width: 1916, height: 1027 },
-  { src: asset("git-split.png"), width: 1920, height: 1140 },
-  { src: asset("code-map.png"), width: 1920, height: 1136 },
-  { src: asset("habits.png"), width: 1920, height: 1137 },
-  { src: asset("video-make.png"), width: 1919, height: 1029 },
+  { src: asset("cap-automation.png"), width: 1916, height: 1027, focus: "right" },
+  { src: asset("git-split.png"), width: 1920, height: 1140, focus: "right" },
+  { src: asset("code-map.png"), width: 1920, height: 1136, focus: "right" },
+  { src: asset("habits.png"), width: 1920, height: 1137, focus: "right" },
+  { src: asset("video-make.png"), width: 1919, height: 1029, focus: "right" },
 ];
 
 // Numbers from the CRM job of 15 Aug 2026 — the same four the old page
@@ -77,7 +80,7 @@ export default function UseCases({ t }: { t: Dict["uses"] }) {
               <article className="ucard" key={c.title}>
                 <div className="txt"><h3>{c.title}</h3><p>{c.body}</p></div>
                 {pic ? (
-                  <div className="pic"><Frame shot={{ ...pic, alt: c.alt }} /></div>
+                  <div className={`pic ${pic.focus}`}><Frame shot={{ src: pic.src, width: pic.width, height: pic.height, alt: c.alt }} /></div>
                 ) : (
                   <ResearchStats t={t.researchStats} />
                 )}

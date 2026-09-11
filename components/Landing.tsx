@@ -36,7 +36,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
               <Weight t={t.weight} />
             </div>
           </section>
-          <Safety t={t.safety} />
+          <Safety t={t.safety} lang={lang} />
           <RealWork t={t.work} />
           <Faq t={t.faq} />
           <FinalCta t={t.cta} />

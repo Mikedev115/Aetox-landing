@@ -1,8 +1,8 @@
 import type { Dict, Lang } from "@/lib/i18n";
 import { langPath } from "@/lib/i18n";
-import { ARCHITECTURE_MD, BASE, BENCHMARK_MD, CONTACT_MAIL, GITHUB, ISSUES, LICENSE, PRIVACY_URL, RELEASES, THIRD_PARTY } from "@/lib/site";
+import { ARCHITECTURE_MD, BASE, BENCHMARK_MD, CONTACT_MAIL, GITHUB, ISSUES, LICENSE, RELEASES, THIRD_PARTY, privacyPath } from "@/lib/site";
 
-export default function Footer({ t, nav, lang }: { t: Dict["footer"]; nav: Dict["nav"]; lang: Lang }) {
+export default function Footer({ t, nav, lang, langHref }: { t: Dict["footer"]; nav: Dict["nav"]; lang: Lang; langHref?: string }) {
   const other: Lang = lang === "en" ? "th" : "en";
   return (
     <footer>
@@ -24,7 +24,7 @@ export default function Footer({ t, nav, lang }: { t: Dict["footer"]; nav: Dict[
           <div>
             <h4>{t.policies}</h4>
             <ul>
-              <li><a href={PRIVACY_URL}>{t.privacy}</a></li>
+              <li><a href={privacyPath(lang)}>{t.privacy}</a></li>
               <li><a href={LICENSE}>{t.license}</a></li>
               <li><a href={THIRD_PARTY}>{t.third}</a></li>
             </ul>
@@ -39,7 +39,7 @@ export default function Footer({ t, nav, lang }: { t: Dict["footer"]; nav: Dict[
         </div>
         <div className="foot-bottom">
           <span>© 2026 Mikedev115 · {t.rights}</span>
-          <a className="lang" href={`${BASE}${langPath(other)}`} lang={other} title={nav.langTitle}>
+          <a className="lang" href={langHref ?? `${BASE}${langPath(other)}`} lang={other} title={nav.langTitle}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" /></svg>
             <span>{nav.lang}</span>
           </a>
