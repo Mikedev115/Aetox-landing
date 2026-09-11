@@ -1,0 +1,23 @@
+{
+  "name": "aetox-landing",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Landing page for Aetox — Next.js static export, deployed to GitHub Pages by .github/workflows/deploy.yml",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "serve": "npx serve out"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
