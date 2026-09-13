@@ -7,11 +7,12 @@ import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
 
 // Disk after install, measured per BENCHMARK.md §4. Competitors 27 Jul 2026,
-// Aetox 25 Aug 2026 on v1.5.7. Widths are each value over VS Code's 1,171 MB.
-// If aetox.exe changes size, BENCHMARK.md and the multipliers in the
+// Aetox 13 Sep 2026 on v1.6.1 — two files since 1.6.0 (aetox.exe 49.2 MB +
+// aetox-engine.exe 31.7 MB, BENCHMARK.md §13). Widths are each value over VS
+// Code's 1,171 MB. If the size changes, BENCHMARK.md and the multipliers in the
 // dictionary's weight.foot change with it — see docs/PUBLISHED-NUMBERS.md.
 const ROWS = [
-  { icon: "logoA", name: "Aetox", type: "aetox", mb: "48.5 MB", w: 4.1, us: true },
+  { icon: "logoA", name: "Aetox", type: "aetox", mb: "80.8 MB", w: 6.9, us: true },
   { icon: "lg-claude", name: "Claude Code", type: "CLI", mb: "236 MB", w: 20.2 },
   { icon: "lg-zed", name: "Zed", type: "IDE", mb: "419 MB", w: 35.8 },
   { icon: "lg-opencode", name: "OpenCode", type: "CLI", mb: "498 MB", w: 42.5 },
@@ -20,7 +21,8 @@ const ROWS = [
   { icon: "lg-vscode", name: "VS Code", type: "IDE", mb: "1,171 MB", w: 100 },
 ];
 
-const KPI_VALUES = ["48.5", "3,533", "0.32", "31"];
+// 80.8 = both files on disk · 5,118 = Go 3,371 + UI 1,747 · 35 = engine 34 + the window's browser (13 Sep 2026, v1.6.1)
+const KPI_VALUES = ["80.8", "5,118", "0.32", "35"];
 
 export default function Weight({ t }: { t: Dict["weight"] }) {
   const bench = useRef<HTMLDivElement>(null);

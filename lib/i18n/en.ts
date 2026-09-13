@@ -146,24 +146,24 @@ export const en = {
     provider: {
       title: "Use a provider you trust",
       price: "Pay as you go",
-      sub: "19 providers",
+      sub: "24 providers",
       points: [
         "You pay them for what you use. We add no markup",
         "Switch provider or model mid-conversation — the context follows",
         "Your machine talks to them directly, never through us",
       ],
       who: "Best for hard jobs · work that needs the largest models",
-      more: "+14",
+      more: "+19",
     },
     note: "**No need to decide yet.** The app ships with a demo model you can play with right after install — see the real screen, watch it pick up tools, read its full reasoning, without connecting anything.",
   },
   weight: {
     h2: "Light enough to leave open all day",
-    p: "An assistant you close because it slows your machine is one you do not use. Aetox is a single 48.5 MB file, drawn with the WebView2 that Windows already ships.",
+    p: "An assistant you close because it slows your machine is one you do not use. Aetox is two files, 80.8 MB together — the window and its engine — drawn with the WebView2 that Windows already ships.",
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
-    foot: "Smaller than Claude Code **5×** · Cursor **18×** · VS Code **24×**. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 25 Aug 2026 on v1.5.7 — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md).",
+    foot: "Smaller than Claude Code **3×** · Cursor **11×** · VS Code **14×**. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 13 Sep 2026 on v1.6.1, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md).",
     ram: {
       addr: "Task Manager · Processes",
       alt: "Windows Task Manager while Aetox is working: Aetox 64.2 MB of memory, beside Antigravity IDE at 1,757 MB, Google Chrome 531 MB and Discord 473 MB",
@@ -171,10 +171,10 @@ export const en = {
       body: "Task Manager on a real afternoon: the Aetox process at 64 MB while an IDE next to it sat at 1.7 GB. Straight talk, as before — Task Manager files the WebView2 that draws our window under Microsoft Edge WebView2, not under Aetox, so add that in your head. What wins is that you are not keeping a second copy of a browser.",
     },
     kpis: [
-      { unit: "MB", k: "Disk on your machine", s: "Single file · installer 21.3 MB" },
-      { unit: "tests", k: "Pass before release", s: "Go 2,479 · UI 1,054" },
+      { unit: "MB", k: "Disk on your machine", s: "Two files · installer 33.6 MB" },
+      { unit: "tests", k: "Pass before release", s: "Go 3,371 · UI 1,747" },
       { unit: "ms", k: "One turn assembled", s: "174.9 KB memory · 13 Aug 2026" },
-      { unit: "tools", k: "In the model's hands from install", s: "8,477 of the 10,400-token ceiling" },
+      { unit: "tools", k: "In the model's hands from install", s: "About 10,300 tokens per request" },
     ],
   },
   safety: {
@@ -258,7 +258,7 @@ export const en = {
       {
         q: "How powerful does my machine need to be",
         a: [
-          "The program takes 48.5 MB as a single file. Any ordinary machine opens it comfortably.",
+          "The program takes 80.8 MB in two files — the window and its engine. Any ordinary machine opens it comfortably.",
           "What takes the power is the model. To run a local model yourself you should have a decent amount of RAM to spare. With another provider's key, your machine barely has to work at all.",
         ],
       },
@@ -307,7 +307,7 @@ export const en = {
     localSub: "Free, no key · prompt never leaves the machine",
     provTitle: "Use a provider you trust",
     provSub: "Enter a key for one you already have, or log in with GitHub Copilot · ChatGPT · OpenRouter · talk straight from your machine to them, not through us.",
-    foot: "Click a name to see each provider's details · switch at any time, no lock-in",
+    foot: "Click a name to see each provider's details · plus any OpenAI-compatible endpoint of your own · switch at any time, no lock-in",
     close: "Close",
   },
   lightbox: { label: "Expanded image", close: "Close" },

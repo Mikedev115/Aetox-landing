@@ -27,6 +27,12 @@ const PROVIDERS = [
   ["modelscope", "https://modelscope.cn", "lg-modelscope"],
   ["nvidia", "https://build.nvidia.com", "lg-nvidia"],
   ["ollama cloud", "https://ollama.com/cloud", "lg-ollama"],
+  // Added 13 Sep 2026 to match the app's catalogue (24 + the built-in aetox);
+  // the app's OpenAI-compatible row is any endpoint of your own, so it has no
+  // logo here and is named in providers.foot instead.
+  ["chatgpt (codex)", "https://chatgpt.com", "lg-openai"],
+  ["opencode zen", "https://opencode.ai/zen", "lg-opencode"],
+  ["opencode go", "https://opencode.ai", "lg-opencode"],
 ] as const;
 
 const Ctx = createContext<() => void>(() => {});
