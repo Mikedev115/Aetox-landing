@@ -1,15 +1,16 @@
 import type { Dict } from "@/lib/i18n";
+import { NUMBERS } from "@/lib/numbers";
 import { RELEASES, STORE_URL } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
 import WingetCmd from "./ui/WingetCmd";
 
-// The body of /download/. Values for the three facts come from here, labels
-// from the dictionary: the version is read at build time (lib/version.ts),
-// the installer size is v1.6.1's MSIX (docs/PUBLISHED-NUMBERS.md).
+// The body of /download/. Values for the three facts: the version is read at
+// build time (lib/version.ts), the installer size is in lib/numbers.ts, and
+// the labels come from the dictionary.
 export default function Download({ t, version }: { t: Dict["pages"]["download"]; version: string }) {
-  const values = [`v${version}`, "33.6 MB", "Windows"];
+  const values = [`v${version}`, `${NUMBERS.INSTALLER_MB} MB`, "Windows"];
   return (
     <>
       <div className="wrap">

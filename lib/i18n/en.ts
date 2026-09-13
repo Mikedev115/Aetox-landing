@@ -2,8 +2,9 @@
 // TypeScript enforces that through the Dict type in ./index.ts.
 //
 // Strings may use a little inline markup rendered by <Rich>: **bold**, `code`,
-// [text](url). Every number here comes from a real run — see
-// docs/PUBLISHED-NUMBERS.md for where each one is measured.
+// [text](url). Every number here comes from a real run — the sizes and
+// counts are {NAME} placeholders filled from lib/numbers.ts, so they are
+// written once; docs/PUBLISHED-NUMBERS.md says where each one is measured.
 
 export const en = {
   meta: {
@@ -143,7 +144,7 @@ export const en = {
     provider: {
       title: "Use a provider you trust",
       price: "Pay as you go",
-      sub: "24 providers",
+      sub: "{PROVIDERS} providers",
       points: [
         "You pay them for what you use. We add no markup",
         "Switch provider or model mid-conversation — the context follows",
@@ -156,7 +157,7 @@ export const en = {
   },
   weight: {
     h2: "Light enough to leave open all day",
-    p: "An assistant you close because it slows your machine is one you do not use. Aetox is two files, 80.8 MB together — the window and its engine — drawn with the WebView2 that Windows already ships.",
+    p: "An assistant you close because it slows your machine is one you do not use. Aetox is two files, {DISK_MB} MB together — the window and its engine — drawn with the WebView2 that Windows already ships.",
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
@@ -168,10 +169,10 @@ export const en = {
       body: "Task Manager on a real afternoon: the Aetox process at 64 MB while an IDE next to it sat at 1.7 GB. Straight talk, as before — Task Manager files the WebView2 that draws our window under Microsoft Edge WebView2, not under Aetox, so add that in your head. What wins is that you are not keeping a second copy of a browser.",
     },
     kpis: [
-      { unit: "MB", k: "Disk on your machine", s: "Two files · installer 33.6 MB" },
-      { unit: "tests", k: "Pass before release", s: "Go 3,371 · UI 1,747" },
+      { unit: "MB", k: "Disk on your machine", s: "Two files · installer {INSTALLER_MB} MB" },
+      { unit: "tests", k: "Pass before release", s: "Go {TESTS_GO} · UI {TESTS_UI}" },
       { unit: "ms", k: "One turn assembled", s: "174.9 KB memory · 13 Aug 2026" },
-      { unit: "tools", k: "In the model's hands from install", s: "About 10,300 tokens per request" },
+      { unit: "tools", k: "In the model's hands from install", s: "About {TOKENS_PER_REQUEST} tokens per request" },
     ],
   },
   safety: {
@@ -255,7 +256,7 @@ export const en = {
       {
         q: "How powerful does my machine need to be",
         a: [
-          "The program takes 80.8 MB in two files — the window and its engine. Any ordinary machine opens it comfortably.",
+          "The program takes {DISK_MB} MB in two files — the window and its engine. Any ordinary machine opens it comfortably.",
           "What takes the power is the model. To run a local model yourself you should have a decent amount of RAM to spare. With another provider's key, your machine barely has to work at all.",
         ],
       },
@@ -302,7 +303,7 @@ export const en = {
       title: "Pricing",
       sub: "The program is free. You only choose who does the thinking — a model on your own machine, or a provider you already pay.",
       metaTitle: "Aetox pricing — free, with a local model or your own key",
-      metaDescription: "Aetox costs nothing and has no subscription. Run a local model with Ollama or LM Studio for free, or bring a key from one of 24 providers. Two files, 80.8 MB on disk.",
+      metaDescription: "Aetox costs nothing and has no subscription. Run a local model with Ollama or LM Studio for free, or bring a key from one of {PROVIDERS} providers. Two files, {DISK_MB} MB on disk.",
       teaser: {
         h2: "Free. Choose who does the thinking",
         p: "No subscription, no paid tier, no account. Run a local model for nothing at all, or bring a key you already have — and switch mid-conversation.",
@@ -339,7 +340,7 @@ export const en = {
       title: "Download Aetox for Windows",
       sub: "One signed package, three ways to get it. Install and run your first job within two minutes — no card, no account, no key needed to start.",
       metaTitle: "Download Aetox for Windows — Microsoft Store, winget, GitHub",
-      metaDescription: "Get Aetox from the Microsoft Store, with one winget command, or from GitHub Releases. Installer 33.6 MB, 80.8 MB on disk, signed by Microsoft, uninstalls in one click.",
+      metaDescription: "Get Aetox from the Microsoft Store, with one winget command, or from GitHub Releases. Installer {INSTALLER_MB} MB, {DISK_MB} MB on disk, signed by Microsoft, uninstalls in one click.",
       store: "Get it from Microsoft Store",
       releases: "Download from GitHub",
       fine: "Signed by Microsoft, nothing to click past · works instantly with no key · uninstall in one click",
@@ -348,7 +349,7 @@ export const en = {
       copyLabel: "Copy the winget command",
       facts: [
         { k: "Current version", s: "Read from GitHub Releases at build time" },
-        { k: "Installer", s: "80.8 MB on disk after install — two files" },
+        { k: "Installer", s: "{DISK_MB} MB on disk after install — two files" },
         { k: "Runs on Windows", s: "Draws with the WebView2 that Windows already ships" },
       ],
       ways: [

@@ -1,11 +1,11 @@
 import type { Dict, Lang } from "@/lib/i18n";
+import { NUMBERS } from "@/lib/numbers";
 import { pagePath } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 
 // Two figures stand in for the whole pricing page: the price of a local
-// model, and the count of providers a key can come from (the dialog list and
-// pricing.provider.more say the same 24).
+// model, and the count of providers a key can come from.
 export default function PricingTeaser({ t, price, lang }: { t: Dict["pages"]["pricing"]["teaser"]; price: string; lang: Lang }) {
   return (
     <section id="pricing">
@@ -17,7 +17,7 @@ export default function PricingTeaser({ t, price, lang }: { t: Dict["pages"]["pr
           </div>
           <div className="kpis two-up">
             <div className="kpi"><b>{price}</b><div className="k">{t.local}</div></div>
-            <div className="kpi"><b>24</b><div className="k">{t.provider}</div></div>
+            <div className="kpi"><b>{NUMBERS.PROVIDERS}</b><div className="k">{t.provider}</div></div>
           </div>
         </Reveal>
       </div>

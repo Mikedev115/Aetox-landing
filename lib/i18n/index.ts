@@ -1,4 +1,5 @@
 import { en } from "./en";
+import { fillDeep } from "@/lib/numbers";
 import type { PolicyDict } from "./privacy-en";
 
 export type Lang = "en" | "th";
@@ -14,7 +15,9 @@ export async function policy(lang: Lang): Promise<PolicyDict> {
   return (await import("./privacy-en")).privacyEn;
 }
 
+// Strings may carry {DISK_MB}-style placeholders for the published numbers
+// (lib/numbers.ts); they are filled here, once, so every consumer sees text.
 export async function dict(lang: Lang): Promise<Dict> {
-  if (lang === "th") return (await import("./th")).th;
-  return en;
+  const raw = lang === "th" ? (await import("./th")).th : en;
+  return fillDeep(raw);
 }
