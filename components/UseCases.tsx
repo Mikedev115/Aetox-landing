@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Dict } from "@/lib/i18n";
-import { asset } from "@/lib/site";
+import type { Dict, Lang } from "@/lib/i18n";
+import { asset, pagePath } from "@/lib/site";
 import Frame from "./ui/Frame";
+import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 
 // One capture per card, in the order of t.cards. `focus` says which half of
@@ -36,7 +37,10 @@ function ResearchStats({ t }: { t: Dict["uses"]["researchStats"] }) {
   );
 }
 
-export default function UseCases({ t }: { t: Dict["uses"] }) {
+// Two shapes of the same nine cards. The home page shows them as a carousel
+// under the statement, with a link to the full page; /features/ lays them all
+// out in a grid under its own title, so `layout="grid"` renders no heading.
+export default function UseCases({ t, lang, more, layout = "carousel" }: { t: Dict["uses"]; lang: Lang; more?: string; layout?: "carousel" | "grid" }) {
   const car = useRef<HTMLDivElement>(null);
   const [edge, setEdge] = useState({ start: true, end: false });
 
@@ -59,6 +63,28 @@ export default function UseCases({ t }: { t: Dict["uses"] }) {
     el.scrollBy({ left: dir * w, behavior: reduced ? "auto" : "smooth" });
   };
 
+  const cards = t.cards.map((c, i) => {
+    const pic = PICS[i];
+    return (
+      <article className="ucard" key={c.title}>
+        <div className="txt"><h3>{c.title}</h3><p>{c.body}</p></div>
+        {pic ? (
+          <div className={`pic ${pic.focus}`}><Frame shot={{ src: pic.src, width: pic.width, height: pic.height, alt: c.alt }} /></div>
+        ) : (
+          <ResearchStats t={t.researchStats} />
+        )}
+      </article>
+    );
+  });
+
+  if (layout === "grid") {
+    return (
+      <section id="uses">
+        <div className="wrap"><div className="ucgrid">{cards}</div></div>
+      </section>
+    );
+  }
+
   return (
     <section id="uses" className="statement">
       <div className="wrap">
@@ -73,21 +99,8 @@ export default function UseCases({ t }: { t: Dict["uses"] }) {
         </div>
       </div>
       <div className="wrap">
-        <div className="carousel" ref={car}>
-          {t.cards.map((c, i) => {
-            const pic = PICS[i];
-            return (
-              <article className="ucard" key={c.title}>
-                <div className="txt"><h3>{c.title}</h3><p>{c.body}</p></div>
-                {pic ? (
-                  <div className={`pic ${pic.focus}`}><Frame shot={{ src: pic.src, width: pic.width, height: pic.height, alt: c.alt }} /></div>
-                ) : (
-                  <ResearchStats t={t.researchStats} />
-                )}
-              </article>
-            );
-          })}
-        </div>
+        <div className="carousel" ref={car}>{cards}</div>
+        {more ? <div className="more-row"><PillLink variant="soft" trail="chev" href={pagePath(lang, "features")}>{more}</PillLink></div> : null}
       </div>
     </section>
   );

@@ -1,15 +1,20 @@
-import type { Dict } from "@/lib/i18n";
-import { DEMO_VIDEO, asset } from "@/lib/site";
+import type { Dict, Lang } from "@/lib/i18n";
+import { DEMO_VIDEO, asset, pagePath } from "@/lib/site";
 import Frame from "./ui/Frame";
+import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
 
-export default function RealWork({ t }: { t: Dict["work"] }) {
+// With `teaser` (the home page) the section carries its own heading and ends
+// in a link to /work/; on /work/ the page head is the heading.
+export default function RealWork({ t, lang, teaser }: { t: Dict["work"]; lang: Lang; teaser?: string }) {
   return (
     <section id="work">
       <div className="wrap">
-        <Reveal as="h2" className="sec-title">{t.h2}</Reveal>
-        <Reveal as="p" className="sec-sub">{t.sub}</Reveal>
+        {teaser ? <>
+          <Reveal as="h2" className="sec-title">{t.h2}</Reveal>
+          <Reveal as="p" className="sec-sub">{t.sub}</Reveal>
+        </> : null}
         <div className="three">
           <Reveal as="article" className="wcard">
             <Frame addr={t.crm.addr}>
@@ -29,6 +34,7 @@ export default function RealWork({ t }: { t: Dict["work"] }) {
             <Rich text={t.video.body} />
           </Reveal>
         </div>
+        {teaser ? <div className="more-row"><PillLink variant="soft" trail="chev" href={pagePath(lang, "work")}>{teaser}</PillLink></div> : null}
       </div>
     </section>
   );

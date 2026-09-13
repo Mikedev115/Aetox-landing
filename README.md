@@ -17,16 +17,34 @@ npm run build      # ส่งออกไป out/
 
 ## โครงสร้าง
 
+เว็บเป็นหลายหน้า ไม่ใช่หน้าเดียวยาว ๆ — แนวเดียวกับ chatgpt.com: เมนูบนทุกอันคือหน้าของตัวเอง หน้าแรกเล่าเรื่องแบบย่อแล้วชี้ไปหน้าเต็ม ตัวติดตั้งรวมอยู่ที่ `/download/` ที่เดียว นโยบายอยู่ใน footer
+
 ```
-app/(en)/        route /      — layout ตั้ง <html lang="en">
-app/(th)/th/     route /th/   — layout ตั้ง <html lang="th">
+/            ภาพรวม — Hero · 3 โหมด · teaser ของ features/pricing/safety/work · CTA
+/features/   งานทั้ง 9 อย่างเป็นตาราง
+/pricing/    สองเส้นทาง + ผู้ให้บริการ + กราฟน้ำหนัก + KPI
+/safety/     การ์ดความปลอดภัย + ขอบเขตการเข้าถึง + ลิงก์นโยบายทั้งหมด
+/work/       งานจริง 3 ชิ้น + case studies
+/faq/        คำถามทั้งหมด
+/download/   Store · winget · GitHub Releases · รุ่น/ขนาด · การถอน
+/privacy/    นโยบายความเป็นส่วนตัว
+```
+
+ทุกหน้ามีคู่ภาษาไทยที่ `/th/…` เหมือนกันหมด
+
+```
+app/(en)/        route /      — layout ตั้ง <html lang="en">  · โฟลเดอร์ละหน้า page.tsx บรรทัดเดียว
+app/(th)/th/     route /th/   — layout ตั้ง <html lang="th">  · โครงเดียวกัน
 app/globals.css  design tokens + สไตล์ทั้งหมด (ธีมมืดเป็นค่าเริ่มต้น, สว่างผ่าน data-theme)
-components/      Landing.tsx ประกอบทุก section ตามลำดับ · section ละไฟล์ · ui/ dialogs/ icons/
-lib/i18n/        en.ts เป็นฐาน · th.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ)
-lib/site.ts      ลิงก์ทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ, privacy)
+components/      Page.tsx = Shell (header/footer/dialogs) + PageHead + pageMetadata ที่ทุกหน้าใช้
+                 Landing.tsx = หน้าแรก · pages/ = หน้าละไฟล์ · section ละไฟล์ · ui/ dialogs/ icons/
+lib/i18n/        en.ts เป็นฐาน · th.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ) · pages.* คือหัวหน้าและ meta ของแต่ละหน้า
+lib/site.ts      PAGES + pagePath() กำหนดว่ามีหน้าอะไรบ้าง · ลิงก์นอกทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ)
 lib/version.ts   ดึงเลขรุ่นจาก GitHub Releases ตอน build — ที่นี่ไม่มีสำเนาเลขรุ่น
 public/assets/   ภาพหน้าจอจากแอปจริง
 ```
+
+เพิ่มหน้าใหม่: ใส่คีย์ใน `PAGES` ของ `lib/site.ts` → เพิ่ม `pages.<key>` ใน en.ts/th.ts → เขียน `components/pages/<Key>Page.tsx` → วาง `page.tsx` ใน `app/(en)/<key>/` และ `app/(th)/th/<key>/` เมนูบน footer และปุ่มสลับภาษาจะรู้จักหน้านั้นเอง
 
 ## ข้อตกลง
 

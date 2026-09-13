@@ -4,12 +4,14 @@ import Rich from "./ui/Rich";
 
 // Native <details> — open/close works with scripts off, and the browser
 // handles keyboard and screen readers.
-export default function Faq({ t }: { t: Dict["faq"] }) {
+export default function Faq({ t, heading = true }: { t: Dict["faq"]; heading?: boolean }) {
   return (
     <section id="faq">
       <div className="wrap">
-        <Reveal as="h2" className="sec-title">{t.h2}</Reveal>
-        <Reveal as="p" className="sec-sub">{t.sub}</Reveal>
+        {heading ? <>
+          <Reveal as="h2" className="sec-title">{t.h2}</Reveal>
+          <Reveal as="p" className="sec-sub">{t.sub}</Reveal>
+        </> : null}
         <div className="faq">
           {t.items.map((it) => (
             <details key={it.q}>

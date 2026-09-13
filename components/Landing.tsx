@@ -1,62 +1,44 @@
 import type { Metadata } from "next";
-import { dict, langPath, type Lang } from "@/lib/i18n";
-import { SITE_URL } from "@/lib/site";
-import { currentVersion } from "@/lib/version";
-import BrandSprite from "./icons/BrandSprite";
-import LightboxProvider from "./dialogs/Lightbox";
-import ProviderDialogProvider from "./dialogs/ProviderDialog";
-import Header from "./Header";
+import { dict, type Lang } from "@/lib/i18n";
+import { SITE_URL, pageUrl } from "@/lib/site";
+import { Shell, load } from "./Page";
 import Hero from "./Hero";
 import Modes from "./Modes";
 import UseCases from "./UseCases";
-import Pricing from "./Pricing";
-import Weight from "./Weight";
+import PricingTeaser from "./PricingTeaser";
 import Safety from "./Safety";
 import RealWork from "./RealWork";
-import Faq from "./Faq";
 import FinalCta from "./FinalCta";
-import Footer from "./Footer";
 
-// The whole page, top to bottom. Both language routes render this; the only
-// difference between them is which dictionary comes back from dict().
+// The home page: the story in short. Each block past the modes is a teaser
+// for one of the site's pages and links there — the detail (all nine jobs,
+// the pricing paths and benchmark, the access scope, the FAQ) lives on those
+// pages, not here.
 export default async function Landing({ lang }: { lang: Lang }) {
-  const [t, version] = await Promise.all([dict(lang), currentVersion()]);
+  const { t, version } = await load(lang);
   return (
-    <LightboxProvider label={t.lightbox.label} close={t.lightbox.close}>
-      <ProviderDialogProvider t={t.providers}>
-        <BrandSprite />
-        <Header t={t.nav} lang={lang} version={version} />
-        <main>
-          <Hero t={t.hero} />
-          <Modes t={t.modes} />
-          <UseCases t={t.uses} />
-          <section id="pricing">
-            <div className="wrap">
-              <Pricing t={t.pricing} />
-              <Weight t={t.weight} />
-            </div>
-          </section>
-          <Safety t={t.safety} lang={lang} />
-          <RealWork t={t.work} />
-          <Faq t={t.faq} />
-          <FinalCta t={t.cta} />
-        </main>
-        <Footer t={t.footer} nav={t.nav} lang={lang} />
-      </ProviderDialogProvider>
-    </LightboxProvider>
+    <Shell lang={lang} page="home" t={t} version={version}>
+      <Hero t={t.hero} lang={lang} />
+      <Modes t={t.modes} />
+      <UseCases t={t.uses} lang={lang} more={t.pages.features.all} />
+      <PricingTeaser t={t.pages.pricing.teaser} price={t.pricing.local.price} lang={lang} />
+      <Safety t={t.safety} lang={lang} teaser={t.pages.safety.more} />
+      <RealWork t={t.work} lang={lang} teaser={t.pages.work.more} />
+      <FinalCta t={t.cta} />
+    </Shell>
   );
 }
 
 export async function landingMetadata(lang: Lang): Promise<Metadata> {
   const t = await dict(lang);
-  const url = new URL(langPath(lang).replace(/^\//, ""), SITE_URL).toString();
+  const url = pageUrl(lang);
   const og = new URL("assets/og.png", SITE_URL).toString();
   return {
     title: t.meta.title,
     description: t.meta.description,
     alternates: {
       canonical: url,
-      languages: { en: SITE_URL, th: new URL("th/", SITE_URL).toString(), "x-default": SITE_URL },
+      languages: { en: SITE_URL, th: pageUrl("th"), "x-default": SITE_URL },
     },
     openGraph: {
       type: "website", siteName: "Aetox", locale: lang === "th" ? "th_TH" : "en_US", url,
