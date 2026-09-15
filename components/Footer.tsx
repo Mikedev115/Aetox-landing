@@ -7,7 +7,7 @@ export default function Footer({ t, nav, lang, page }: { t: Dict["footer"]; nav:
   const other: Lang = lang === "en" ? "th" : "en";
   const site: [PageKey, string][] = [
     ["home", nav.overview], ["features", nav.uses], ["pricing", nav.pricing], ["safety", nav.safety],
-    ["work", nav.work], ["faq", nav.faq], ["download", nav.download],
+    ["work", nav.work], ["faq", nav.faq], ["supporters", nav.supporters], ["download", nav.download],
   ];
   return (
     <footer>

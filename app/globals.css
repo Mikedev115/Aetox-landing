@@ -94,6 +94,10 @@ nav.primary a:hover,nav.primary a[aria-current="page"]{color:var(--text);backgro
 .cmd b{font-weight:500;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cmd .copy{flex:none;white-space:nowrap;border-radius:999px;padding:.2rem .6rem;background:var(--bg-card);font-size:.75rem;color:var(--text)}
 .cmd .copy.done{background:var(--blue);color:#fff}
+@media (max-width:1040px){
+  .hero{padding:clamp(3.5rem,6vw,4.5rem) 0 0}
+  .hero h1{font-size:clamp(2.5rem,5vw,3.5rem)}
+}
 
 /* the app, in a window. Same frame is reused everywhere a screenshot appears. */
 .frame{display:block;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--bg-frame);border:1px solid var(--line);box-shadow:var(--shadow)}
@@ -337,4 +341,33 @@ dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(6px)}
   [data-reveal]{opacity:1;transform:none;transition:none}
   .brow .fill{transform:none;transition:none}
   html{scroll-behavior:auto}
+}
+
+
+/* ── support page ── */
+.supporters{padding-top:clamp(2.5rem,6vw,4.5rem)}
+.support-total{max-width:760px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem);text-align:center;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-xl)}
+.support-total .eyebrow{margin-bottom:.5rem}
+.support-amount{font-size:clamp(2.8rem,8vw,5.5rem);font-weight:600;line-height:1;letter-spacing:-.04em}
+.support-sub{margin-top:1rem;color:var(--muted)}
+.support-list{max-width:760px;margin:clamp(3rem,7vw,5rem) auto 0}
+.support-list h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600;letter-spacing:-.02em}
+.support-list ol{margin-top:1.25rem;list-style:none;border-top:1px solid var(--line)}
+.support-list li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+.support-person-amount{font-variant-numeric:tabular-nums;color:var(--muted)}
+
+/* ── navigation groups ── */
+.nav-group{position:relative}
+.nav-group summary{display:flex;align-items:center;gap:.35rem;padding:.45rem .8rem;border-radius:999px;cursor:pointer;font-size:.92rem;white-space:nowrap;color:var(--muted);transition:color .15s,background .15s}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary::after{content:"⌄";font-size:.9em;line-height:1;transition:transform .15s}
+.nav-group[open] summary::after{transform:rotate(180deg)}
+.nav-group[open] summary,.nav-group.current summary{color:var(--text);background:var(--bg-card)}
+.nav-flyout{position:absolute;top:calc(100% + .65rem);left:0;min-width:220px;padding:.4rem;background:var(--bg-card2);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:0 12px 32px rgba(0,0,0,.14)}
+nav.primary .nav-flyout a{display:block;padding:.6rem .7rem;border-radius:var(--r-md)}
+@media (max-width:1040px){
+  .nav-group{width:100%}
+  .nav-group summary{padding:.8rem .5rem;font-size:1.05rem}
+  .nav-flyout{position:static;min-width:0;margin:.25rem 0 0;padding:.25rem;background:transparent;border:0;box-shadow:none}
+  nav.primary .nav-flyout a{padding:.7rem 1rem;font-size:1rem}
 }

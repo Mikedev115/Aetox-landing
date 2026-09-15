@@ -12,8 +12,10 @@ export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lan
   const [open, setOpen] = useState(false);
   const other: Lang = lang === "en" ? "th" : "en";
   const links: [PageKey, string][] = [
-    ["home", t.overview], ["features", t.uses], ["pricing", t.pricing], ["safety", t.safety], ["work", t.work], ["faq", t.faq],
+    ["home", t.overview],
+    ["faq", t.faq],
   ];
+  const isUsesPage = ["features", "pricing", "safety", "work"].includes(page);
   return (
     <header>
       <div className="wrap bar">
@@ -22,10 +24,23 @@ export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lan
         </a>
         {/* one string on purpose — split JSX would put comment nodes in the static HTML */}
         <span className="ver"><span className="led" aria-hidden="true" />{`v${version} · Windows`}</span>
-        <nav id="nav" className={`primary${open ? " open" : ""}`} aria-label="Main" onClick={() => setOpen(false)}>
-          {links.map(([key, label]) => (
+        <nav id="nav" className={`primary${open ? " open" : ""}`} aria-label="Main">
+          {links.slice(0, 1).map(([key, label]) => (
             <a key={key} href={pagePath(lang, key)} aria-current={key === page ? "page" : undefined}>{label}</a>
           ))}
+          <details className={`nav-group${isUsesPage ? " current" : ""}`}>
+            <summary>{t.uses}</summary>
+            <div className="nav-flyout">
+              <a href={pagePath(lang, "features")} aria-current={page === "features" ? "page" : undefined}>{t.allUses}</a>
+              <a href={pagePath(lang, "pricing")} aria-current={page === "pricing" ? "page" : undefined}>{t.pricing}</a>
+              <a href={pagePath(lang, "work")} aria-current={page === "work" ? "page" : undefined}>{t.work}</a>
+              <a href={pagePath(lang, "safety")} aria-current={page === "safety" ? "page" : undefined}>{t.safety}</a>
+            </div>
+          </details>
+          {links.slice(1).map(([key, label]) => (
+            <a key={key} href={pagePath(lang, key)} aria-current={key === page ? "page" : undefined}>{label}</a>
+          ))}
+          <a href={pagePath(lang, "supporters")} aria-current={page === "supporters" ? "page" : undefined}>{t.supporters}</a>
           <a href={GITHUB}>GitHub</a>
         </nav>
         <div className="tools">

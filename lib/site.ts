@@ -13,10 +13,10 @@ export const STORE_PRIVACY_URL = `${AETOX_PAGES}privacy.html`;
 // The site's pages. Every one exists in both languages: English at the root,
 // Thai under /th/. The header, the footer and the language switch all draw
 // from this list, so adding a page here is what makes it reachable.
-export const PAGES = ["home", "features", "pricing", "safety", "work", "faq", "download", "privacy"] as const;
+export const PAGES = ["home", "features", "pricing", "safety", "work", "faq", "supporters", "download", "privacy"] as const;
 export type PageKey = (typeof PAGES)[number];
 const SLUG: Record<PageKey, string> = {
-  home: "", features: "features/", pricing: "pricing/", safety: "safety/", work: "work/", faq: "faq/", download: "download/", privacy: "privacy/",
+  home: "", features: "features/", pricing: "pricing/", safety: "safety/", work: "work/", faq: "faq/", supporters: "supporters/", download: "download/", privacy: "privacy/",
 };
 /** Site-relative href of a page, e.g. /aetox-landing/th/pricing/ */
 export const pagePath = (lang: "en" | "th", page: PageKey = "home") => `${BASE}${lang === "en" ? "/" : "/th/"}${SLUG[page]}`;
