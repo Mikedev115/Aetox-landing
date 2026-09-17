@@ -13,7 +13,7 @@ npm run dev        # http://localhost:3000/Aetox-landing/
 npm run build      # ส่งออกไป out/
 ```
 
-`basePath` เป็น `/Aetox-landing` ทั้งตอน dev และตอน build เพื่อให้ URL ที่เห็นในเครื่องมีรูปเดียวกับที่ปล่อยจริง
+ตอน dev และ GitHub Pages, `basePath` เป็น `/Aetox-landing` เพื่อให้ URL ตรงกับ project site; Vercel ตั้ง `VERCEL=1` ระหว่าง build จึงเสิร์ฟจากโดเมนรากโดยไม่มี path นำหน้า
 
 ## โครงสร้าง
 

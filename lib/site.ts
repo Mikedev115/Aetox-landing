@@ -3,7 +3,12 @@
 
 export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export const SITE_URL = "https://mikedev115.github.io/Aetox-landing/";
+const GITHUB_PAGES_URL = "https://mikedev115.github.io/Aetox-landing/";
+const VERCEL_SITE_URL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/` : undefined;
+
+// Set NEXT_PUBLIC_SITE_URL on Vercel when its production domain differs from
+// VERCEL_URL. GitHub Pages remains the local-development and fallback URL.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? VERCEL_SITE_URL ?? GITHUB_PAGES_URL;
 
 // The app repo's own Pages. A copy of the privacy policy has to stay there:
 // that URL is registered with the Microsoft Store listing. This site carries
