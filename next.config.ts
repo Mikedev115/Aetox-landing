@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
-// Published at https://mikedev115.github.io/aetox-landing/ — a GitHub project
-// site, so every absolute URL Next emits has to start with /aetox-landing.
-// Local dev runs at http://localhost:3000/aetox-landing for the same reason:
+// Published at https://mikedev115.github.io/Aetox-landing/ — a GitHub project
+// site, so every absolute URL Next emits has to start with /Aetox-landing.
+// Local dev runs at http://localhost:3000/Aetox-landing for the same reason:
 // what you see is the same URL shape that ships. If the site ever moves to a
 // custom domain, set basePath to "" and add a CNAME file under public/.
-const basePath = "/aetox-landing";
+const basePath = "/Aetox-landing";
 
 const nextConfig: NextConfig = {
   output: "export",

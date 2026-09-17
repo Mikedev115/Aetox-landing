@@ -3,7 +3,7 @@
 
 export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export const SITE_URL = "https://mikedev115.github.io/aetox-landing/";
+export const SITE_URL = "https://mikedev115.github.io/Aetox-landing/";
 
 // The app repo's own Pages. A copy of the privacy policy has to stay there:
 // that URL is registered with the Microsoft Store listing. This site carries
@@ -18,7 +18,7 @@ export type PageKey = (typeof PAGES)[number];
 const SLUG: Record<PageKey, string> = {
   home: "", features: "features/", pricing: "pricing/", safety: "safety/", work: "work/", faq: "faq/", supporters: "supporters/", download: "download/", privacy: "privacy/",
 };
-/** Site-relative href of a page, e.g. /aetox-landing/th/pricing/ */
+/** Site-relative href of a page, e.g. /Aetox-landing/th/pricing/ */
 export const pagePath = (lang: "en" | "th", page: PageKey = "home") => `${BASE}${lang === "en" ? "/" : "/th/"}${SLUG[page]}`;
 /** Absolute URL of a page, for canonical/alternate/og tags. */
 export const pageUrl = (lang: "en" | "th", page: PageKey = "home") => new URL(`${lang === "en" ? "" : "th/"}${SLUG[page]}`, SITE_URL).toString();

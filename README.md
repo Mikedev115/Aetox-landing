@@ -1,7 +1,7 @@
 # aetox-landing
 
 แลนดิ้งเพจของ [Aetox](https://github.com/Mikedev115/Aetox) — Next.js (App Router) ส่งออกเป็นไฟล์นิ่ง แล้ว GitHub Actions เอาขึ้น GitHub Pages ที่
-<https://mikedev115.github.io/aetox-landing/> (อังกฤษ) และ <https://mikedev115.github.io/aetox-landing/th/> (ไทย)
+<https://mikedev115.github.io/Aetox-landing/> (อังกฤษ) และ <https://mikedev115.github.io/Aetox-landing/th/> (ไทย)
 
 แยกออกมาจากรีโปแอปตั้งแต่ 11 ก.ย. 2026 เพื่อให้คนที่ fork แอปไม่ต้องได้เว็บการตลาดติดไปด้วย และให้เว็บปล่อยได้โดยไม่ต้องผ่าน CI ของแอป
 
@@ -9,11 +9,11 @@
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000/aetox-landing/
+npm run dev        # http://localhost:3000/Aetox-landing/
 npm run build      # ส่งออกไป out/
 ```
 
-`basePath` เป็น `/aetox-landing` ทั้งตอน dev และตอน build เพื่อให้ URL ที่เห็นในเครื่องมีรูปเดียวกับที่ปล่อยจริง
+`basePath` เป็น `/Aetox-landing` ทั้งตอน dev และตอน build เพื่อให้ URL ที่เห็นในเครื่องมีรูปเดียวกับที่ปล่อยจริง
 
 ## โครงสร้าง
 
