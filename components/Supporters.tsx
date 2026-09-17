@@ -1,4 +1,5 @@
 import type { Dict, Lang } from "@/lib/i18n";
+import { asset } from "@/lib/site";
 import { SUPPORTERS, supportTotal } from "@/lib/supporters";
 import Reveal from "./ui/Reveal";
 
@@ -19,6 +20,14 @@ export default function Supporters({ t, lang }: { t: Dict["pages"]["supporters"]
           <p className="eyebrow">{t.total}</p>
           <p className="support-amount">{total}</p>
           <p className="support-sub">{t.totalSub}</p>
+        </Reveal>
+        <Reveal className="support-promptpay">
+          <div>
+            <p className="eyebrow">{t.promptPay}</p>
+            <h2>{t.promptPayTitle}</h2>
+            <p>{t.promptPaySub}</p>
+          </div>
+          <img src={asset("promptpay-qr.png")} alt={t.promptPayAlt} width={640} height={713} />
         </Reveal>
         <div className="support-list">
           <h2>{t.list}</h2>
