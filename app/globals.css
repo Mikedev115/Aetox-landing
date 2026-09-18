@@ -70,7 +70,12 @@ nav.primary a:hover,nav.primary a[aria-current="page"]{color:var(--text);backgro
 :root[data-theme="light"] .icon-btn .moon{display:none}
 :root:not([data-theme="light"]) .icon-btn .sun{display:none}
 .menu-btn{display:none}
-@media (max-width:420px){.lockup span{display:none}.bar .pill.solid{padding:0 .9rem;height:38px;font-size:.88rem}.bar{gap:.5rem}}
+/* the wordmark goes first, then the Download pill shrinks: between 421 and 560px
+   the bar still carries logo + wordmark + TH + theme + Download + menu, which is
+   wider than the screen. Hiding the wordmark at 560px is what keeps the menu
+   button on screen and tappable. */
+@media (max-width:560px){.lockup span{display:none}.bar{gap:.5rem}}
+@media (max-width:420px){.bar .pill.solid{padding:0 .9rem;height:38px;font-size:.88rem}}
 /* 8 links + badge + tools need ~1180px in a row; drop the badge first, then collapse to the hamburger */
 @media (max-width:1180px){.ver{display:none}}
 @media (max-width:1040px){
