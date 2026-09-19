@@ -381,3 +381,9 @@ nav.primary .nav-flyout a{display:block;padding:.6rem .7rem;border-radius:var(--
   .nav-flyout{position:static;min-width:0;margin:.25rem 0 0;padding:.25rem;background:transparent;border:0;box-shadow:none}
   nav.primary .nav-flyout a{padding:.7rem 1rem;font-size:1rem}
 }
+/* The supporters page stands in the middle: its total is a centred figure, so
+   the title above it and the cards under it sit on the same axis (owner,
+   20 ก.ย. 2026). Other pages keep the left-aligned head. */
+.page-center .phead{text-align:center}
+.page-center .phead h1,.page-center .phead .sub{margin-inline:auto}
+.page-center .support-total,.page-center .support-promptpay,.page-center .support-list{margin-inline:auto}

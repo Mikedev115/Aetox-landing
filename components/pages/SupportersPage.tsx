@@ -6,7 +6,7 @@ import FinalCta from "@/components/FinalCta";
 export default async function SupportersPage({ lang }: { lang: Lang }) {
   const { t, version } = await load(lang);
   return (
-    <Shell lang={lang} page="supporters" t={t} version={version}>
+    <Shell lang={lang} page="supporters" t={t} version={version} main="page-center">
       <PageHead title={t.pages.supporters.title} sub={t.pages.supporters.sub} />
       <Supporters t={t.pages.supporters} lang={lang} />
       <FinalCta t={t.cta} />
