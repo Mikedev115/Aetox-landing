@@ -1,5 +1,5 @@
 import type { Dict, Lang } from "@/lib/i18n";
-import { ARCHITECTURE_MD, BENCHMARK_MD, CONTACT_MAIL, GITHUB, ISSUES, LICENSE, RELEASES, THIRD_PARTY, pagePath, type PageKey } from "@/lib/site";
+import { BENCHMARK_MD, CONTACT_MAIL, GITHUB, ISSUES, LICENSE, RELEASES, THIRD_PARTY, pagePath, type PageKey } from "@/lib/site";
 
 // Same footer on every page. Four lists: this site's pages, the app repo,
 // the policies, and how to reach a person.
@@ -26,7 +26,6 @@ export default function Footer({ t, nav, lang, page }: { t: Dict["footer"]; nav:
             <ul>
               <li><a href={GITHUB}>GitHub</a></li>
               <li><a href={RELEASES}>{t.releases}</a></li>
-              <li><a href={ARCHITECTURE_MD}>Architecture</a></li>
               <li><a href={BENCHMARK_MD}>Benchmark</a></li>
             </ul>
           </div>

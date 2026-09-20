@@ -36,8 +36,9 @@ export const WINGET_CMD = "winget install --id=9N4KKBRRSCZZ --source=msstore";
 export const GITHUB = "https://github.com/Mikedev115/Aetox";
 export const RELEASES = `${GITHUB}/releases/latest`;
 export const ISSUES = `${GITHUB}/issues`;
-export const BENCHMARK_MD = `${GITHUB}/blob/main/BENCHMARK.md`;
-export const ARCHITECTURE_MD = `${GITHUB}/blob/main/ARCHITECTURE.md`;
+// The measurement shelf moved under docs/reports/ on 2026-09-20; ARCHITECTURE.md
+// is a private record since 2026-09-19 and has no public address any more.
+export const BENCHMARK_MD = `${GITHUB}/blob/main/docs/reports/BENCHMARK.md`;
 export const LICENSE = `${GITHUB}/blob/main/LICENSE`;
 export const THIRD_PARTY = `${GITHUB}/blob/main/THIRD-PARTY-NOTICES.md`;
 export const CONTACT_MAIL = "mailto:phrmsawanachyphl@gmail.com";
