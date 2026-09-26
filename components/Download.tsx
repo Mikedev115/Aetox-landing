@@ -36,8 +36,8 @@ export default function Download({ t, version }: { t: Dict["pages"]["download"];
           <Reveal className="scard uninstall">
             <h3>{t.cli.title}</h3>
             <Rich text={t.cli.body} />
-            <div className="cta"><PillLink variant="ghost" trail="arrow" href={CLI_SETUP_URL}>{t.cli.button}</PillLink></div>
-            <Rich className="fine" text={t.cli.note} />
+            <div className="cli-get"><PillLink variant="ghost" trail="arrow" href={CLI_SETUP_URL}>{t.cli.button}</PillLink></div>
+            <Rich className="cli-note" text={t.cli.note} />
           </Reveal>
           <Reveal className="scard uninstall"><h3>{t.uninstallTitle}</h3><p>{t.uninstallBody}</p></Reveal>
         </div>

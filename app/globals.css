@@ -387,3 +387,8 @@ nav.primary .nav-flyout a{display:block;padding:.6rem .7rem;border-radius:var(--
 .page-center .phead{text-align:center}
 .page-center .phead h1,.page-center .phead .sub{margin-inline:auto}
 .page-center .support-total,.page-center .support-promptpay,.page-center .support-list{margin-inline:auto}
+
+/* Aetox in the terminal (download page): the button and the note sit
+   under the card's text, left like it, whatever the page around does. */
+.cli-get{display:flex;margin-top:1rem}
+.cli-note{margin-top:.75rem;font-size:13px;color:var(--dim)}
