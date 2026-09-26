@@ -382,6 +382,12 @@ export const en = {
           body: "Every release is also published on GitHub with its notes, for machines where the Store is not an option.",
         },
       ],
+      cli: {
+        title: "Aetox in the terminal",
+        body: "The Code desk as a full-screen console: type `aetox` in any project folder, watch the work land above the input, answer approvals in place. A separate installer from the app — it goes into your own user folder, adds itself to PATH, needs no administrator rights, and is not in the Microsoft Store.",
+        button: "Download Aetox CLI",
+        note: "Open a new terminal after installing and type `aetox` · remove it from Settings → Apps → Aetox CLI · not code-signed yet, so SmartScreen asks once",
+      },
       uninstallTitle: "If you do not like it",
       uninstallBody: "Uninstall from Windows Settings like any other app. Nothing runs in the background afterwards and nothing is left behind — your conversations and output folders are plain files you can keep or delete.",
     },

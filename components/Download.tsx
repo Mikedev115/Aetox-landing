@@ -1,6 +1,6 @@
 import type { Dict } from "@/lib/i18n";
 import { NUMBERS } from "@/lib/numbers";
-import { RELEASES, STORE_URL } from "@/lib/site";
+import { CLI_SETUP_URL, RELEASES, STORE_URL } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
@@ -33,6 +33,12 @@ export default function Download({ t, version }: { t: Dict["pages"]["download"];
               <Reveal as="article" className="scard" key={w.title}><h3>{w.title}</h3><Rich text={w.body} /></Reveal>
             ))}
           </div>
+          <Reveal className="scard uninstall">
+            <h3>{t.cli.title}</h3>
+            <Rich text={t.cli.body} />
+            <div className="cta"><PillLink variant="ghost" trail="arrow" href={CLI_SETUP_URL}>{t.cli.button}</PillLink></div>
+            <Rich className="fine" text={t.cli.note} />
+          </Reveal>
           <Reveal className="scard uninstall"><h3>{t.uninstallTitle}</h3><p>{t.uninstallBody}</p></Reveal>
         </div>
       </section>
