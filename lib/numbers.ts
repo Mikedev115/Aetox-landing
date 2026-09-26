@@ -4,17 +4,17 @@
 // {DISK_MB} and the like, and dict() fills those in — so a new release means
 // editing this file, not hunting through two dictionaries.
 //
-// 13 Sep 2026, v1.6.1.
+// 27 Sep 2026, v1.9.0.
 export const NUMBERS = {
-  DISK_MB: "80.8", // aetox.exe 49.2 + aetox-engine.exe 31.7, both files on disk after install
-  INSTALLER_MB: "33.6", // the MSIX the Store ships
-  TESTS: "5,118", // Go + UI
-  TESTS_GO: "3,371",
-  TESTS_UI: "1,747",
+  DISK_MB: "90.4", // aetox.exe 55.1 + aetox-engine.exe 35.3 (MiB), the v1.9.0 portable zip's two files
+  INSTALLER_MB: "36.7", // aetox-amd64-installer.exe on the v1.9.0 release (38,465,834 bytes)
+  TESTS: "5,754", // Go + UI, the app README's count for v1.9.0
+  TESTS_GO: "3,648",
+  TESTS_UI: "2,106",
   TURN_MS: "0.32", // one turn assembled, 174.9 KB memory, 13 Aug 2026
   TOOLS: "35", // engine 34 + the window's browser
-  TOKENS_PER_REQUEST: "10,300",
-  PROVIDERS: "24", // the catalogue in dialogs/ProviderDialog.tsx, not counting the built-in aetox
+  TOKENS_PER_REQUEST: "10,700",
+  PROVIDERS: "27", // the catalogue in dialogs/ProviderDialog.tsx, not counting the built-in aetox
 } as const;
 
 const TOKEN = /\{([A-Z_]+)\}/g;

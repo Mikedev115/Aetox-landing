@@ -14,7 +14,10 @@ export async function currentVersion(): Promise<string> {
   const headers: Record<string, string> = { Accept: "application/vnd.github+json", "User-Agent": "aetox-landing-build" };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
-  const res = await fetch(RELEASES_API, { headers, cache: "force-cache" });
+  // `next dev` keeps a force-cached answer across restarts — a dev page
+  // showed v1.5.28 on 27 Sep 2026 with v1.9.0 out. A build asks once anyway.
+  const cache = process.env.NODE_ENV === "development" ? "no-store" : "force-cache";
+  const res = await fetch(RELEASES_API, { headers, cache });
   if (!res.ok) throw new Error(`GitHub releases API: ${res.status} ${res.statusText} — set AETOX_VERSION to build without it`);
   const data = (await res.json()) as { tag_name?: string };
   if (!data.tag_name) throw new Error("GitHub releases API: latest release has no tag_name");

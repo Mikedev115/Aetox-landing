@@ -59,10 +59,10 @@ export const en = {
         alt: "Code door — the chat on the left reporting a release check, and on the right tabs for a tool card, Git, PowerShell 7, the project's file tree and an open Go file",
       },
       {
-        title: "Agents",
+        title: "Team",
         lead: "For jobs too big for one pair of hands.",
-        body: "It splits a job and hands pieces to specialist agents — research, automation, documents, spreadsheets — that work at the same time. A card still working wears a light travelling its edge; when it finishes, the light goes out.",
-        addr: "Aetox · agents",
+        body: "Talk to one secretary. It sends the job to an agent, a team, a department or the whole company — every rung has a head that thinks for itself — and the specialists work at the same time. A card still working wears a light travelling its edge; when it finishes, the light goes out.",
+        addr: "Aetox · team",
         alt: "Four agents — research, automation, doc, sheet — working in parallel, each card tagged running with a light travelling its edge",
       },
     ],
@@ -117,6 +117,24 @@ export const en = {
         body: "Ask for a short clip and it designs, renders and opens it beside the chat. Say the 3.8-second cut is too short and it stretches it to 8 seconds, checks the file's real duration, and renders again.",
         alt: "The chat reporting an 8-second hero clip re-rendered from 3.8 seconds, with the mp4 playing in the tab beside it",
       },
+      {
+        title: "Team",
+        body: "Talk to one secretary. It decides whether a job needs one agent, a team, a department or the whole company, hands it over in your own words, and reports back. The work shows as one tree — stop any row, answer a question right where it was asked.",
+        alt: "",
+        mini: { addr: "Aetox · team", lines: ["you → secretary", "  └ content team · head", "      ├ writer     drafting 3 posts", "      ├ designer   cover images", "      └ editor     waiting to review"] },
+      },
+      {
+        title: "Install by asking",
+        body: "Paste an MCP link, a claude mcp add line, a GitHub page or just a name. It finds the official server, checks whether it needs a key or a sign-in, and shows a card — nothing installs until you press it.",
+        alt: "",
+        mini: { addr: "Aetox · capabilities", lines: ["> claude mcp add playwright", "", "Playwright MCP", "  official · no key needed", "  who gets it: Code desk, Researcher", "", "  [ Install ]"] },
+      },
+      {
+        title: "In the terminal",
+        body: "The Code desk without the window: type aetox in any project folder. The work prints above the input, approvals are answered in place, and it shares keys, chats and memory with the app. A separate installer, not in the Store.",
+        alt: "",
+        mini: { addr: "Windows Terminal · aetox", lines: ["▄▀█ █▀▀ ▀█▀ █▀█ ▀▄▀  Code desk", "█▀█ ██▄  █  █▄█ █ █  ~/shop-api · main", "", "▌ fix the save button on settings", "▌", "▌ Act  gpt-6-sol · high"] },
+      },
     ],
     researchStats: {
       label: "Numbers from that job",
@@ -163,7 +181,7 @@ export const en = {
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
-    foot: "Smaller than Claude Code **3×** · Cursor **11×** · VS Code **14×**. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 13 Sep 2026 on v1.6.1, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md).",
+    foot: "Smaller than Claude Code **3×** · Cursor **10×** · VS Code **13×**. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 27 Sep 2026 on v1.9.0, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md).",
     ram: {
       addr: "Task Manager · Processes",
       alt: "Windows Task Manager while Aetox is working: Aetox 64.2 MB of memory, beside Antigravity IDE at 1,757 MB, Google Chrome 531 MB and Discord 473 MB",

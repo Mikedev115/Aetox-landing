@@ -33,6 +33,10 @@ const PROVIDERS = [
   ["chatgpt (codex)", "https://chatgpt.com", "lg-openai"],
   ["opencode zen", "https://opencode.ai/zen", "lg-opencode"],
   ["opencode go", "https://opencode.ai", "lg-opencode"],
+  // 27 Sep 2026, v1.9.0: three rows the app gained after the list above.
+  ["meta", "https://dev.meta.ai", "lg-meta"],
+  ["xiaomi mimo", "https://platform.xiaomimimo.com", "lg-xiaomi"],
+  ["xiaomi mimo token plan", "https://platform.xiaomimimo.com", "lg-xiaomi"],
 ] as const;
 
 const Ctx = createContext<() => void>(() => {});

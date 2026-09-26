@@ -1,9 +1,10 @@
 # Builds the static export and publishes it to GitHub Pages.
 #
-# Runs on every push to main, by hand, and on `repository_dispatch` with
-# event type `aetox-release` — the Aetox repo can fire that after a release so
-# the version badge (read from GitHub Releases at build time) updates without
-# a commit here.
+# Runs on every push to main, by hand, on `repository_dispatch` with event
+# type `aetox-release`, and once a day. The version badge is read from GitHub
+# Releases at build time, and nothing in the Aetox repo fires the dispatch —
+# the live page said v1.7.5 on 27 Sep 2026 with v1.9.0 out — so the daily
+# build is what keeps it current without a commit here.
 name: Deploy to GitHub Pages
 
 on:
@@ -12,6 +13,8 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [aetox-release]
+  schedule:
+    - cron: "17 1 * * *"
 
 permissions:
   contents: read

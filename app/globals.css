@@ -392,3 +392,7 @@ nav.primary .nav-flyout a{display:block;padding:.6rem .7rem;border-radius:var(--
    under the card's text, left like it, whatever the page around does. */
 .cli-get{display:flex;margin-top:1rem}
 .cli-note{margin-top:.75rem;font-size:13px;color:var(--dim)}
+
+/* A use card with no screenshot yet draws its pane in text (UseCases MiniPane). */
+.frame.mini{background:var(--bg-card)}
+.frame.mini pre{margin:0;padding:1rem 1.1rem;font:12.5px/1.6 var(--mono);color:var(--muted);white-space:pre;overflow:hidden}
