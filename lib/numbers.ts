@@ -1,20 +1,21 @@
 // Every published number that appears on the site, once. Where each one is
-// measured is in the app repo's docs/PUBLISHED-NUMBERS.md; the method is in
+// measured is in the app repo's docs/reports/PUBLISHED-NUMBERS.md; the method is in
 // BENCHMARK.md. Components import the values; prose in lib/i18n writes
 // {DISK_MB} and the like, and dict() fills those in — so a new release means
 // editing this file, not hunting through two dictionaries.
 //
-// 27 Sep 2026, v1.9.0.
+// Package sizes and providers: 30 Sep 2026, v1.9.4. Other figures retain their
+// own measurement dates; the test counts below are historical, not recounted.
 export const NUMBERS = {
-  DISK_MB: "90.4", // aetox.exe 55.1 + aetox-engine.exe 35.3 (MiB), the v1.9.0 portable zip's two files
-  INSTALLER_MB: "36.7", // aetox-amd64-installer.exe on the v1.9.0 release (38,465,834 bytes)
-  TESTS: "5,754", // Go + UI, the app README's count for v1.9.0
+  DISK_MB: "91.2", // v1.9.4: 58,240,000 + 37,425,152 bytes = 91.2333984375 MiB
+  INSTALLER_MB: "37.0", // aetox-amd64-installer.exe on v1.9.4 (38,775,372 bytes)
+  TESTS: "5,754", // Go + UI, measured on v1.7.2 on 17 Sep 2026 (dated in the app README)
   TESTS_GO: "3,648",
   TESTS_UI: "2,106",
   TURN_MS: "0.32", // one turn assembled, 174.9 KB memory, 13 Aug 2026
   TOOLS: "35", // engine 34 + the window's browser
   TOKENS_PER_REQUEST: "10,700",
-  PROVIDERS: "27", // the catalogue in dialogs/ProviderDialog.tsx, not counting the built-in aetox
+  PROVIDERS: "28", // the app's internal/provider/catalog.go, not counting the built-in aetox
 } as const;
 
 const TOKEN = /\{([A-Z_]+)\}/g;

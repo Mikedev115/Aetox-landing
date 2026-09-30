@@ -181,7 +181,7 @@ export const en = {
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
-    foot: "Smaller than Claude Code **3×** · Cursor **10×** · VS Code **13×**. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 27 Sep 2026 on v1.9.0, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md).",
+    foot: "Smaller than Claude Code **3×** · Cursor **10×** · VS Code **13×**, rounded to whole numbers. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 30 Sep 2026 on v1.9.4, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
     ram: {
       addr: "Task Manager · Processes",
       alt: "Windows Task Manager while Aetox is working: Aetox 64.2 MB of memory, beside Antigravity IDE at 1,757 MB, Google Chrome 531 MB and Discord 473 MB",
