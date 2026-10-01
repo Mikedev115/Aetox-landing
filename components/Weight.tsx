@@ -12,7 +12,7 @@ import Rich from "./ui/Rich";
 // Aetox's is DISK_MB / 1,171. If the size changes, BENCHMARK.md and the
 // multipliers in the dictionary's weight.foot change with it.
 const ROWS = [
-  { icon: "logoA", name: "Aetox", type: "aetox", mb: `${NUMBERS.DISK_MB} MB`, w: 7.7, us: true },
+  { icon: "logoA", name: "Aetox", type: "aetox", mb: `${NUMBERS.DISK_MB} MB`, w: 7.8, us: true },
   { icon: "lg-claude", name: "Claude Code", type: "CLI", mb: "236 MB", w: 20.2 },
   { icon: "lg-zed", name: "Zed", type: "IDE", mb: "419 MB", w: 35.8 },
   { icon: "lg-opencode", name: "OpenCode", type: "CLI", mb: "498 MB", w: 42.5 },

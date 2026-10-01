@@ -4,11 +4,11 @@
 // {DISK_MB} and the like, and dict() fills those in — so a new release means
 // editing this file, not hunting through two dictionaries.
 //
-// Package sizes and providers: 30 Sep 2026, v1.9.4. Other figures retain their
+// Package sizes: 2 Oct 2026, v1.9.5; providers: 30 Sep 2026. Other figures retain their
 // own measurement dates; the test counts below are historical, not recounted.
 export const NUMBERS = {
-  DISK_MB: "91.2", // v1.9.4: 58,240,000 + 37,425,152 bytes = 91.2333984375 MiB
-  INSTALLER_MB: "37.0", // aetox-amd64-installer.exe on v1.9.4 (38,775,372 bytes)
+  DISK_MB: "91.6", // v1.9.5: 58,488,320 + 37,515,264 bytes = 91.55615234375 MiB
+  INSTALLER_MB: "37.1", // aetox-amd64-installer.exe on v1.9.5 (38,861,777 bytes)
   TESTS: "5,754", // Go + UI, measured on v1.7.2 on 17 Sep 2026 (dated in the app README)
   TESTS_GO: "3,648",
   TESTS_UI: "2,106",

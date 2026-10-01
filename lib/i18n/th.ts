@@ -174,7 +174,7 @@ export const th: Dict = {
     benchLabel: "พื้นที่ดิสก์หลังติดตั้ง สั้นกว่าคือดีกว่า",
     aetoxType: "AI agent",
     cometType: "ผู้ช่วย AI",
-    foot: "เล็กกว่า Claude Code **3 เท่า** · Cursor **10 เท่า** · VS Code **13 เท่า** เมื่อปัดเป็นจำนวนเต็ม แน่นอนว่าคนละหมวด — CLI ไม่มีหน้าต่าง และ IDE เป็นเครื่องมือของงานอีกแบบ สิ่งที่เทียบกันได้อย่างยุติธรรมคือพื้นที่ดิสก์ที่แต่ละตัวกินบนเครื่องแบบเดียวกับของคุณ คู่แข่งวัด 27 ก.ค. 2026 · Aetox วัด 30 ก.ย. 2026 บน v1.9.4 รวมทั้งสองไฟล์ — วิธีวัดอยู่ใน [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md) จำนวนเทสต์กับตัวเลขการทำงานยังเป็นข้อมูลตามวันที่ใน README",
+    foot: "เล็กกว่า Claude Code **3 เท่า** · Cursor **10 เท่า** · VS Code **13 เท่า** เมื่อปัดเป็นจำนวนเต็ม แน่นอนว่าคนละหมวด — CLI ไม่มีหน้าต่าง และ IDE เป็นเครื่องมือของงานอีกแบบ สิ่งที่เทียบกันได้อย่างยุติธรรมคือพื้นที่ดิสก์ที่แต่ละตัวกินบนเครื่องแบบเดียวกับของคุณ คู่แข่งวัด 27 ก.ค. 2026 · Aetox วัด 2 ต.ค. 2026 บน v1.9.5 รวมทั้งสองไฟล์ — วิธีวัดอยู่ใน [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md) จำนวนเทสต์กับตัวเลขการทำงานยังเป็นข้อมูลตามวันที่ใน README",
     ram: {
       addr: "Task Manager · กระบวนการ",
       alt: "Task Manager ของ Windows ขณะ Aetox ทำงาน: Aetox ใช้หน่วยความจำ 64.2 MB ข้าง Antigravity IDE 1,757 MB, Google Chrome 531 MB และ Discord 473 MB",
