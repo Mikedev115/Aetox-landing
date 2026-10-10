@@ -46,6 +46,12 @@ public/assets/   ภาพหน้าจอจากแอปจริง
 
 เพิ่มหน้าใหม่: ใส่คีย์ใน `PAGES` ของ `lib/site.ts` → เพิ่ม `pages.<key>` ใน en.ts/th.ts → เขียน `components/pages/<Key>Page.tsx` → วาง `page.tsx` ใน `app/(en)/<key>/` และ `app/(th)/th/<key>/` เมนูบน footer และปุ่มสลับภาษาจะรู้จักหน้านั้นเอง
 
+## ดีไซน์
+
+ภาษาภาพตั้งแต่ 20 ก.ย. 2026 ถอดมาจาก tryprofound.com: พื้นดำล้วน หมึกเดียว (#edf2f5) เส้นขอบสีเดียว (#232323) ที่วาดทุกกรอบ หัวเรื่อง Inter น้ำหนัก 500 ขนาด 48px tracking -0.0225em ปุ่มสูง 32px มุม 8px คอนเทนเนอร์ 1088px มีเส้นประแนวตั้งสองข้าง ระยะห่างระหว่าง section 120px หัว section ชิดซ้าย การ์ดใหญ่เป็นสี่เหลี่ยมมีขอบ ไม่ถมสี ทั้งหมดอยู่ใน token ต้นไฟล์ `app/globals.css`
+
+สองชิ้นที่เป็น canvas: `components/ui/HeroLight.tsx` (ลำแสงหลัง h1 บนหน้าแรก) และ `components/Network.tsx` (สนามโหนดจากไอคอน provider ใน sprite + ประโยคที่ค่อยชัดจากเบลอตามการเลื่อน, section สูง 250vh ข้างในติดหนึบ) ทั้งคู่ปิดแอนิเมชันเมื่อ `prefers-reduced-motion`
+
 ## ข้อตกลง
 
 - **ตัวเลขทุกตัวมาจากงานจริง** วิธีวัดอยู่ที่ [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/BENCHMARK.md)

@@ -28,6 +28,8 @@ export const en = {
     theme: "Toggle light/dark theme",
     lang: "ไทย",
     langTitle: "อ่านภาษาไทย",
+    announceBefore: "Aetox ",
+    announceAfter: " is out — see what changed",
     backToTop: "Aetox — back to top",
   },
   hero: {
@@ -41,6 +43,12 @@ export const en = {
     imgAlt:
       "The Aetox window after a job — on the left the chat, on the right the plan card showing 2 of 2 steps done and the session's artifacts panel listing the real files it wrote: a CSV, two Markdown documents and an HTML mock-up",
     frameAddr: "Aetox · plan 2/2 · 5 artifacts",
+  },
+  network: {
+    lines: [
+      "Every model, every editor, every runtime you already use —",
+      "one agent on your machine that does the work with them.",
+    ],
   },
   modes: {
     items: [

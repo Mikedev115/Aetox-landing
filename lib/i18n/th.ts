@@ -25,6 +25,8 @@ export const th: Dict = {
     theme: "สลับธีมสว่าง/มืด",
     lang: "English",
     langTitle: "Read in English",
+    announceBefore: "Aetox ",
+    announceAfter: " ออกแล้ว — ดูว่ามีอะไรเปลี่ยน",
     backToTop: "Aetox — กลับขึ้นบนสุด",
   },
   hero: {
@@ -38,6 +40,12 @@ export const th: Dict = {
     imgAlt:
       "หน้าต่าง Aetox หลังทำงานเสร็จ — ซ้ายเป็นแชท ขวาเป็นการ์ดแผนงานที่ทำครบ 2 จาก 2 ขั้น และแผงชิ้นงานของเซสชันที่ลิสต์ไฟล์จริงที่มันเขียน: CSV, Markdown สองไฟล์ และ HTML ต้นแบบ",
     frameAddr: "Aetox · แผนงาน 2/2 · ชิ้นงาน 5",
+  },
+  network: {
+    lines: [
+      "ทุกโมเดล ทุกอีดิเตอร์ ทุกรันไทม์ที่คุณใช้อยู่แล้ว —",
+      "เอเจนต์ตัวเดียวบนเครื่องคุณ ลงมือทำงานกับมันทั้งหมด",
+    ],
   },
   modes: {
     items: [
