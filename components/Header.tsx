@@ -20,7 +20,7 @@ export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lan
     <header>
       <div className="wrap bar">
         <a className="lockup" href={pagePath(lang)} aria-label={t.backToTop}>
-          <svg className="mark" aria-hidden="true"><use href="#logoA" /></svg><span>Aetox</span>
+          <svg className="mark" aria-hidden="true"><use href="#logoA" /></svg><span>Aetox harness</span>
         </a>
         {/* one string on purpose — split JSX would put comment nodes in the static HTML */}
         <span className="ver"><span className="led" aria-hidden="true" />{`v${version} · Windows`}</span>

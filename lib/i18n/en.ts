@@ -8,7 +8,7 @@
 
 export const en = {
   meta: {
-    title: "Aetox — An AI agent that does the work on your machine",
+    title: "Aetox harness — An AI agent that does the work on your machine",
     description:
       "Aetox is a Windows app you command in plain language. It reads receipts, reads videos, opens real websites and clicks real buttons, and returns real Excel and Word files. No middle server, no subscription.",
     ogDescription: "Command it in plain language, get back finished files. Work stays on your machine. No middle server.",
@@ -315,14 +315,14 @@ export const en = {
     features: {
       title: "What it does",
       sub: "Nine jobs Aetox does on its own, on your machine — each one a real run with a real file at the end.",
-      metaTitle: "What Aetox does — receipts, research, browsers, code, video",
+      metaTitle: "What Aetox harness does — receipts, research, browsers, code, video",
       metaDescription: "The jobs Aetox handles on its own on a Windows machine: reading receipts into Excel, research across twenty sites, driving real websites, Git, code maps, video — and what each one looks like.",
       all: "See everything it does",
     },
     pricing: {
       title: "Pricing",
       sub: "The program is free. You only choose who does the thinking — a model on your own machine, or a provider you already pay.",
-      metaTitle: "Aetox pricing — free, with a local model or your own key",
+      metaTitle: "Aetox harness pricing — free, with a local model or your own key",
       metaDescription: "Aetox costs nothing and has no subscription. Run a local model with Ollama or LM Studio for free, or bring a key from one of {PROVIDERS} providers. Two files, {DISK_MB} MB on disk.",
       teaser: {
         h2: "Free. Choose who does the thinking",
@@ -335,7 +335,7 @@ export const en = {
     safety: {
       title: "Safety",
       sub: "No server of ours in the middle, no usage statistics, no account. What it can and cannot touch on your machine, spelled out.",
-      metaTitle: "Aetox safety — your data never has to leave your machine",
+      metaTitle: "Aetox harness safety — your data never has to leave your machine",
       metaDescription: "How Aetox keeps conversations, files and API keys on your machine: no middle server, encrypted keys, credential stores refused at the door, every command logged and every write asked first.",
       more: "Read about safety",
       policies: "The policies in full",
@@ -344,7 +344,7 @@ export const en = {
     supporters: {
       title: "Aetox supporters",
       sub: "People who choose to support Aetox and allow their name to be shown here.",
-      metaTitle: "Aetox supporters",
+      metaTitle: "Aetox harness supporters",
       metaDescription: "The people supporting Aetox, with the total confirmed support recorded for the project.",
       total: "Total support",
       totalSub: "Calculated from confirmed contributions",
@@ -358,7 +358,7 @@ export const en = {
     work: {
       title: "Real work",
       sub: "Three jobs that actually ran, with the log to read back — not staged demos.",
-      metaTitle: "Real work done by Aetox — CRM research, n8n, a web page on video",
+      metaTitle: "Real work done by Aetox harness — CRM research, n8n, a web page on video",
       metaDescription: "Jobs Aetox ran for real: twenty CRMs compared in one spreadsheet, an eleven-node n8n workflow wired from one sentence, and a web page built on video. Every number comes from a log.",
       more: "See the real work",
       cases: "Browse the case studies",
@@ -367,13 +367,13 @@ export const en = {
     faq: {
       title: "Questions",
       sub: "Straight answers on what it is, what it costs, what it can reach, and how to get rid of it.",
-      metaTitle: "Aetox FAQ — cost, safety, hardware, uninstall",
+      metaTitle: "Aetox harness FAQ — cost, safety, hardware, uninstall",
       metaDescription: "Answers on how Aetox differs from a web AI, whether you need to code, how safe your data is, what it can access, what it costs, what machine it needs, and how to uninstall.",
     },
     download: {
       title: "Download Aetox for Windows",
       sub: "One signed package, three ways to get it. Install and run your first job within two minutes — no card, no account, no key needed to start.",
-      metaTitle: "Download Aetox for Windows — Microsoft Store, winget, GitHub",
+      metaTitle: "Download Aetox harness for Windows — Microsoft Store, winget, GitHub",
       metaDescription: "Get Aetox from the Microsoft Store, with one winget command, or from GitHub Releases. Installer {INSTALLER_MB} MB, {DISK_MB} MB on disk, signed by Microsoft, uninstalls in one click.",
       store: "Get it from Microsoft Store",
       releases: "Download from GitHub",

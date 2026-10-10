@@ -14,7 +14,7 @@ export default function Footer({ t, nav, lang, page }: { t: Dict["footer"]; nav:
       <div className="wrap">
         <div className="foot">
           <div className="brand">
-            <svg className="mark" aria-label="Aetox"><use href="#logoA" /></svg>
+            <svg className="mark" aria-label="Aetox harness"><use href="#logoA" /></svg>
             <p style={{ marginTop: "1rem", color: "var(--muted)", maxWidth: "32ch" }}>{t.tag}</p>
           </div>
           <div>
