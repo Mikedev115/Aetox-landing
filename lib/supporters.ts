@@ -24,6 +24,16 @@ export const SUPPORTERS: readonly Supporter[] = [
     supportedOn: "2026-10-06",
   },
   {
+    name: "วสุ แก้****",
+    amount: 500,
+    supportedOn: "2026-10-01",
+  },
+  {
+    name: "สุภิพงษ์ จัน****",
+    amount: 100,
+    supportedOn: "2026-10-01",
+  },
+  {
     name: "กิตติภณ สุข****",
     amount: 200,
     supportedOn: "2026-09-15",
