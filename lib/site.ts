@@ -29,7 +29,7 @@ export const pagePath = (lang: "en" | "th", page: PageKey = "home") => `${BASE}$
 export const pageUrl = (lang: "en" | "th", page: PageKey = "home") => new URL(`${lang === "en" ? "" : "th/"}${SLUG[page]}`, SITE_URL).toString();
 export const privacyPath = (lang: "en" | "th") => pagePath(lang, "privacy");
 export const homePath = (lang: "en" | "th") => pagePath(lang, "home");
-export const CASE_STUDIES_URL = `${AETOX_PAGES}case-studies/web-pages/restaurant.html`;
+export const CASE_STUDIES_URL = `https://mikedev115.github.io/Aetox-Harness/case-studies/web-pages/restaurant.html`;
 
 export const STORE_URL = "https://apps.microsoft.com/detail/9N4KKBRRSCZZ";
 export const WINGET_CMD = "winget install --id=9N4KKBRRSCZZ --source=msstore";
