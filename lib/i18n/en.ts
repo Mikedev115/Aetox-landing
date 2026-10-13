@@ -123,20 +123,17 @@ export const en = {
       {
         title: "Team",
         body: "Talk to one secretary. It decides whether a job needs one agent, a team, a department or the whole company, hands it over in your own words, and reports back. The work shows as one tree — stop any row, answer a question right where it was asked.",
-        alt: "",
-        mini: { addr: "Aetox · team", lines: ["you → secretary", "  └ content team · head", "      ├ writer     drafting 3 posts", "      ├ designer   cover images", "      └ editor     waiting to review"] },
+        alt: "The delegation tree: the assistant hands the job to the content team, whose head splits it between a writer, a designer and an editor, each row with its status and files",
       },
       {
         title: "Install by asking",
         body: "Paste an MCP link, a claude mcp add line, a GitHub page or just a name. It finds the official server, checks whether it needs a key or a sign-in, and shows a card — nothing installs until you press it.",
-        alt: "",
-        mini: { addr: "Aetox · capabilities", lines: ["> claude mcp add playwright", "", "Playwright MCP", "  official · no key needed", "  who gets it: Code desk, Researcher", "", "  [ Install ]"] },
+        alt: "The Playwright MCP install card: source npm, the command it will run, no key needed, who gets it, and an Install button waiting to be pressed",
       },
       {
         title: "In the terminal",
         body: "The Code desk without the window: type aetox in any project folder. The work prints above the input, approvals are answered in place, and it shares keys, chats and memory with the app. A separate installer, not in the Store.",
-        alt: "",
-        mini: { addr: "Windows Terminal · aetox", lines: ["▄▀█ █▀▀ ▀█▀ █▀█ ▀▄▀  Code desk", "█▀█ ██▄  █  █▄█ █ █  ~/shop-api · main", "", "▌ fix the save button on settings", "▌", "▌ Act  gpt-6-sol · high"] },
+        alt: "The aetox console in Windows Terminal: a code search and an edit, then a card asking to run npm test above the input",
       },
     ],
     researchStats: {

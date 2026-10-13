@@ -77,12 +77,17 @@ cd D:/Aetox/Aetox/promo && npx vite build && npx vite preview --port 5199   # �
 node landing/shoot-hero.mjs                 # S01
 node landing/shoot-modes.mjs                # S02–S04
 node landing/shoot-cards.mjs S05 S09 …      # การ์ด (ไม่ใส่ = ทุกใบ)
+sh landing/cli/shoot.sh 64 21 && node landing/cli/shoot-term.mjs 64 21   # การ์ดเทอร์มินัล (ต้องมี Go)
 ```
 
 ไฟล์ออกที่ `output/shots/` แล้วก๊อปเข้า `public/assets/` ตามชื่อในตาราง บทของแต่ละช็อตอยู่ใน `promo/src/scenes/landing-*.ts`
 
+**การ์ดเทอร์มินัล** (`uc-terminal-*`) ไม่ได้มาจากโรงถ่าย เพราะโรงถ่ายวาดแค่หน้าต่างแอป: `shoot.sh` รันคอนโซลจริง (`internal/tui` ของแอป) กับเอนจินตามบทผ่าน `go test` แล้วเก็บไบต์ที่มันเขียนลงจอ ·
+`shoot-term.mjs` เล่นไบต์นั้นใน xterm.js (สี Campbell ของ Windows Terminal, Consolas) แล้ววาดทีละคำตามคอลัมน์ให้ภาษาไทยต่อกันเป็นคำ ·
+ตัวคอนโซลมีแต่ภาษาไทย คู่ EN จึงต่างกันแค่ข้อความที่พิมพ์และคำตอบ
+
 **ยังไม่มีภาพ** (กรอบว่างที่บอกเลขช่อง ผ่าน `components/ui/Slot.tsx`): S08 n8n (การ์ดออโตเมชั่นและการ์ดงานจริง — ต้องมี n8n จริง) ·
-S13 poster ของวิดีโอ YouTube · การ์ดเทอร์มินัลยังเป็นข้อความ
+S13 poster ของวิดีโอ YouTube
 
 ## ข้อตกลง
 

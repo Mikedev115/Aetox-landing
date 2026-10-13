@@ -12,8 +12,9 @@ import Slot from "./ui/Slot";
 // 374×271 window at 2x, already cropped to the one panel the card is about).
 // A card still waiting for its capture names its slot in the shot plan
 // instead. The research card has no picture: it shows the numbers from the run
-// (see ResearchStats). The terminal card draws its pane from the dictionary's
-// `mini` lines (MiniPane): the CLI has no screen the studio can shoot.
+// (see ResearchStats). The terminal card is the real console (internal/tui)
+// run against a scripted engine and replayed into xterm.js — the studio's
+// promo/landing/cli/, since the studio itself only renders the window.
 type Pic = { name: string } | { slot: string };
 const PICS: (Pic | null)[] = [
   { name: "uc-slips" },
@@ -26,7 +27,7 @@ const PICS: (Pic | null)[] = [
   { name: "uc-video" },
   { name: "uc-team" },
   { name: "uc-install" },
-  null,
+  { name: "uc-terminal" },
 ];
 
 // Numbers from the CRM job of 15 Aug 2026 — the same four the old page
@@ -39,17 +40,6 @@ function ResearchStats({ t }: { t: Dict["uses"]["researchStats"] }) {
       {t.items.map((it, i) => (
         <div key={it.k}><b>{RESEARCH[i]}<small>{it.unit}</small></b><span>{it.k}</span></div>
       ))}
-    </div>
-  );
-}
-
-type Mini = { addr: string; lines: string[] };
-
-// A pane drawn in text, in the same frame as the screenshots.
-function MiniPane({ mini }: { mini: Mini }) {
-  return (
-    <div className="pic">
-      <Frame addr={mini.addr} className="mini"><pre>{mini.lines.join("\n")}</pre></Frame>
     </div>
   );
 }
@@ -82,7 +72,6 @@ export default function UseCases({ t, lang, more, layout = "carousel" }: { t: Di
 
   const cards = t.cards.map((c, i) => {
     const pic = PICS[i];
-    const mini = "mini" in c ? (c.mini as Mini | undefined) : undefined;
     return (
       <article className="ucard" key={c.title}>
         <div className="txt"><h3>{c.title}</h3><p>{c.body}</p></div>
@@ -90,8 +79,6 @@ export default function UseCases({ t, lang, more, layout = "carousel" }: { t: Di
           <div className="pic"><Frame shot={{ src: asset(`${pic.name}-${lang}.png`), width: 748, height: 542, alt: c.alt }} /></div>
         ) : pic ? (
           <div className="pic"><Frame><Slot id={pic.slot} /></Frame></div>
-        ) : mini ? (
-          <MiniPane mini={mini} />
         ) : (
           <ResearchStats t={t.researchStats} />
         )}
