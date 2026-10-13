@@ -23,7 +23,6 @@ const PICS: (Pic | null)[] = [
   { slot: "S08" },
   { name: "uc-git" },
   { name: "uc-map" },
-  { slot: "S11" },
   { name: "uc-video" },
   { name: "uc-team" },
   { name: "uc-install" },

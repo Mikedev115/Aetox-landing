@@ -12,7 +12,7 @@ import RealWork from "./RealWork";
 import FinalCta from "./FinalCta";
 
 // The home page: the story in short. Each block past the modes is a teaser
-// for one of the site's pages and links there — the detail (all nine jobs,
+// for one of the site's pages and links there — the detail (all eleven jobs,
 // the pricing paths and benchmark, the access scope, the FAQ) lives on those
 // pages, not here.
 export default async function Landing({ lang }: { lang: Lang }) {

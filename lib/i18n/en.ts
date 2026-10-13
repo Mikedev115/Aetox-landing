@@ -116,11 +116,6 @@ export const en = {
         alt: "A force-directed map of 150 of a project's 741 files, dots sized by import count, beside the chat listing the largest source files",
       },
       {
-        title: "Memory",
-        body: "It notices what you ask for again and again — and never keeps it on its own. Each habit waits in Settings for you to turn it into a skill, a prompt, or throw it away. One switch turns the whole thing off.",
-        alt: "Settings → Learning → Habits: nine repeated requests, each with buttons to build a skill, turn it into a prompt, or discard",
-      },
-      {
         title: "Video",
         body: "Ask for a short clip and it designs, renders and opens it beside the chat. Say the 3.8-second cut is too short and it stretches it to 8 seconds, checks the file's real duration, and renders again.",
         alt: "The chat reporting an 8-second hero clip re-rendered from 3.8 seconds, with the mp4 playing in the tab beside it",
@@ -314,7 +309,7 @@ export const en = {
   pages: {
     features: {
       title: "What it does",
-      sub: "Nine jobs Aetox does on its own, on your machine — each one a real run with a real file at the end.",
+      sub: "Eleven jobs Aetox does on its own, on your machine — each one a real run with a real file at the end.",
       metaTitle: "What Aetox harness does — receipts, research, browsers, code, video",
       metaDescription: "The jobs Aetox handles on its own on a Windows machine: reading receipts into Excel, research across twenty sites, driving real websites, Git, code maps, video — and what each one looks like.",
       all: "See everything it does",
