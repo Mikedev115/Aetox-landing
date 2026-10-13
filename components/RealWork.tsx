@@ -1,9 +1,10 @@
 import type { Dict, Lang } from "@/lib/i18n";
-import { DEMO_VIDEO, asset, pagePath } from "@/lib/site";
+import { DEMO_VIDEO, pagePath } from "@/lib/site";
 import Frame from "./ui/Frame";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
+import Slot from "./ui/Slot";
 
 // With `teaser` (the home page) the section carries its own heading and ends
 // in a link to /work/; on /work/ the page head is the heading.
@@ -24,12 +25,12 @@ export default function RealWork({ t, lang, teaser }: { t: Dict["work"]; lang: L
             <p>{t.crm.body}</p>
           </Reveal>
           <Reveal as="article" className="wcard">
-            <Frame addr={t.n8n.addr} shot={{ src: asset("cap-automation.png"), alt: t.n8n.alt, width: 1916, height: 1027 }} />
+            <Frame addr={t.n8n.addr}><Slot id="S08" /></Frame>
             <h3>{t.n8n.title}</h3>
             <p>{t.n8n.body}</p>
           </Reveal>
           <Reveal as="article" className="wcard">
-            <Frame addr={t.video.addr} href={DEMO_VIDEO} shot={{ src: asset("hero-app.png"), alt: t.video.alt, width: 1919, height: 1027 }} />
+            <Frame addr={t.video.addr} href={DEMO_VIDEO}><Slot id="S13" /></Frame>
             <h3><a href={DEMO_VIDEO} target="_blank" rel="noopener">{t.video.title}</a></h3>
             <Rich text={t.video.body} />
           </Reveal>

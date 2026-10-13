@@ -41,7 +41,7 @@ components/      Page.tsx = Shell (header/footer/dialogs) + PageHead + pageMetad
 lib/i18n/        en.ts เป็นฐาน · th.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ) · pages.* คือหัวหน้าและ meta ของแต่ละหน้า
 lib/site.ts      PAGES + pagePath() กำหนดว่ามีหน้าอะไรบ้าง · ลิงก์นอกทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ)
 lib/version.ts   ดึงเลขรุ่นจาก GitHub Releases ตอน build — ที่นี่ไม่มีสำเนาเลขรุ่น
-public/assets/   ภาพหน้าจอจากแอปจริง
+public/assets/   ภาพและวิดีโอของแอป (ดูหัวข้อ "ภาพและวิดีโอ") · og.png · promptpay-qr.png
 ```
 
 เพิ่มหน้าใหม่: ใส่คีย์ใน `PAGES` ของ `lib/site.ts` → เพิ่ม `pages.<key>` ใน en.ts/th.ts → เขียน `components/pages/<Key>Page.tsx` → วาง `page.tsx` ใน `app/(en)/<key>/` และ `app/(th)/th/<key>/` เมนูบน footer และปุ่มสลับภาษาจะรู้จักหน้านั้นเอง
@@ -51,6 +51,38 @@ public/assets/   ภาพหน้าจอจากแอปจริง
 ภาษาภาพตั้งแต่ 20 ก.ย. 2026 ถอดมาจาก tryprofound.com: พื้นดำล้วน หมึกเดียว (#edf2f5) เส้นขอบสีเดียว (#232323) ที่วาดทุกกรอบ หัวเรื่อง Inter น้ำหนัก 500 ขนาด 48px tracking -0.0225em ปุ่มสูง 32px มุม 8px คอนเทนเนอร์ 1088px มีเส้นประแนวตั้งสองข้าง ระยะห่างระหว่าง section 120px หัว section ชิดซ้าย การ์ดใหญ่เป็นสี่เหลี่ยมมีขอบ ไม่ถมสี ทั้งหมดอยู่ใน token ต้นไฟล์ `app/globals.css`
 
 สองชิ้นที่เป็น canvas: `components/ui/HeroLight.tsx` (ลำแสงหลัง h1 บนหน้าแรก) และ `components/Network.tsx` (สนามโหนดจากไอคอน provider ใน sprite + ประโยคที่ค่อยชัดจากเบลอตามการเลื่อน, section สูง 250vh ข้างในติดหนึบ) ทั้งคู่ปิดแอนิเมชันเมื่อ `prefers-reduced-motion`
+
+## ภาพและวิดีโอ
+
+ชุดใหม่ทั้งหมด 13 ต.ค. 2026 (ชุดเดิมจาก 11 ก.ย. ถูกถอดทั้งชุด) แนวคิดจากเว็บใหญ่ (Linear, Cursor, Notion, Raycast, Claude):
+hero ตัวเดียวและขยับได้ · วิดีโอเฉพาะหัวข้อหลัก · การ์ดเล็กใช้ภาพ crop เฉพาะแผงที่พิสูจน์ประโยคบนการ์ด ไม่ย่อทั้งหน้าต่าง ·
+CTA ท้ายหน้าไม่มีภาพ
+
+ทุกไฟล์ถ่ายจาก **โรงถ่าย** `D:\Aetox\Aetox\promo` — คอมโพเนนต์จริงของแอปกับข้อมูลในบท ถ่ายซ้ำได้ภาพเดิมทุกครั้ง
+ไม่มีชื่อ path หรือคีย์จริงหลุด ทุกไฟล์มีคู่ `-th` / `-en` และกว้างเป็น 2 เท่าของที่วาดบนจอพอดี:
+
+| ไฟล์ | ที่วาง | วาดที่ (CSS px) | ไฟล์ |
+|---|---|---|---|
+| `hero-*.mp4` + `.png` (poster) | Hero หน้าแรก | 1008 × 599 | 2016 × 1198 วิดีโอวน ~20 วิ |
+| `mode-assist/code/team-*.mp4` + `.png` | 3 โหมด (เล่นเฉพาะแท็บที่เลือก) | 574 × 359 | 1148 × 718 วิดีโอวน ~13 วิ |
+| `uc-*-*.png` | การ์ดใน carousel / `/features/` | 374 × 271 | 748 × 542 |
+
+วิดีโอเข้ารหัส H.264 ~1.5 Mbit/s (ไฟล์ละ 1–2 MB) เล่นเองแบบปิดเสียง และหยุดอยู่ที่ poster เมื่อ `prefers-reduced-motion`
+— `components/ui/Frame.tsx` รับ `shot.video` · `components/Modes.tsx` สลับวิดีโอตามแท็บ
+
+**ถ่ายใหม่** (ต้องมี Chrome และ ffmpeg ที่มี `h264_nvenc`; สคริปต์ชี้ไปที่ตัวของ CapCut):
+
+```bash
+cd D:/Aetox/Aetox/promo && npx vite build && npx vite preview --port 5199   # หรือ preview "studio" ใน .claude/launch.json
+node landing/shoot-hero.mjs                 # S01
+node landing/shoot-modes.mjs                # S02–S04
+node landing/shoot-cards.mjs S05 S09 …      # การ์ด (ไม่ใส่ = ทุกใบ)
+```
+
+ไฟล์ออกที่ `output/shots/` แล้วก๊อปเข้า `public/assets/` ตามชื่อในตาราง บทของแต่ละช็อตอยู่ใน `promo/src/scenes/landing-*.ts`
+
+**ยังไม่มีภาพ** (กรอบว่างที่บอกเลขช่อง ผ่าน `components/ui/Slot.tsx`): S08 n8n (การ์ดออโตเมชั่นและการ์ดงานจริง — ต้องมี n8n จริง) ·
+S11 การ์ดความจำ (ฟีเจอร์ถูกถอดจากแอป 3 ต.ค.) · S13 poster ของวิดีโอ YouTube · การ์ดเทอร์มินัลยังเป็นข้อความ
 
 ## ข้อตกลง
 

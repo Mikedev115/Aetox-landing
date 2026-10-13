@@ -41,8 +41,8 @@ export const en = {
     other: "All ways to install",
     fine: "Signed by Microsoft, nothing to click past · works instantly with no key · uninstall in one click",
     imgAlt:
-      "The Aetox window after a job — on the left the chat, on the right the plan card showing 2 of 2 steps done and the session's artifacts panel listing the real files it wrote: a CSV, two Markdown documents and an HTML mock-up",
-    frameAddr: "Aetox · plan 2/2 · 5 artifacts",
+      "The Aetox window: a request for a one-page coffee shop site, a four-step plan appearing in the chat and ticking off one step at a time, while the artifacts panel on the right shows the full plan and how it will know it is done",
+    frameAddr: "Aetox · plan 4/4",
   },
   network: {
     lines: [
@@ -57,21 +57,21 @@ export const en = {
         lead: "For everyday work, documents and research.",
         body: "Point it at a folder of receipts, a two-hour recording, or a question that needs twenty websites. It reads on its own, works on its own, and the result lands in your folder as a real file — not text in a chat box.",
         addr: "Aetox · assistant",
-        alt: "Assistant door — chart drawn in the chat and a summary page opened in the built-in browser",
+        alt: "Assistant door — asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
       },
       {
         title: "Code",
         lead: "For reading code, building systems and debugging.",
         body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
         addr: "Aetox · code",
-        alt: "Code door — the chat on the left reporting a release check, and on the right tabs for a tool card, Git, PowerShell 7, the project's file tree and an open Go file",
+        alt: "Code door — asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
       },
       {
         title: "Team",
         lead: "For jobs too big for one pair of hands.",
         body: "Talk to one secretary. It sends the job to an agent, a team, a department or the whole company — every rung has a head that thinks for itself — and the specialists work at the same time. A card still working wears a light travelling its edge; when it finishes, the light goes out.",
         addr: "Aetox · team",
-        alt: "Four agents — research, automation, doc, sheet — working in parallel, each card tagged running with a light travelling its edge",
+        alt: "Team door — the secretary hands launch posts to the content team, whose lead splits the work between a writer, a designer and an editor; the tree grows row by row until all three are done",
       },
     ],
   },
@@ -190,12 +190,6 @@ export const en = {
     aetoxType: "AI agent",
     cometType: "AI assistant",
     foot: "Smaller than Claude Code **3×** · Cursor **10×** · VS Code **13×**, rounded to whole numbers. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 2 Oct 2026 on v1.9.5, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
-    ram: {
-      addr: "Task Manager · Processes",
-      alt: "Windows Task Manager while Aetox is working: Aetox 64.2 MB of memory, beside Antigravity IDE at 1,757 MB, Google Chrome 531 MB and Discord 473 MB",
-      title: "And while it works",
-      body: "Task Manager on a real afternoon: the Aetox process at 64 MB while an IDE next to it sat at 1.7 GB. Straight talk, as before — Task Manager files the WebView2 that draws our window under Microsoft Edge WebView2, not under Aetox, so add that in your head. What wins is that you are not keeping a second copy of a browser.",
-    },
     kpis: [
       { unit: "MB", k: "Disk on your machine", s: "Two files · installer {INSTALLER_MB} MB" },
       { unit: "tests", k: "Pass before release", s: "Go {TESTS_GO} · UI {TESTS_UI}" },
@@ -313,8 +307,6 @@ export const en = {
     h2: "Try Aetox today",
     p: "Install and run your first job within two minutes. No card, no subscription, nothing left behind if you uninstall.",
     btn: "Get it from Microsoft Store",
-    imgAlt: "A fresh Aetox chat asking “what shall I get done for you today?” with four suggested jobs",
-    frameAddr: "Aetox · new chat",
   },
   // One entry per page of the site (lib/site.ts PAGES). `title` and `sub` open
   // the page; `meta` is the <title> and description. The home page uses `meta`

@@ -17,7 +17,7 @@ export default function Hero({ t, lang }: { t: Dict["hero"]; lang: Lang }) {
         </div>
         <p className="fine">{t.fine}</p>
         <div className="hero-visual">
-          <Frame addr={t.frameAddr} shot={{ src: asset("hero-plan.png"), alt: t.imgAlt, width: 1920, height: 1140, eager: true }} />
+          <Frame addr={t.frameAddr} shot={{ src: asset(`hero-${lang}.png`), video: asset(`hero-${lang}.mp4`), alt: t.imgAlt, width: 2016, height: 1198, eager: true }} />
         </div>
       </div>
     </div>

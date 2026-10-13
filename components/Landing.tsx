@@ -21,7 +21,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
     <Shell lang={lang} page="home" t={t} version={version}>
       <Hero t={t.hero} lang={lang} />
       <Network t={t.network} />
-      <Modes t={t.modes} />
+      <Modes t={t.modes} lang={lang} />
       <UseCases t={t.uses} lang={lang} more={t.pages.features.all} />
       <PricingTeaser t={t.pages.pricing.teaser} price={t.pricing.local.price} lang={lang} />
       <Safety t={t.safety} lang={lang} teaser={t.pages.safety.more} />

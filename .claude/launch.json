@@ -7,6 +7,13 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "url": "http://localhost:3000"
+    },
+    {
+      "name": "studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:/Aetox/Aetox/promo", "exec", "--", "vite", "preview", "D:/Aetox/Aetox/promo", "--port", "5199", "--strictPort"],
+      "port": 5199,
+      "url": "http://localhost:5199"
     }
   ]
 }

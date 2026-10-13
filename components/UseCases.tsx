@@ -5,26 +5,28 @@ import { asset, pagePath } from "@/lib/site";
 import Frame from "./ui/Frame";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
+import Slot from "./ui/Slot";
 
-// One capture per card, in the order of t.cards. `focus` says which half of
-// the app window the card zooms into — "right" for the desk panel where the
-// work shows, "left" for the chat. The research card has no screenshot: it
-// shows the numbers from the run instead (see ResearchStats). The last three
-// (team, install by asking, the terminal — v1.8–1.9) have no capture yet and
-// draw their pane from the dictionary's `mini` lines instead (MiniPane).
-type Pic = { src: string; width: number; height: number; focus: "left" | "right" };
+// One picture per card, in the order of t.cards: `name` is the file pair in
+// public/assets (`<name>-th.png` / `<name>-en.png`, 748×542 — the card's
+// 374×271 window at 2x, already cropped to the one panel the card is about).
+// A card still waiting for its capture names its slot in the shot plan
+// instead. The research card has no picture: it shows the numbers from the run
+// (see ResearchStats). The terminal card draws its pane from the dictionary's
+// `mini` lines (MiniPane): the CLI has no screen the studio can shoot.
+type Pic = { name: string } | { slot: string };
 const PICS: (Pic | null)[] = [
-  { src: asset("cap-image-ocr.png"), width: 1536, height: 960, focus: "left" },
-  { src: asset("cap-clip.png"), width: 1536, height: 960, focus: "left" },
-  { src: asset("cap-browser.png"), width: 1919, height: 1029, focus: "right" },
+  { name: "uc-slips" },
+  { name: "uc-clip" },
+  { name: "uc-web" },
   null,
-  { src: asset("cap-automation.png"), width: 1916, height: 1027, focus: "right" },
-  { src: asset("git-split.png"), width: 1920, height: 1140, focus: "right" },
-  { src: asset("code-map.png"), width: 1920, height: 1136, focus: "right" },
-  { src: asset("habits.png"), width: 1920, height: 1137, focus: "right" },
-  { src: asset("video-make.png"), width: 1919, height: 1029, focus: "right" },
-  null,
-  null,
+  { slot: "S08" },
+  { name: "uc-git" },
+  { name: "uc-map" },
+  { slot: "S11" },
+  { name: "uc-video" },
+  { name: "uc-team" },
+  { name: "uc-install" },
   null,
 ];
 
@@ -47,7 +49,7 @@ type Mini = { addr: string; lines: string[] };
 // A pane drawn in text, in the same frame as the screenshots.
 function MiniPane({ mini }: { mini: Mini }) {
   return (
-    <div className="pic right">
+    <div className="pic">
       <Frame addr={mini.addr} className="mini"><pre>{mini.lines.join("\n")}</pre></Frame>
     </div>
   );
@@ -85,8 +87,10 @@ export default function UseCases({ t, lang, more, layout = "carousel" }: { t: Di
     return (
       <article className="ucard" key={c.title}>
         <div className="txt"><h3>{c.title}</h3><p>{c.body}</p></div>
-        {pic ? (
-          <div className={`pic ${pic.focus}`}><Frame shot={{ src: pic.src, width: pic.width, height: pic.height, alt: c.alt }} /></div>
+        {pic && "name" in pic ? (
+          <div className="pic"><Frame shot={{ src: asset(`${pic.name}-${lang}.png`), width: 748, height: 542, alt: c.alt }} /></div>
+        ) : pic ? (
+          <div className="pic"><Frame><Slot id={pic.slot} /></Frame></div>
         ) : mini ? (
           <MiniPane mini={mini} />
         ) : (

@@ -191,11 +191,10 @@ section + .policies,section + .cases{padding-top:0}
 .mode:not(.active){opacity:.5}
 .mode:not(.active):hover{opacity:.85}
 .modes .stage{position:sticky;top:calc(var(--head-h) + 1.5rem)}
-.modes .stage .frame img{transition:opacity .4s ease}
-.stage .layer{position:absolute;inset:36px 0 0;width:100%;height:calc(100% - 36px);object-fit:cover;object-position:left top;opacity:0;transition:opacity .45s ease}
+/* the three loops share one cell under the chrome and cross-fade (16:10, 1148×718) */
+.stage .frame{display:grid;grid-template-rows:auto auto}
+.stage .layer{grid-row:2;grid-column:1;width:100%;height:auto;aspect-ratio:1148/718;opacity:0;transition:opacity .45s ease}
 .stage .layer.on{opacity:1}
-.stage .frame{aspect-ratio:1919/1065}
-.stage .frame .base{visibility:hidden}
 @media (max-width:820px){
   .modes{grid-template-columns:1fr}
   .modes .stage{position:static}
@@ -219,14 +218,14 @@ section + .policies,section + .cases{padding-top:0}
 .ucard .txt{padding:1.5rem 1.5rem 1.25rem}
 .ucard h3{font-size:1.125rem;letter-spacing:-.005em;margin-bottom:.4rem}
 .ucard p{color:var(--muted);font-size:14px;line-height:1.45}
-/* the app window sits in the bottom of the card, zoomed into one half so the
-   work is legible at card size; the frame bleeds off the right and bottom */
+/* the app window sits in the bottom of the card, cropped to the one panel the
+   card is about (748×542 = the 374×271 window at 2x); the frame bleeds off the
+   right and bottom */
 .ucard .pic{margin-top:auto;padding:0 0 0 1.5rem}
 .ucard .pic .frame{border-radius:var(--r-sm) 0 0 0;border-right:0;border-bottom:0;box-shadow:none;aspect-ratio:5/4;overflow:hidden}
 .ucard .pic .frame .chrome{height:28px;padding:0 .7rem}
 .ucard .pic .frame .chrome i{width:8px;height:8px}
-.ucard .pic .frame img{width:150%;max-width:none;height:auto;aspect-ratio:auto}
-.ucard .pic.right .frame img{margin-left:-50%}
+.ucard .pic .frame img{display:block;width:100%;height:calc(100% - 28px);object-fit:cover;object-position:left top}
 .ucard .stat-pic{margin-top:auto;padding:0 1.5rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
 .ucard .stat-pic div{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-sm);padding:.85rem 1rem}
 .ucard .stat-pic b{display:block;font-size:1.5rem;font-weight:500;letter-spacing:-.02em;line-height:1.1}
@@ -320,19 +319,10 @@ section + .policies,section + .cases{padding-top:0}
 .faq details p + p{padding-top:0}
 
 /* ── final banner ── */
-.banner{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(2rem,5vw,3.5rem) 0 0 clamp(2rem,5vw,3.5rem);
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:end;gap:2rem;overflow:hidden}
-.banner .copy{padding:0 0 clamp(2rem,5vw,3.5rem)}
+.banner{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(2rem,5vw,3.5rem);overflow:hidden}
 .banner h2{font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.2}
 .banner p{color:var(--muted);margin:.5rem 0 1.5rem;max-width:40ch}
-.banner .frame{border-radius:var(--r-sm) 0 0 0;border-right:0;border-bottom:0;box-shadow:none}
-@media (max-width:760px){.banner{grid-template-columns:1fr;padding-right:clamp(2rem,5vw,3.5rem)}.banner .copy{padding-bottom:0}.banner .frame{border-right:1px solid var(--line);border-radius:var(--r-sm) var(--r-sm) 0 0}}
 
-/* RAM aside inside the weight card */
-.ram{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1.5rem;align-items:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)}
-.ram h3{font-size:1.05rem;margin-bottom:.5rem}
-.ram p{color:var(--muted);font-size:15px}
-@media (max-width:760px){.ram{grid-template-columns:1fr}}
 
 /* ── footer ── */
 footer{border-top:1px solid var(--line);padding:4rem 0 2.5rem;font-size:14px}
@@ -447,3 +437,10 @@ nav.primary .nav-flyout a:hover{background:var(--bg-card2)}
 /* A use card with no screenshot yet draws its pane in text (UseCases MiniPane). */
 .frame.mini{background:var(--bg-card)}
 .frame.mini pre{margin:0;padding:1rem 1.1rem;font:12.5px/1.6 var(--mono);color:var(--muted);white-space:pre;overflow:hidden}
+
+/* empty frame waiting for its capture — components/ui/Slot.tsx */
+.slot{display:grid;place-items:center;width:100%;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--line) 10px 11px)}
+.slot span{font:500 13px/1 var(--mono);color:var(--dim);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:.4rem .6rem}
+.ucard .pic .frame .slot{height:100%}
+.wcard .frame .slot{position:absolute;inset:36px 0 0;height:auto}
+.frame video{display:block;width:100%;height:auto}

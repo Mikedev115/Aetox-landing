@@ -1,9 +1,10 @@
 import type { Dict } from "@/lib/i18n";
-import { STORE_URL, asset } from "@/lib/site";
-import Frame from "./ui/Frame";
+import { STORE_URL } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 
+// Words and one button, no screenshot — the close of every page, the way the
+// big product sites end theirs (Linear, Cursor, Claude).
 export default function FinalCta({ t }: { t: Dict["cta"] }) {
   return (
     <section id="get">
@@ -13,7 +14,6 @@ export default function FinalCta({ t }: { t: Dict["cta"] }) {
             <h2>{t.h2}</h2><p>{t.p}</p>
             <PillLink trail="chev" href={STORE_URL}>{t.btn}</PillLink>
           </div>
-          <Frame addr={t.frameAddr} shot={{ src: asset("new-chat.png"), alt: t.imgAlt, width: 1417, height: 897 }} />
         </Reveal>
       </div>
     </section>

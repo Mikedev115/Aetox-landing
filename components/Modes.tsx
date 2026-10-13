@@ -1,24 +1,22 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Dict } from "@/lib/i18n";
+import type { Dict, Lang } from "@/lib/i18n";
 import { asset } from "@/lib/site";
-import { useLightbox } from "./dialogs/Lightbox";
 
-// Screenshot per mode, in the order of t.items.
-const SHOTS = [
-  { src: asset("hero-app.png"), width: 1919, height: 1027 },
-  { src: asset("code-desk.png"), width: 1920, height: 1155 },
-  { src: asset("cap-parallel.png"), width: 1115, height: 856 },
-];
+// One loop per mode, in the order of t.items: `mode-<name>-<lang>.mp4` with a
+// PNG poster of its last frame, 1148×718 — the 574 px stage at 2x, 16:10.
+const LOOPS = ["assist", "code", "team"];
 
 // Three headings on the left, one sticky window on the right. While the
 // visitor scrolls, whichever heading crosses the middle of the viewport owns
 // the window — the same scroll-driven telling as the reference, without a
 // scroll library. Under 820px the list stacks and the observer is not used.
-export default function Modes({ t }: { t: Dict["modes"] }) {
+// Only the active loop plays, from its start; under reduced motion none does
+// and each shows its poster.
+export default function Modes({ t, lang }: { t: Dict["modes"]; lang: Lang }) {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
-  const open = useLightbox();
+  const vids = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window) || !matchMedia("(min-width: 821px)").matches) return;
@@ -29,6 +27,24 @@ export default function Modes({ t }: { t: Dict["modes"] }) {
     refs.current.forEach((el) => el && io.observe(el));
     return () => io.disconnect();
   }, []);
+
+  // The active loop plays only while the stage is on screen. A play() made
+  // in a background tab is refused and never retried, so the observer (which
+  // fires again once the tab is shown) is what starts it, not the tab switch.
+  const stage = useRef<HTMLDivElement | null>(null);
+  const seen = useRef(false);
+  useEffect(() => {
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const sync = (restart: boolean) => vids.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === active && seen.current && !still) { if (restart) v.currentTime = 0; v.play().catch(() => {}); } else v.pause();
+    });
+    if (!stage.current || !("IntersectionObserver" in window)) { seen.current = true; sync(true); return; }
+    sync(true);
+    const io = new IntersectionObserver(([en]) => { seen.current = en.isIntersecting; sync(false); });
+    io.observe(stage.current);
+    return () => io.disconnect();
+  }, [active]);
 
   const cur = t.items[active];
   return (
@@ -47,16 +63,15 @@ export default function Modes({ t }: { t: Dict["modes"] }) {
               </div>
             ))}
           </div>
-          <div className="stage">
-            <button type="button" className="shot frame" onClick={() => open(SHOTS[active].src, cur.alt)}>
+          <div className="stage" ref={stage}>
+            <div className="frame">
               <div className="chrome" aria-hidden="true"><i /><i /><i /><span className="addr">{cur.addr}</span></div>
-              {/* the first shot also sits underneath, invisible, to give the frame its height */}
-              <img className="base" src={SHOTS[0].src} alt="" width={SHOTS[0].width} height={SHOTS[0].height} aria-hidden="true" />
-              {SHOTS.map((s, i) => (
-                <img key={s.src} className={`layer${i === active ? " on" : ""}`} src={s.src} alt={t.items[i].alt}
-                  width={s.width} height={s.height} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+              {LOOPS.map((name, i) => (
+                <video key={name} ref={(el) => { vids.current[i] = el; }} className={`layer${i === active ? " on" : ""}`}
+                  src={asset(`mode-${name}-${lang}.mp4`)} poster={asset(`mode-${name}-${lang}.png`)}
+                  width={1148} height={718} aria-label={t.items[i].alt} muted loop playsInline preload={i === 0 ? "auto" : "metadata"} />
               ))}
-            </button>
+            </div>
           </div>
         </div>
       </div>
