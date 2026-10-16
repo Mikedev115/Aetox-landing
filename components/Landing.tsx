@@ -10,6 +10,7 @@ import PricingTeaser from "./PricingTeaser";
 import Safety from "./Safety";
 import RealWork from "./RealWork";
 import FinalCta from "./FinalCta";
+import { MobilePreview } from "./MobilePreview";
 
 // The home page: the story in short. Each block past the modes is a teaser
 // for one of the site's pages and links there — the detail (all eleven jobs,
@@ -26,6 +27,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
       <PricingTeaser t={t.pages.pricing.teaser} price={t.pricing.local.price} lang={lang} />
       <Safety t={t.safety} lang={lang} teaser={t.pages.safety.more} />
       <RealWork t={t.work} lang={lang} teaser={t.pages.work.more} />
+      <MobilePreview lang={lang} />
       <FinalCta t={t.cta} />
     </Shell>
   );

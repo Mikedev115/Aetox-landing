@@ -441,3 +441,15 @@ nav.primary .nav-flyout a:hover{background:var(--bg-card2)}
 .ucard .pic .frame .slot{height:100%}
 .wcard .frame .slot{position:absolute;inset:36px 0 0;height:auto}
 .frame video{display:block;width:100%;height:auto}
+
+/* Mobile preview keeps its test status separate from the stable Windows CTA. */
+.mobile-preview{padding:32px 0 72px}
+.mobile-preview-card{padding:clamp(24px,4vw,48px);border:1px solid var(--line)}
+.mobile-preview-card .eyebrow{color:var(--badge);font-size:12px;letter-spacing:.08em;margin-bottom:16px}
+.mobile-preview-card h2{font-size:clamp(26px,3.6vw,42px);line-height:1.2;max-width:26ch}
+.mobile-preview-body{max-width:75ch;color:var(--muted);margin:20px 0;line-height:1.7}
+.mobile-preview-requirement{max-width:80ch;padding:12px 0 12px 16px;border-left:2px solid var(--blue);color:var(--text);font-size:14px;line-height:1.7}
+.mobile-preview .cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.mobile-preview .pill{min-height:44px}
+.mobile-preview-card .fine{color:var(--muted);font-size:13px;line-height:1.7;max-width:90ch}
+.mobile-preview-iphone{margin-bottom:10px}
