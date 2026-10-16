@@ -8,7 +8,7 @@
 
 export const en = {
   meta: {
-    title: "Aetox harness An AI agent that does the work on your machine",
+    title: "Aetox harness",
     description:
       "Aetox is a Windows app you command in plain language. It reads receipts, reads videos, opens real websites and clicks real buttons, and returns real Excel and Word files. No middle server, no subscription.",
     ogDescription: "Command it in plain language, get back finished files. Work stays on your machine. No middle server.",
