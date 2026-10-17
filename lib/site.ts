@@ -35,8 +35,8 @@ export const STORE_URL = "https://apps.microsoft.com/detail/9N4KKBRRSCZZ";
 export const WINGET_CMD = "winget install --id=9N4KKBRRSCZZ --source=msstore";
 export const GITHUB = "https://github.com/Mikedev115/Aetox";
 export const RELEASES = `${GITHUB}/releases/latest`;
-export const MOBILE_RELEASE = "https://github.com/Mikedev115/Aetox-Harness/releases/tag/mobile-v0.1.0-test";
-export const MOBILE_APK = "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.1.0-test/Aetox-Mobile-Android-Test.apk";
+export const MOBILE_RELEASE = "https://github.com/Mikedev115/Aetox-Harness/releases/tag/mobile-v0.2.0";
+export const MOBILE_APK = "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.2.0/Aetox-Mobile-Android-Test.apk";
 // The console's own installer (app repo DECISIONS §333): a separate download
 // from the app, never in the Store. Named off the app updater's suffixes.
 export const CLI_SETUP_URL = `${GITHUB}/releases/latest/download/aetox-cli-setup.exe`;
