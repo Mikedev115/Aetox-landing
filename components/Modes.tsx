@@ -5,9 +5,9 @@ import { asset } from "@/lib/site";
 
 // One loop per mode, in the order of t.items: `mode-<name>-<lang>.mp4` with a
 // PNG poster of its last frame, 1148×718 — the 574 px stage at 2x, 16:10.
-const LOOPS = ["assist", "code", "team"];
+const LOOPS = ["assist", "code"];
 
-// Three headings on the left, one sticky window on the right. While the
+// Two headings on the left, one sticky window on the right. While the
 // visitor scrolls, whichever heading crosses the middle of the viewport owns
 // the window — the same scroll-driven telling as the reference, without a
 // scroll library. Under 820px the list stacks and the observer is not used.

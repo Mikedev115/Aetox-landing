@@ -54,8 +54,8 @@ export const en = {
     items: [
       {
         title: "Assistant",
-        lead: "For everyday work, documents and research.",
-        body: "Point it at a folder of receipts, a two-hour recording, or a question that needs twenty websites. It reads on its own, works on its own, and the result lands in your folder as a real file, not text in a chat box.",
+        lead: "For everyday work, documents, research, and jobs too big for one pair of hands.",
+        body: "Point it at a folder of receipts, a two-hour recording, or a question that needs twenty websites. It reads on its own, works on its own, and the result lands in your folder as a real file, not text in a chat box. For a bigger job it hands the whole thing to a team, a department or the whole company you appointed, from the same chat.",
         addr: "Aetox · assistant",
         alt: "Assistant door: asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
       },
@@ -65,13 +65,6 @@ export const en = {
         body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
         addr: "Aetox · code",
         alt: "Code door: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
-      },
-      {
-        title: "Team",
-        lead: "For jobs too big for one pair of hands.",
-        body: "Talk to one secretary. It sends the job to an agent, a team, a department or the whole company (every rung has a head that thinks for itself), and the specialists work at the same time. A card still working wears a light travelling its edge; when it finishes, the light goes out.",
-        addr: "Aetox · team",
-        alt: "Team door: the secretary hands launch posts to the content team, whose lead splits the work between a writer, a designer and an editor; the tree grows row by row until all three are done",
       },
     ],
   },
@@ -122,7 +115,7 @@ export const en = {
       },
       {
         title: "Team",
-        body: "Talk to one secretary. It decides whether a job needs one agent, a team, a department or the whole company, hands it over in your own words, and reports back. The work shows as one tree. Stop any row, answer a question right where it was asked.",
+        body: "Tell the assistant what you want. It does the work itself, or hands the whole job to a team, a department or the whole company you appointed, in your own words, and reports back in the same chat. The work shows as one tree. Stop any row, answer a question right where it was asked.",
         alt: "The delegation tree: the assistant hands the job to the content team, whose head splits it between a writer, a designer and an editor, each row with its status and files",
       },
       {
