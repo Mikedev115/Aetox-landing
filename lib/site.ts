@@ -39,8 +39,8 @@ export const RELEASES = `${GITHUB}/releases/latest`;
 // downloads the file instead of opening the release page. Not code-signed:
 // SmartScreen asks once (the Store package is the signed one).
 export const APP_SETUP_URL = `${GITHUB}/releases/latest/download/aetox-amd64-installer.exe`;
-export const MOBILE_RELEASE = "https://github.com/Mikedev115/Aetox-Harness/releases/tag/mobile-v0.3.1";
-export const MOBILE_APK = "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.3.1/Aetox-Mobile-Android-Test.apk";
+export const MOBILE_RELEASE = "https://github.com/Mikedev115/Aetox-Harness/releases/tag/mobile-v0.3.2";
+export const MOBILE_APK = "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.3.2/Aetox-Mobile-Android-Test.apk";
 // The console's own installer (app repo DECISIONS §333): a separate download
 // from the app, never in the Store. Named off the app updater's suffixes.
 export const CLI_SETUP_URL = `${GITHUB}/releases/latest/download/aetox-cli-setup.exe`;
