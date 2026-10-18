@@ -5,6 +5,7 @@ import { Shell, load } from "./Page";
 import Hero from "./Hero";
 import Network from "./Network";
 import Modes from "./Modes";
+import Company from "./Company";
 import UseCases from "./UseCases";
 import PricingTeaser from "./PricingTeaser";
 import Safety from "./Safety";
@@ -23,6 +24,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
       <Hero t={t.hero} lang={lang} />
       <Network t={t.network} />
       <Modes t={t.modes} lang={lang} />
+      <Company t={t.company} />
       <UseCases t={t.uses} lang={lang} more={t.pages.features.all} />
       <PricingTeaser t={t.pages.pricing.teaser} price={t.pricing.local.price} lang={lang} />
       <Safety t={t.safety} lang={lang} teaser={t.pages.safety.more} />
