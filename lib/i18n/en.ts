@@ -29,14 +29,14 @@ export const en = {
     lang: "ไทย",
     langTitle: "อ่านภาษาไทย",
     announceBefore: "Aetox ",
-    announceAfter: " is out — see what changed",
-    backToTop: "Aetox — back to top",
+    announceAfter: " is out. See what changed",
+    backToTop: "Aetox, back to top",
   },
   hero: {
     h1Before: "Now you can tell an AI to ",
     h1Highlight: "do the work",
     h1After: " on your own machine",
-    lede: "Aetox is an AI agent for Windows. Say what you want in plain language — it reads your files, opens real websites, clicks real buttons, and hands back real Excel, Word and web pages. No middle server. No subscription.",
+    lede: "Aetox is an AI agent for Windows. Say what you want in plain language: it reads your files, opens real websites, clicks real buttons, and hands back real Excel, Word and web pages. No middle server. No subscription.",
     download: "Download the installer",
     other: "All ways to install",
     fine: "One {INSTALLER_MB} MB .exe from GitHub · works instantly with no key · uninstall in one click",
@@ -46,7 +46,7 @@ export const en = {
   },
   network: {
     lines: [
-      "Every model, every editor, every runtime you already use —",
+      "Every model, every editor, every runtime you already use,",
       "one agent on your machine that does the work with them.",
     ],
   },
@@ -55,28 +55,28 @@ export const en = {
       {
         title: "Assistant",
         lead: "For everyday work, documents and research.",
-        body: "Point it at a folder of receipts, a two-hour recording, or a question that needs twenty websites. It reads on its own, works on its own, and the result lands in your folder as a real file — not text in a chat box.",
+        body: "Point it at a folder of receipts, a two-hour recording, or a question that needs twenty websites. It reads on its own, works on its own, and the result lands in your folder as a real file, not text in a chat box.",
         addr: "Aetox · assistant",
-        alt: "Assistant door — asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
+        alt: "Assistant door: asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
       },
       {
         title: "Code",
         lead: "For reading code, building systems and debugging.",
         body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
         addr: "Aetox · code",
-        alt: "Code door — asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
+        alt: "Code door: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
       },
       {
         title: "Team",
         lead: "For jobs too big for one pair of hands.",
-        body: "Talk to one secretary. It sends the job to an agent, a team, a department or the whole company — every rung has a head that thinks for itself — and the specialists work at the same time. A card still working wears a light travelling its edge; when it finishes, the light goes out.",
+        body: "Talk to one secretary. It sends the job to an agent, a team, a department or the whole company (every rung has a head that thinks for itself), and the specialists work at the same time. A card still working wears a light travelling its edge; when it finishes, the light goes out.",
         addr: "Aetox · team",
-        alt: "Team door — the secretary hands launch posts to the content team, whose lead splits the work between a writer, a designer and an editor; the tree grows row by row until all three are done",
+        alt: "Team door: the secretary hands launch posts to the content team, whose lead splits the work between a writer, a designer and an editor; the tree grows row by row until all three are done",
       },
     ],
   },
   uses: {
-    h2: "Let Aetox handle the work you repeat every day — on your machine, not in someone's cloud",
+    h2: "Let Aetox handle the work you repeat every day, on your machine, not in someone's cloud",
     prev: "Previous",
     next: "Next",
     cards: [
@@ -92,7 +92,7 @@ export const en = {
       },
       {
         title: "The web",
-        body: "It opens a real page in its own window, reads it, then clicks, types, picks from dropdowns and submits the form — while you watch, and can stop it at any moment.",
+        body: "It opens a real page in its own window, reads it, then clicks, types, picks from dropdowns and submits the form while you watch, and can stop it at any moment.",
         alt: "Aetox driving a real browser inside the app with five tabs open",
       },
       {
@@ -107,12 +107,12 @@ export const en = {
       },
       {
         title: "Git",
-        body: "Twenty-five changed files, one sentence: it groups them into commits that belong together, writes each message, and you tick what goes in. Or commit by hand — the panel shows every diff either way.",
+        body: "Twenty-five changed files, one sentence: it groups them into commits that belong together, writes each message, and you tick what goes in. Or commit by hand: the panel shows every diff either way.",
         alt: "The Git panel splitting 25 changed files into 3 commit groups, each with a written message and per-file tick boxes",
       },
       {
         title: "Code map",
-        body: "Open a project of 741 files and see it as a map — every dot a file sized by how much it is imported, every line an import. Ask which file is the largest and it opens it on the desk.",
+        body: "Open a project of 741 files and see it as a map: every dot a file sized by how much it is imported, every line an import. Ask which file is the largest and it opens it on the desk.",
         alt: "A force-directed map of 150 of a project's 741 files, dots sized by import count, beside the chat listing the largest source files",
       },
       {
@@ -122,12 +122,12 @@ export const en = {
       },
       {
         title: "Team",
-        body: "Talk to one secretary. It decides whether a job needs one agent, a team, a department or the whole company, hands it over in your own words, and reports back. The work shows as one tree — stop any row, answer a question right where it was asked.",
+        body: "Talk to one secretary. It decides whether a job needs one agent, a team, a department or the whole company, hands it over in your own words, and reports back. The work shows as one tree. Stop any row, answer a question right where it was asked.",
         alt: "The delegation tree: the assistant hands the job to the content team, whose head splits it between a writer, a designer and an editor, each row with its status and files",
       },
       {
         title: "Install by asking",
-        body: "Paste an MCP link, a claude mcp add line, a GitHub page or just a name. It finds the official server, checks whether it needs a key or a sign-in, and shows a card — nothing installs until you press it.",
+        body: "Paste an MCP link, a claude mcp add line, a GitHub page or just a name. It finds the official server, checks whether it needs a key or a sign-in, and shows a card. Nothing installs until you press it.",
         alt: "The Playwright MCP install card: source npm, the command it will run, no key needed, who gets it, and an Install button waiting to be pressed",
       },
       {
@@ -148,7 +148,7 @@ export const en = {
   },
   pricing: {
     h2: "Free. Choose who does the thinking",
-    p: "The program costs nothing — no subscription of ours, no paid tier, no account to sign up for. You only choose which model thinks for you, and you can switch mid-conversation.",
+    p: "The program costs nothing: no subscription of ours, no paid tier, no account to sign up for. You only choose which model thinks for you, and you can switch mid-conversation.",
     all: "See all providers",
     local: {
       title: "Run it on your own machine",
@@ -167,21 +167,21 @@ export const en = {
       sub: "{PROVIDERS} providers",
       points: [
         "You pay them for what you use. We add no markup",
-        "Switch provider or model mid-conversation — the context follows",
+        "Switch provider or model mid-conversation and the context follows",
         "Your machine talks to them directly, never through us",
       ],
       who: "Best for hard jobs · work that needs the largest models",
       more: "+19",
     },
-    note: "**No need to decide yet.** The app ships with a demo model you can play with right after install — see the real screen, watch it pick up tools, read its full reasoning, without connecting anything.",
+    note: "**No need to decide yet.** The app ships with a demo model you can play with right after install. See the real screen, watch it pick up tools, read its full reasoning, without connecting anything.",
   },
   weight: {
     h2: "Light enough to leave open all day",
-    p: "An assistant you close because it slows your machine is one you do not use. Aetox is two files, {DISK_MB} MB together — the window and its engine — drawn with the WebView2 that Windows already ships.",
+    p: "An assistant you close because it slows your machine is one you do not use. Aetox is two files, {DISK_MB} MB together (the window and its engine), drawn with the WebView2 that Windows already ships.",
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
-    foot: "Smaller than Claude Code **2×** · Cursor **8×** · VS Code **10×**, rounded to whole numbers. Different categories, of course — a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 2 Oct 2026 on v1.9.5, both files — method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
+    foot: "Smaller than Claude Code **2×** · Cursor **8×** · VS Code **10×**, rounded to whole numbers. Different categories, of course: a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 2 Oct 2026 on v1.9.5, both files. Method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
     kpis: [
       { unit: "MB", k: "Disk on your machine", s: "Two files · installer {INSTALLER_MB} MB" },
       { unit: "tests", k: "Pass before release", s: "Go {TESTS_GO} · UI {TESTS_UI}" },
@@ -191,7 +191,7 @@ export const en = {
   },
   safety: {
     h2: "Built so your data never has to leave your machine",
-    sub: "There is no server of ours in the middle for data to travel through. No usage statistics, no account. With a local model, what you type and the files it opens go nowhere at all — not one byte.",
+    sub: "There is no server of ours in the middle for data to travel through. No usage statistics, no account. With a local model, what you type and the files it opens go nowhere at all, not one byte.",
     cards: [
       {
         title: "Your conversations and files stay here",
@@ -199,7 +199,7 @@ export const en = {
       },
       {
         title: "Keys are encrypted, key stores are locked",
-        body: "API keys live in their own file, encrypted to your Windows account and stripped from logs. And it cannot open `.ssh` `.aws` `.gnupg`, the Windows credential store or any browser profile — refused at the door, in every mode.",
+        body: "API keys live in their own file, encrypted to your Windows account and stripped from logs. And it cannot open `.ssh` `.aws` `.gnupg`, the Windows credential store or any browser profile. Refused at the door, in every mode.",
       },
     ],
     more: "Learn more",
@@ -219,7 +219,7 @@ export const en = {
       addr: "n8n · 11 nodes",
       alt: "An eleven-node n8n workflow Aetox built end to end",
       title: "An eleven-node n8n workflow, wired end to end from one sentence",
-      body: "It hit real errors along the way, read what the system said back, fixed and retried until it passed — then wrote down what it still could not verify.",
+      body: "It hit real errors along the way, read what the system said back, fixed and retried until it passed, then wrote down what it still could not verify.",
     },
     video: {
       addr: "youtube · 1:07",
@@ -257,7 +257,7 @@ export const en = {
         q: "What can it access on my machine",
         a: [
           "With a project open, it stays in that folder plus the ones you added. With no project open, it sees the whole machine, and the files it writes land in that session's output folder.",
-          "What it can never open in any mode is the key and password stores — `.ssh` `.aws` `.gnupg`, the Windows credential store and every brand's browser profile. Anything that is not a plain read asks you first, and every command is logged.",
+          "What it can never open in any mode is the key and password stores: `.ssh` `.aws` `.gnupg`, the Windows credential store and every brand's browser profile. Anything that is not a plain read asks you first, and every command is logged.",
         ],
       },
       {
@@ -270,14 +270,14 @@ export const en = {
       {
         q: "How powerful does my machine need to be",
         a: [
-          "The program takes {DISK_MB} MB in two files — the window and its engine. Any ordinary machine opens it comfortably.",
+          "The program takes {DISK_MB} MB in two files: the window and its engine. Any ordinary machine opens it comfortably.",
           "What takes the power is the model. To run a local model yourself you should have a decent amount of RAM to spare. With another provider's key, your machine barely has to work at all.",
         ],
       },
       {
         q: "Is there a scheduler",
         a: [
-          "No, deliberately. Aetox has no cloud, so a timer inside the program would mean your work only runs while you leave the machine on — a promise that cannot be kept. n8n and Windmill are clocks. Aetox is a pair of hands.",
+          "No, deliberately. Aetox has no cloud, so a timer inside the program would mean your work only runs while you leave the machine on, a promise that cannot be kept. n8n and Windmill are clocks. Aetox is a pair of hands.",
         ],
       },
       {
@@ -306,19 +306,19 @@ export const en = {
   pages: {
     features: {
       title: "What it does",
-      sub: "Eleven jobs Aetox does on its own, on your machine — each one a real run with a real file at the end.",
-      metaTitle: "What Aetox harness does — receipts, research, browsers, code, video",
-      metaDescription: "The jobs Aetox handles on its own on a Windows machine: reading receipts into Excel, research across twenty sites, driving real websites, Git, code maps, video — and what each one looks like.",
+      sub: "Eleven jobs Aetox does on its own, on your machine, each one a real run with a real file at the end.",
+      metaTitle: "What Aetox harness does: receipts, research, browsers, code, video",
+      metaDescription: "The jobs Aetox handles on its own on a Windows machine: reading receipts into Excel, research across twenty sites, driving real websites, Git, code maps, video, and what each one looks like.",
       all: "See everything it does",
     },
     pricing: {
       title: "Pricing",
-      sub: "The program is free. You only choose who does the thinking — a model on your own machine, or a provider you already pay.",
-      metaTitle: "Aetox harness pricing — free, with a local model or your own key",
+      sub: "The program is free. You only choose who does the thinking: a model on your own machine, or a provider you already pay.",
+      metaTitle: "Aetox harness pricing: free, with a local model or your own key",
       metaDescription: "Aetox costs nothing and has no subscription. Run a local model with Ollama or LM Studio for free, or bring a key from one of {PROVIDERS} providers. Two files, {DISK_MB} MB on disk.",
       teaser: {
         h2: "Free. Choose who does the thinking",
-        p: "No subscription, no paid tier, no account. Run a local model for nothing at all, or bring a key you already have — and switch mid-conversation.",
+        p: "No subscription, no paid tier, no account. Run a local model for nothing at all, or bring a key you already have, and switch mid-conversation.",
         local: "with Ollama or LM Studio",
         provider: "supported, your own key",
         btn: "See pricing",
@@ -327,7 +327,7 @@ export const en = {
     safety: {
       title: "Safety",
       sub: "No server of ours in the middle, no usage statistics, no account. What it can and cannot touch on your machine, spelled out.",
-      metaTitle: "Aetox harness safety — your data never has to leave your machine",
+      metaTitle: "Aetox harness safety: your data never has to leave your machine",
       metaDescription: "How Aetox keeps conversations, files and API keys on your machine: no middle server, encrypted keys, credential stores refused at the door, every command logged and every write asked first.",
       more: "Read about safety",
       policies: "The policies in full",
@@ -349,23 +349,23 @@ export const en = {
     },
     work: {
       title: "Real work",
-      sub: "Three jobs that actually ran, with the log to read back — not staged demos.",
-      metaTitle: "Real work done by Aetox harness — CRM research, n8n, a web page on video",
+      sub: "Three jobs that actually ran, with the log to read back, not staged demos.",
+      metaTitle: "Real work done by Aetox harness: CRM research, n8n, a web page on video",
       metaDescription: "Jobs Aetox ran for real: twenty CRMs compared in one spreadsheet, an eleven-node n8n workflow wired from one sentence, and a web page built on video. Every number comes from a log.",
       more: "See the real work",
       cases: "Browse the case studies",
-      casesSub: "More pages and files Aetox has built, kept as they came out — in the app repo's case studies.",
+      casesSub: "More pages and files Aetox has built, kept as they came out, in the app repo's case studies.",
     },
     faq: {
       title: "Questions",
       sub: "Straight answers on what it is, what it costs, what it can reach, and how to get rid of it.",
-      metaTitle: "Aetox harness FAQ — cost, safety, hardware, uninstall",
+      metaTitle: "Aetox harness FAQ: cost, safety, hardware, uninstall",
       metaDescription: "Answers on how Aetox differs from a web AI, whether you need to code, how safe your data is, what it can access, what it costs, what machine it needs, and how to uninstall.",
     },
     download: {
       title: "Download Aetox for Windows",
-      sub: "One installer file from GitHub. Install and run your first job within two minutes — no card, no account, no key needed to start.",
-      metaTitle: "Download Aetox harness for Windows — installer, Aetox CLI, Microsoft Store",
+      sub: "One installer file from GitHub. Install and run your first job within two minutes. No card, no account, no key needed to start.",
+      metaTitle: "Download Aetox harness for Windows: installer, Aetox CLI, Microsoft Store",
       metaDescription: "Download the Aetox installer from GitHub ({INSTALLER_MB} MB, {DISK_MB} MB on disk), the Aetox CLI for your terminal, or get it from the Microsoft Store with one winget command. Uninstalls in one click.",
       setup: "Download the installer",
       cliSetup: "Aetox CLI",
@@ -376,13 +376,13 @@ export const en = {
       copyLabel: "Copy the winget command",
       facts: [
         { k: "Current version", s: "Read from GitHub Releases at build time" },
-        { k: "Installer", s: "{DISK_MB} MB on disk after install — two files" },
+        { k: "Installer", s: "{DISK_MB} MB on disk after install, two files" },
         { k: "Runs on Windows", s: "Draws with the WebView2 that Windows already ships" },
       ],
       ways: [
         {
           title: "Installer",
-          body: "One `.exe`. It installs to Program Files with a Start-menu shortcut. The app checks for a new release once a day — press **Download the update**, then **Restart to update**, right inside the app.",
+          body: "One `.exe`. It installs to Program Files with a Start-menu shortcut. The app checks for a new release once a day. Press **Download the update**, then **Restart to update**, right inside the app.",
         },
         {
           title: "Microsoft Store and winget",
@@ -390,21 +390,21 @@ export const en = {
         },
         {
           title: "Scoop or a portable zip",
-          body: "Rather not install? Unzip and keep both files together, or use Scoop for the app and the CLI — every file and its release notes are on [GitHub Releases](RELEASES).",
+          body: "Rather not install? Unzip and keep both files together, or use Scoop for the app and the CLI. Every file and its release notes are on [GitHub Releases](RELEASES).",
         },
       ],
       cli: {
         title: "Aetox in the terminal",
-        body: "The Code desk as a full-screen console: type `aetox` in any project folder, watch the work land above the input, answer approvals in place. A separate installer from the app — it goes into your own user folder, adds itself to PATH, needs no administrator rights, and is not in the Microsoft Store.",
+        body: "The Code desk as a full-screen console: type `aetox` in any project folder, watch the work land above the input, answer approvals in place. A separate installer from the app: it goes into your own user folder, adds itself to PATH, needs no administrator rights, and is not in the Microsoft Store.",
         button: "Download Aetox CLI",
         note: "Open a new terminal after installing and type `aetox` · remove it from Settings → Apps → Aetox CLI · not code-signed yet, so SmartScreen asks once",
       },
       oneChannel: {
         title: "Pick one channel and stay with it",
-        body: "The Store copy and the installer copy are two separate Aetox apps on the same machine — separate settings, history, memory and keys. To switch channels, uninstall the old one first.",
+        body: "The Store copy and the installer copy are two separate Aetox apps on the same machine, with separate settings, history, memory and keys. To switch channels, uninstall the old one first.",
       },
       uninstallTitle: "If you do not like it",
-      uninstallBody: "Uninstall from Windows Settings like any other app. Nothing runs in the background afterwards and nothing is left behind — your conversations and output folders are plain files you can keep or delete.",
+      uninstallBody: "Uninstall from Windows Settings like any other app. Nothing runs in the background afterwards and nothing is left behind. Your conversations and output folders are plain files you can keep or delete.",
     },
   },
   footer: {

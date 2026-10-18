@@ -47,7 +47,7 @@ export async function landingMetadata(lang: Lang): Promise<Metadata> {
     openGraph: {
       type: "website", siteName: "Aetox", locale: lang === "th" ? "th_TH" : "en_US", url,
       title: t.meta.title, description: t.meta.ogDescription,
-      images: [{ url: og, width: 1200, height: 630, alt: "Aetox — finish the work on your machine", type: "image/png" }],
+      images: [{ url: og, width: 1200, height: 630, alt: "Aetox: finish the work on your machine", type: "image/png" }],
     },
     twitter: { card: "summary_large_image", title: t.meta.title, description: t.meta.ogDescription, images: [og] },
     other: { "theme-color": "#000000" },
