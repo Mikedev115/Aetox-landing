@@ -1,6 +1,6 @@
 import type { Dict } from "@/lib/i18n";
 import { NUMBERS } from "@/lib/numbers";
-import { CLI_SETUP_URL, RELEASES, STORE_URL } from "@/lib/site";
+import { APP_SETUP_URL, CLI_SETUP_URL, STORE_URL } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
@@ -15,11 +15,12 @@ export default function Download({ t, version }: { t: Dict["pages"]["download"];
     <>
       <div className="wrap">
         <div className="cta dl-cta">
-          <PillLink href={STORE_URL}>{t.store}</PillLink>
-          <PillLink variant="ghost" trail="arrow" href={RELEASES}>{t.releases}</PillLink>
+          <PillLink href={APP_SETUP_URL}>{t.setup}</PillLink>
+          <PillLink variant="ghost" href={CLI_SETUP_URL}>{t.cliSetup}</PillLink>
+          <PillLink variant="ghost" trail="arrow" href={STORE_URL}>{t.store}</PillLink>
         </div>
         <div className="dl-cmd"><WingetCmd t={t} /></div>
-        <p className="fine">{t.fine}</p>
+        <Rich className="fine" text={t.fine} />
       </div>
       <section>
         <div className="wrap">
@@ -33,6 +34,7 @@ export default function Download({ t, version }: { t: Dict["pages"]["download"];
               <Reveal as="article" className="scard" key={w.title}><h3>{w.title}</h3><Rich text={w.body} /></Reveal>
             ))}
           </div>
+          <Reveal className="scard uninstall"><h3>{t.oneChannel.title}</h3><p>{t.oneChannel.body}</p></Reveal>
           <Reveal className="scard uninstall">
             <h3>{t.cli.title}</h3>
             <Rich text={t.cli.body} />

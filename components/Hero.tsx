@@ -1,5 +1,5 @@
 import type { Dict, Lang } from "@/lib/i18n";
-import { STORE_URL, asset, pagePath } from "@/lib/site";
+import { APP_SETUP_URL, asset, pagePath } from "@/lib/site";
 import Frame from "./ui/Frame";
 import HeroLight from "./ui/HeroLight";
 import { PillLink } from "./ui/Pill";
@@ -12,7 +12,7 @@ export default function Hero({ t, lang }: { t: Dict["hero"]; lang: Lang }) {
         <h1>{t.h1Before}<span className="hl">{t.h1Highlight}</span>{t.h1After}</h1>
         <p className="lede">{t.lede}</p>
         <div className="cta">
-          <PillLink href={STORE_URL}>{t.download}</PillLink>
+          <PillLink href={APP_SETUP_URL}>{t.download}</PillLink>
           <PillLink variant="soft" href={pagePath(lang, "download")}>{t.other}</PillLink>
         </div>
         <p className="fine">{t.fine}</p>

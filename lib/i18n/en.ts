@@ -37,9 +37,9 @@ export const en = {
     h1Highlight: "do the work",
     h1After: " on your own machine",
     lede: "Aetox is an AI agent for Windows. Say what you want in plain language — it reads your files, opens real websites, clicks real buttons, and hands back real Excel, Word and web pages. No middle server. No subscription.",
-    download: "Get it from Microsoft Store",
+    download: "Download the installer",
     other: "All ways to install",
-    fine: "Signed by Microsoft, nothing to click past · works instantly with no key · uninstall in one click",
+    fine: "One {INSTALLER_MB} MB .exe from GitHub · works instantly with no key · uninstall in one click",
     imgAlt:
       "The Aetox window: a request for a one-page coffee shop site, a four-step plan appearing in the chat and ticking off one step at a time, while the artifacts panel on the right shows the full plan and how it will know it is done",
     frameAddr: "Aetox · plan 4/4",
@@ -298,7 +298,7 @@ export const en = {
   cta: {
     h2: "Try Aetox today",
     p: "Install and run your first job within two minutes. No card, no subscription, nothing left behind if you uninstall.",
-    btn: "Get it from Microsoft Store",
+    btn: "Download the installer",
   },
   // One entry per page of the site (lib/site.ts PAGES). `title` and `sub` open
   // the page; `meta` is the <title> and description. The home page uses `meta`
@@ -364,12 +364,13 @@ export const en = {
     },
     download: {
       title: "Download Aetox for Windows",
-      sub: "One signed package, three ways to get it. Install and run your first job within two minutes — no card, no account, no key needed to start.",
-      metaTitle: "Download Aetox harness for Windows — Microsoft Store, winget, GitHub",
-      metaDescription: "Get Aetox from the Microsoft Store, with one winget command, or from GitHub Releases. Installer {INSTALLER_MB} MB, {DISK_MB} MB on disk, signed by Microsoft, uninstalls in one click.",
-      store: "Get it from Microsoft Store",
-      releases: "Download from GitHub",
-      fine: "Signed by Microsoft, nothing to click past · works instantly with no key · uninstall in one click",
+      sub: "One installer file from GitHub. Install and run your first job within two minutes — no card, no account, no key needed to start.",
+      metaTitle: "Download Aetox harness for Windows — installer, Aetox CLI, Microsoft Store",
+      metaDescription: "Download the Aetox installer from GitHub ({INSTALLER_MB} MB, {DISK_MB} MB on disk), the Aetox CLI for your terminal, or get it from the Microsoft Store with one winget command. Uninstalls in one click.",
+      setup: "Download the installer",
+      cliSetup: "Aetox CLI",
+      store: "Microsoft Store",
+      fine: "The installer is not code-signed yet. If SmartScreen says \"Windows protected your PC\", press **More info → Run anyway** · for no warning at all, use the Microsoft Store or the winget line above",
       copy: "copy",
       copied: "copied",
       copyLabel: "Copy the winget command",
@@ -380,16 +381,16 @@ export const en = {
       ],
       ways: [
         {
-          title: "Microsoft Store",
-          body: "The usual way. Microsoft signs the package, so there is no warning to click past, and the Store keeps it updated on its own.",
+          title: "Installer",
+          body: "One `.exe`. It installs to Program Files with a Start-menu shortcut. The app checks for a new release once a day — press **Download the update**, then **Restart to update**, right inside the app.",
         },
         {
-          title: "winget, one line",
-          body: "The same Store package from a terminal. Paste the command above into PowerShell — updates come through `winget upgrade`.",
+          title: "Microsoft Store and winget",
+          body: "Microsoft signs the package, so there is no warning to click past, and Windows keeps it updated. Install from the Store page or paste the command above into PowerShell.",
         },
         {
-          title: "GitHub Releases",
-          body: "Every release is also published on GitHub with its notes, for machines where the Store is not an option.",
+          title: "Scoop or a portable zip",
+          body: "Rather not install? Unzip and keep both files together, or use Scoop for the app and the CLI — every file and its release notes are on [GitHub Releases](RELEASES).",
         },
       ],
       cli: {
@@ -397,6 +398,10 @@ export const en = {
         body: "The Code desk as a full-screen console: type `aetox` in any project folder, watch the work land above the input, answer approvals in place. A separate installer from the app — it goes into your own user folder, adds itself to PATH, needs no administrator rights, and is not in the Microsoft Store.",
         button: "Download Aetox CLI",
         note: "Open a new terminal after installing and type `aetox` · remove it from Settings → Apps → Aetox CLI · not code-signed yet, so SmartScreen asks once",
+      },
+      oneChannel: {
+        title: "Pick one channel and stay with it",
+        body: "The Store copy and the installer copy are two separate Aetox apps on the same machine — separate settings, history, memory and keys. To switch channels, uninstall the old one first.",
       },
       uninstallTitle: "If you do not like it",
       uninstallBody: "Uninstall from Windows Settings like any other app. Nothing runs in the background afterwards and nothing is left behind — your conversations and output folders are plain files you can keep or delete.",

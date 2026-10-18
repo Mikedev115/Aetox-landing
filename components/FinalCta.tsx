@@ -1,5 +1,5 @@
 import type { Dict } from "@/lib/i18n";
-import { STORE_URL } from "@/lib/site";
+import { APP_SETUP_URL } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
 
@@ -12,7 +12,7 @@ export default function FinalCta({ t }: { t: Dict["cta"] }) {
         <Reveal className="banner">
           <div className="copy">
             <h2>{t.h2}</h2><p>{t.p}</p>
-            <PillLink trail="chev" href={STORE_URL}>{t.btn}</PillLink>
+            <PillLink trail="chev" href={APP_SETUP_URL}>{t.btn}</PillLink>
           </div>
         </Reveal>
       </div>

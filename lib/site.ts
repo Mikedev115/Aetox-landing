@@ -35,6 +35,10 @@ export const STORE_URL = "https://apps.microsoft.com/detail/9N4KKBRRSCZZ";
 export const WINGET_CMD = "winget install --id=9N4KKBRRSCZZ --source=msstore";
 export const GITHUB = "https://github.com/Mikedev115/Aetox";
 export const RELEASES = `${GITHUB}/releases/latest`;
+// The app's own installer straight off the latest release, so the button
+// downloads the file instead of opening the release page. Not code-signed:
+// SmartScreen asks once (the Store package is the signed one).
+export const APP_SETUP_URL = `${GITHUB}/releases/latest/download/aetox-amd64-installer.exe`;
 export const MOBILE_RELEASE = "https://github.com/Mikedev115/Aetox-Harness/releases/tag/mobile-v0.3.1";
 export const MOBILE_APK = "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.3.1/Aetox-Mobile-Android-Test.apk";
 // The console's own installer (app repo DECISIONS §333): a separate download
