@@ -110,6 +110,16 @@ export const en = {
       { title: "The result is real files", body: "Work lands in the team's folder and shows up as cards in the assistant's answer. Anything that would be posted or sent outside, the assistant asks you about first." },
     ],
   },
+  video: {
+    kick: "Make and cut video",
+    h2: "Ask for it in one sentence, then cut it yourself",
+    lead: "Ask for a clip in one sentence. It designs it, renders it and opens it beside the chat. Tell it what to change, or open the same `.cut` file and edit by hand on a multi-track timeline: the agent and you work on one file.",
+    body: "Cut by words, shrink silences, fix misheard words, and add text, subtitles and keyframes while the whole timeline plays live. Undo still works after a restart, and long jobs like transcribing and rendering run in the background with progress.",
+    chips: ["Promo films", "Talking-head video, cut by words", "Subtitles from the voice"],
+    proof: "In this loop: a 17.5-second screen tour heard on this machine, four silences folded and one filler cut, down to 11.1 seconds. Then the person fixes the line the speech engine misheard and plays it.",
+    addr: "Aetox · Cutting room · promo.cut",
+    alt: "The Aetox cutting room beside the chat: a promo cut from a screen tour on a multi-track timeline with a title, the talking clip, subtitles, words and a music bed. The person double-clicks the first subtitle, fixes the misheard app name, and plays it: the title grows in and the subtitles follow the voice.",
+  },
   uses: {
     h2: "Let Aetox handle the work you repeat every day, on your machine, not in someone's cloud",
     prev: "Previous",
@@ -124,6 +134,11 @@ export const en = {
         title: "Video and audio",
         body: "A two-hour meeting becomes a summary that says which minute each thing happens at. It transcribes on your machine, reads text on screen too, and translates a clip in a language you do not know.",
         alt: "Aetox transcribing a clip with Thai translation and timestamps",
+      },
+      {
+        title: "Meeting room",
+        body: "Write the agenda first, record with pause and resume, and keep the original audio with a transcript and a summary that says who said what at which minute. It transcribes on your machine.",
+        alt: "A recorded meeting's summary: the topics and the decision, each with the minute it was said at, and two to-dos with who does them and by when",
       },
       {
         title: "The web",
@@ -149,11 +164,6 @@ export const en = {
         title: "Code map",
         body: "Open a project of 741 files and see it as a map: every dot a file sized by how much it is imported, every line an import. Ask which file is the largest and it opens it on the desk.",
         alt: "A force-directed map of 150 of a project's 741 files, dots sized by import count, beside the chat listing the largest source files",
-      },
-      {
-        title: "Video",
-        body: "Ask for a short clip and it designs, renders and opens it beside the chat. Say the 3.8-second cut is too short and it stretches it to 8 seconds, checks the file's real duration, and renders again.",
-        alt: "The chat reporting an 8-second hero clip re-rendered from 3.8 seconds, with the mp4 playing in the tab beside it",
       },
       {
         title: "Team",

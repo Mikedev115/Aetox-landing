@@ -273,6 +273,17 @@ section + .policies,section + .cases{padding-top:0}
 }
 @keyframes co-cam-sm{0%,100%{transform:translate(-9%,0) scale(2.1)}50%{transform:translate(-13%,-1.5%) scale(2.25)}}
 @media (prefers-reduced-motion:reduce){.co-cam,.co-ring,.co-breathe,.co-pin,.co-live i,.co-chain b::after{animation:none}}
+/* ── cut room ── the loop of the app's editor beside its copy (components/VideoCut.tsx) */
+.vcut-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.vcut-copy{display:grid;gap:1rem;align-content:start}
+.vcut-copy .eyebrow{margin:0}
+.vcut-copy .sec-title{max-width:18ch;font-size:clamp(1.75rem,3vw,2.375rem)}
+.vcut-copy p{color:var(--muted);font-size:15px;line-height:1.65}
+.vcut-copy .lead{color:var(--text);font-size:1.0625rem}
+.vcut-chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.vcut-chips li{display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border:1px solid var(--line-strong);border-radius:999px;font-size:13px;color:var(--muted)}
+.vcut-copy .vcut-proof{font-size:13px;color:var(--dim);border-left:2px solid var(--line-strong);padding-left:12px}
+@media (max-width:900px){.vcut-grid{grid-template-columns:1fr}.vcut-copy .sec-title{max-width:none}}
 .mode .proof{margin-top:1rem;padding:.9rem 1rem;border:1px solid var(--line);background:var(--bg-card);display:grid;gap:.45rem;font-size:13px}
 .mode .proof .k{color:var(--dim);font-size:12px;margin-bottom:.15rem}
 .mode .proof .row{display:grid;grid-template-columns:5.5rem minmax(0,1fr) 3.25rem;align-items:center;gap:.6rem}

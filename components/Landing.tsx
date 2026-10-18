@@ -7,6 +7,7 @@ import Proof from "./Proof";
 import Network from "./Network";
 import Modes from "./Modes";
 import Company from "./Company";
+import VideoCut from "./VideoCut";
 import UseCases from "./UseCases";
 import PricingTeaser from "./PricingTeaser";
 import Safety from "./Safety";
@@ -27,6 +28,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
       <Network t={t.network} />
       <Modes t={t.modes} lang={lang} />
       <Company t={t.company} lang={lang} />
+      <VideoCut t={t.video} lang={lang} />
       <UseCases t={t.uses} lang={lang} more={t.pages.features.all} />
       <PricingTeaser t={t.pages.pricing.teaser} price={t.pricing.local.price} lang={lang} />
       <Safety t={t.safety} lang={lang} teaser={t.pages.safety.more} />

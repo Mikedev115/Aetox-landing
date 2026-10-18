@@ -19,12 +19,12 @@ type Pic = { name: string } | { slot: string };
 const PICS: (Pic | null)[] = [
   { name: "uc-slips" },
   { name: "uc-clip" },
+  { name: "uc-meeting" },
   { name: "uc-web" },
   null,
   { slot: "S08" },
   { name: "uc-git" },
   { name: "uc-map" },
-  { name: "uc-video" },
   { name: "uc-team" },
   { name: "uc-install" },
   { name: "uc-terminal" },

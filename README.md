@@ -67,6 +67,7 @@ CTA ท้ายหน้าไม่มีภาพ · การ์ด "คว�
 | `mode-assist/code/team-*.mp4` + `.png` | 3 โหมด (เล่นเฉพาะแท็บที่เลือก) | 574 × 359 | 1148 × 718 วิดีโอวน ~13 วิ |
 | `uc-*-*.png` | การ์ดใน carousel / `/features/` | 374 × 271 | 748 × 542 |
 | `company-*.mp4` + `.png` + `.json` | section "บริษัท AI ของคุณ" (ห้องบริษัท 3D, กล้องนิ่ง แพน/ซูมด้วย CSS) | 1008 × 599 | 2016 × 1198 วิดีโอวน ~21 วิ · `.json` = ตำแหน่ง px บน poster ของเอเจนต์ โต๊ะ และโฮโลแกรม สำหรับวางป้าย |
+| `cut-*.mp4` + `.png` | section "สร้างและตัดวิดีโอ" (ห้องตัดต่อข้างแชท, `components/VideoCut.tsx`) | 574 × 359 | 1148 × 718 วิดีโอวน ~12 วิ |
 
 วิดีโอเข้ารหัส H.264 ~1.5 Mbit/s (ไฟล์ละ 1–2 MB) เล่นเองแบบปิดเสียง และหยุดอยู่ที่ poster เมื่อ `prefers-reduced-motion`
 — `components/ui/Frame.tsx` รับ `shot.video` · `components/Modes.tsx` สลับวิดีโอตามแท็บ
@@ -79,10 +80,18 @@ node landing/shoot-hero.mjs                 # S01
 node landing/shoot-modes.mjs                # S02–S04
 node landing/shoot-cards.mjs S05 S09 …      # การ์ด (ไม่ใส่ = ทุกใบ)
 node landing/shoot-company.mjs              # ห้องบริษัท 3D → promo/output/shots/company-*
+node landing/shoot-cut.mjs                  # S14 ห้องตัดต่อ → cut-*
+node landing/shoot-cards.mjs M1             # การ์ดห้องประชุม → M1-* (ก๊อปเป็น uc-meeting-*)
 sh landing/cli/shoot.sh 64 21 && node landing/cli/shoot-term.mjs 64 21   # การ์ดเทอร์มินัล (ต้องมี Go)
 ```
 
 ไฟล์ออกที่ `output/shots/` แล้วก๊อปเข้า `public/assets/` ตามชื่อในตาราง บทของแต่ละช็อตอยู่ใน `promo/src/scenes/landing-*.ts`
+
+**ห้องตัดต่อ** (`cut-*`) เปิดไฟล์ `.cut` ที่ engine จริงทำไว้ ไม่ได้เขียนมือ: `promo/tools/cutshot` (Go) เปิดทัวร์หน้าจอที่มีเสียงพากย์ด้วย `cutroom.Open`
+(ถอดเสียงด้วย whisper.cpp ในเครื่อง) แล้วส่ง ops ใน `tools/cutshot/ops/` ผ่าน journal ทีละชุด ฝั่งเอเจนก่อน ฝั่งคนทีหลัง
+`dump` เขียน RoomView กับระดับเสียงลง `promo/src/scenes/cut-*.json` ตัวเลขบนเว็บ (15.2 → 10.2 วิ, 17.5 → 11.1 วิ) จึงมาจากรันนั้น ·
+ในเทค คนแก้วลีที่ถอดผิดเองในห้อง op ที่จอส่งออกมาตรงกับ `*-user.json` ที่ engine รันไว้ทุกตัวอักษร (สคริปต์พิมพ์ออกคอนโซล) ·
+ไม่เคลมว่าส่งไฟล์ `.cut` ไป Premiere หรือ Resolve ได้ แอปยังไม่ทำ
 
 **การ์ดเทอร์มินัล** (`uc-terminal-*`) ไม่ได้มาจากโรงถ่าย เพราะโรงถ่ายวาดแค่หน้าต่างแอป: `shoot.sh` รันคอนโซลจริง (`internal/tui` ของแอป) กับเอนจินตามบทผ่าน `go test` แล้วเก็บไบต์ที่มันเขียนลงจอ ·
 `shoot-term.mjs` เล่นไบต์นั้นใน xterm.js (สี Campbell ของ Windows Terminal, Consolas) แล้ววาดทีละคำตามคอลัมน์ให้ภาษาไทยต่อกันเป็นคำ ·
