@@ -193,9 +193,13 @@ section + .policies,section + .cases{padding-top:0}
 .company{padding-top:0}
 .co-wide{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
 .co-stage{position:relative;aspect-ratio:16/8.2;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-lg);background:#1a1712;isolation:isolate}
-.co-cam{position:absolute;left:0;top:0;width:100%;aspect-ratio:1739/1184;transform-origin:62% 40%;animation:co-cam 26s ease-in-out infinite alternate}
-.co-cam img{position:absolute;inset:0;width:100%;height:100%;display:block;max-width:none}
-@keyframes co-cam{0%{transform:translate(0,-6%) scale(1.04)}100%{transform:translate(-6%,-17%) scale(1.22)}}
+/* The take is the whole campus. 0–12% holds the wide shot, then the camera
+   dives into the content team's room (top left of the take) and holds there
+   while the pins show, then pulls back out. */
+.co-cam{position:absolute;left:0;top:0;width:100%;aspect-ratio:2016/1198;transform-origin:0 0;transform:translate(0,-1.8%) scale(2.2);animation:co-cam 32s ease-in-out infinite}
+.co-cam video{position:absolute;inset:0;width:100%;height:100%;display:block;max-width:none;object-fit:cover}
+@keyframes co-cam{0%,12%{transform:translate(0,0) scale(1)}38%{transform:translate(0,-1.8%) scale(2.2)}82%{transform:translate(-1.5%,-3%) scale(2.3)}100%{transform:translate(0,0) scale(1)}}
+@keyframes co-pins{0%,36%{opacity:0}42%,80%{opacity:1}86%,100%{opacity:0}}
 .co-ov{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .co-ring{fill:none;stroke:#9ff0ff;stroke-width:3;transform-box:fill-box;transform-origin:center;opacity:0;animation:co-ring 3s ease-out infinite}
 .co-ring2{animation-delay:1.5s}
@@ -203,13 +207,12 @@ section + .policies,section + .cases{padding-top:0}
 .co-breathe{animation:co-breathe 4s ease-in-out infinite}
 @keyframes co-breathe{50%{opacity:.45}}
 .co-trail{fill:none;stroke-width:3;stroke-dasharray:2 10;opacity:.8}
-.co-pin{position:absolute;transform:translate(-50%,-100%);display:flex;align-items:center;gap:7px;white-space:nowrap;padding:5px 10px 5px 8px;border-radius:999px;background:rgba(12,14,20,.82);border:1px solid rgba(255,255,255,.16);color:#e8eef8;font:500 clamp(9px,1vw,12.5px)/1 var(--mono);box-shadow:0 8px 24px -10px rgba(0,0,0,.7);backdrop-filter:blur(6px);animation:co-pin 6s ease-in-out infinite}
-.co-pin:nth-of-type(2){animation-delay:-1.5s}.co-pin:nth-of-type(3){animation-delay:-3s}.co-pin:nth-of-type(4){animation-delay:-4.5s}
-.co-pin i{width:7px;height:7px;border-radius:50%}
+/* Pins live inside the camera, so they are drawn at 1/2.2 size and grow with the zoom. */
+.co-pin{position:absolute;transform:translate(-50%,-100%);display:flex;align-items:center;gap:3px;white-space:nowrap;padding:2.3px 4.5px 2.3px 3.6px;border-radius:999px;background:rgba(12,14,20,.84);border:.5px solid rgba(255,255,255,.2);color:#e8eef8;font:500 clamp(4px,.46vw,5.7px)/1 var(--mono);box-shadow:0 4px 10px -5px rgba(0,0,0,.7);animation:co-pins 32s ease-in-out infinite}
+.co-pin i{width:3px;height:3px;border-radius:50%}
 .co-pin span{font-family:var(--sans);color:#a9b4c6;font-weight:400}
-.co-pin.head{border-color:rgba(255,211,107,.5)}
+.co-pin.head{border-color:rgba(255,211,107,.6)}
 .co-pin.end{transform:translate(-100%,-100%)}
-@keyframes co-pin{0%,100%{translate:0 0}50%{translate:0 -5px}}
 .co-shade{position:absolute;inset:0;pointer-events:none;background:
   linear-gradient(90deg,rgba(6,6,8,.92) 0%,rgba(6,6,8,.72) 26%,rgba(6,6,8,0) 52%),
   linear-gradient(0deg,rgba(6,6,8,.75) 0%,rgba(6,6,8,0) 30%),
@@ -246,16 +249,16 @@ section + .policies,section + .cases{padding-top:0}
 .co-pillars p{font-size:14px;color:var(--muted);line-height:1.65}
 @media (max-width:900px){
   .co-stage{aspect-ratio:auto;padding-top:78%}
-  .co-cam{width:165%;left:-50%;transform-origin:60% 30%;animation-name:co-cam-sm}
+  .co-cam{animation-name:co-cam-sm;transform:translate(-11%,0) scale(2.2)}
+  .co-pin{animation:none}
   .co-shade{background:radial-gradient(120% 80% at 50% 30%,transparent 55%,rgba(0,0,0,.45) 100%)}
   .co-title{position:relative;left:auto;bottom:auto;max-width:none;padding:28px 20px 22px;background:linear-gradient(180deg,rgba(6,6,8,0) 0,rgba(6,6,8,.94) 40px,#060608 100%)}
   .co-hud{top:12px;left:12px;right:12px}
-  .co-pin{font-size:9px;padding:4px 8px 4px 7px}
   .co-feed{display:none}
   .co-pillars{grid-template-columns:1fr}
   .co-chain b{width:14px}
 }
-@keyframes co-cam-sm{0%{transform:translate(0,-4%) scale(1)}100%{transform:translate(-10%,-10%) scale(1.08)}}
+@keyframes co-cam-sm{0%,100%{transform:translate(-9%,0) scale(2.1)}50%{transform:translate(-13%,-1.5%) scale(2.25)}}
 @media (prefers-reduced-motion:reduce){.co-cam,.co-ring,.co-breathe,.co-pin,.co-live i,.co-chain b::after{animation:none}}
 .mode .proof{margin-top:1rem;padding:.9rem 1rem;border:1px solid var(--line);background:var(--bg-card);display:grid;gap:.45rem;font-size:13px}
 .mode .proof .k{color:var(--dim);font-size:12px;margin-bottom:.15rem}

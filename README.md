@@ -66,6 +66,7 @@ CTA ท้ายหน้าไม่มีภาพ · การ์ด "คว�
 | `hero-*.mp4` + `.png` (poster) | Hero หน้าแรก | 1008 × 599 | 2016 × 1198 วิดีโอวน ~20 วิ |
 | `mode-assist/code/team-*.mp4` + `.png` | 3 โหมด (เล่นเฉพาะแท็บที่เลือก) | 574 × 359 | 1148 × 718 วิดีโอวน ~13 วิ |
 | `uc-*-*.png` | การ์ดใน carousel / `/features/` | 374 × 271 | 748 × 542 |
+| `company-*.mp4` + `.png` + `.json` | section "บริษัท AI ของคุณ" (ห้องบริษัท 3D, กล้องนิ่ง แพน/ซูมด้วย CSS) | 1008 × 599 | 2016 × 1198 วิดีโอวน ~21 วิ · `.json` = ตำแหน่ง px บน poster ของเอเจนต์ โต๊ะ และโฮโลแกรม สำหรับวางป้าย |
 
 วิดีโอเข้ารหัส H.264 ~1.5 Mbit/s (ไฟล์ละ 1–2 MB) เล่นเองแบบปิดเสียง และหยุดอยู่ที่ poster เมื่อ `prefers-reduced-motion`
 — `components/ui/Frame.tsx` รับ `shot.video` · `components/Modes.tsx` สลับวิดีโอตามแท็บ
@@ -77,6 +78,7 @@ cd D:/Aetox/Aetox/promo && npx vite build && npx vite preview --port 5199   # �
 node landing/shoot-hero.mjs                 # S01
 node landing/shoot-modes.mjs                # S02–S04
 node landing/shoot-cards.mjs S05 S09 …      # การ์ด (ไม่ใส่ = ทุกใบ)
+node landing/shoot-company.mjs              # ห้องบริษัท 3D → promo/output/shots/company-*
 sh landing/cli/shoot.sh 64 21 && node landing/cli/shoot-term.mjs 64 21   # การ์ดเทอร์มินัล (ต้องมี Go)
 ```
 
