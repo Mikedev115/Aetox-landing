@@ -12,8 +12,10 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? VERCEL_SITE_URL ?? G
 
 // The app repo's own Pages. A copy of the privacy policy has to stay there:
 // that URL is registered with the Microsoft Store listing. This site carries
-// the same policy at /privacy/ and /th/privacy/ — see privacyPath().
-export const AETOX_PAGES = "https://mikedev115.github.io/Aetox/";
+// the same policy at /privacy/ and /th/privacy/ — see privacyPath(). Since the
+// repo became Aetox-Harness, Pages serves it there; the old /Aetox/ path is a 404
+// (checked 18 Oct 2026), so the Store listing has to point at this one too.
+export const AETOX_PAGES = "https://mikedev115.github.io/Aetox-Harness/";
 export const STORE_PRIVACY_URL = `${AETOX_PAGES}privacy.html`;
 // The site's pages. Every one exists in both languages: English at the root,
 // Thai under /th/. The header, the footer and the language switch all draw

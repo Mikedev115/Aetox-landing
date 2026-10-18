@@ -9,6 +9,7 @@ export default function Hero({ t, lang }: { t: Dict["hero"]; lang: Lang }) {
     <div className="hero">
       <HeroLight />
       <div className="wrap">
+        <p className="eyebrow hero-eyebrow">{t.eyebrow}</p>
         <h1>{t.h1Before}<span className="hl">{t.h1Highlight}</span>{t.h1After}</h1>
         <p className="lede">{t.lede}</p>
         <div className="cta">

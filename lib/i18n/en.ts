@@ -8,10 +8,10 @@
 
 export const en = {
   meta: {
-    title: "Aetox harness",
+    title: "Aetox · The best harness for the AI you already use",
     description:
-      "Aetox is a Windows app you command in plain language. It reads receipts, reads videos, opens real websites and clicks real buttons, and returns real Excel and Word files. No middle server, no subscription.",
-    ogDescription: "Command it in plain language, get back finished files. Work stays on your machine. No middle server.",
+      "Aetox is the best harness for the AI you already use. It runs everything around the model, the tools, skills, context and the checks before it hands work back, so your model does better work on documents, websites and code. Free, for Windows.",
+    ogDescription: "Don't change your model. Change the harness. Same model, same tasks: Aetox gets more out of it.",
   },
   nav: {
     overview: "Overview",
@@ -33,39 +33,49 @@ export const en = {
     backToTop: "Aetox, back to top",
   },
   hero: {
-    h1Before: "Now you can tell an AI to ",
-    h1Highlight: "do the work",
-    h1After: " on your own machine",
-    lede: "Aetox is an AI agent for Windows. Say what you want in plain language: it reads your files, opens real websites, clicks real buttons, and hands back real Excel, Word and web pages. No middle server. No subscription.",
+    eyebrow: "The Model Multiplier.",
+    h1Before: "The best harness ",
+    h1Highlight: "for the AI you already use", // no-break spaces keep "for the" off the first line
+    h1After: "",
+    lede: "Don't change your model. Change the harness. Aetox runs everything around the model, the tools, skills, context and the checks before it hands work back, so your model works at full strength on documents, websites and code. On Windows.",
     download: "Download the installer",
     other: "All ways to install",
-    fine: "One {INSTALLER_MB} MB .exe from GitHub · works instantly with no key · uninstall in one click",
+    fine: "One {INSTALLER_MB} MB .exe from GitHub · bring your own model, or run one locally for free · uninstall in one click",
     imgAlt:
       "The Aetox window: a request for a one-page coffee shop site, a four-step plan appearing in the chat and ticking off one step at a time, while the artifacts panel on the right shows the full plan and how it will know it is done",
     frameAddr: "Aetox · plan 4/4",
   },
+  proof: {
+    h2: "Same model, same tasks, judged by hidden tests",
+    stats: [
+      { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", k: "Secure code", s: "GPT-6 Luna, against the best of four other harnesses (CWEval func-sec@1)" },
+      { n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%", k: "Long multi-turn coding", s: "Tests passed on GPT-5.6 Terra, and the top score on both models (SlopCodeBench)" },
+      { n: "{PRICE_X}×", vs: "cheaper model", k: "The same range, in less time", s: "GPT-6 Luna on Aetox passes {CHEAP_PCT}% in {CHEAP_MIN} min. GPT-5.6 Terra on the others passes {BIG_PCT}% in {BIG_MIN} min" },
+    ],
+    note: "11 coding tasks × 2 models × 3 rounds, the same account for every harness. The secure-code lead comes from the security skill Aetox ships with. Aetox uses more tokens and loses one SWE-bench bug on Luna. [Read the report](CODING_BENCH)",
+  },
   network: {
     lines: [
       "Every model, every editor, every runtime you already use,",
-      "one agent on your machine that does the work with them.",
+      "one harness that gets more out of every one of them.",
     ],
   },
   modes: {
     items: [
       {
         title: "Assistant",
-        lead: "For everyday work, documents, research, and jobs too big for one pair of hands.",
-        body: "Point it at a folder of receipts, a two-hour recording, or a question that needs twenty websites. It reads on its own, works on its own, and the result lands in your folder as a real file, not text in a chat box. For a bigger job it hands the whole thing to a team, a department or the whole company you appointed, from the same chat.",
+        lead: "Let your AI work at full strength.",
+        body: "Point it at a folder of receipts, a two-hour meeting recording, or a question that needs twenty websites. It reads on its own, keeps your tasks and meeting notes, reads your calendar, and the result lands in your folder as a real file, not text in a chat box. For a bigger job it hands the whole thing to a team, a department or the whole company you appointed, from the same chat.",
         addr: "Aetox · assistant",
         alt: "Assistant door: asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
       },
       {
         title: "Code",
-        lead: "For reading code, building systems and debugging.",
-        body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
+        lead: "We multiply the model by owning the whole harness.",
+        body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, runs the project's own tests before it says done, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
         proof: {
           label: "Secure code, same model · CWEval func-sec@1 on GPT-6 Luna",
-          note: "593 runs judged by hidden tests, Aetox 1.10.0. The lead comes from the security skill it ships with; with that skill off, Aetox lands with the rest. It loses on one SWE-bench bug on Luna and on time on Terra, and uses more tokens. [Read the report](CODING_BENCH)",
+          note: "11 tasks × 2 models × 3 rounds, judged by hidden tests. The lead comes from the security skill it ships with; with that skill off, Aetox lands with the rest. It loses on one SWE-bench bug on Luna and on time on Terra, and uses more tokens. [Read the report](CODING_BENCH)",
         },
         addr: "Aetox · code",
         alt: "Code door: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
@@ -196,9 +206,9 @@ export const en = {
         "Your machine talks to them directly, never through us",
       ],
       who: "Best for hard jobs · work that needs the largest models",
-      more: "+19",
+      more: "+{PROVIDERS_MORE}",
     },
-    note: "**No need to decide yet.** The app ships with a demo model you can play with right after install. See the real screen, watch it pick up tools, read its full reasoning, without connecting anything.",
+    note: "**No need to decide yet.** Open the app and its guide right after install. When you want it to do the work, connect a model: an account or key you already have, or a local model through Ollama or LM Studio.",
   },
   weight: {
     h2: "Light enough to leave open all day",
@@ -215,8 +225,8 @@ export const en = {
     ],
   },
   safety: {
-    h2: "Built so your data never has to leave your machine",
-    sub: "There is no server of ours in the middle for data to travel through. No usage statistics, no account. With a local model, what you type and the files it opens go nowhere at all, not one byte.",
+    h2: "No server of ours in the middle",
+    sub: "History and files stay on the machine doing the work. No usage statistics, no account. A cloud model receives what is sent to it, straight from your machine. Web search, connected services and online speech still use the network when the model runs locally.",
     cards: [
       {
         title: "Your conversations and files stay here",
@@ -229,7 +239,7 @@ export const en = {
     ],
     more: "Learn more",
     scope:
-      "On scope, let us be precise: with a project open it works inside that folder plus the ones you added. With no project open it sees the whole machine, and the files it writes land in that session's output folder. Anything that is not a plain read asks you first, and every command is logged.",
+      "On scope, let us be precise: with a project open it works inside that folder plus the ones you added. With no project open it sees the whole machine, and the files it writes land in that session's output folder. How often it asks first depends on the permission level you pick; publishing anything outside is asked about at every level, and every command is logged.",
   },
   work: {
     h2: "Real work, not staged demos",
@@ -282,7 +292,7 @@ export const en = {
         q: "What can it access on my machine",
         a: [
           "With a project open, it stays in that folder plus the ones you added. With no project open, it sees the whole machine, and the files it writes land in that session's output folder.",
-          "What it can never open in any mode is the key and password stores: `.ssh` `.aws` `.gnupg`, the Windows credential store and every brand's browser profile. Anything that is not a plain read asks you first, and every command is logged.",
+          "What it can never open in any mode is the key and password stores: `.ssh` `.aws` `.gnupg`, the Windows credential store and every brand's browser profile. How often it asks first depends on the permission level you pick; publishing anything outside is asked about at every level, and every command is logged.",
         ],
       },
       {
@@ -321,8 +331,8 @@ export const en = {
     ],
   },
   cta: {
-    h2: "Try Aetox today",
-    p: "Install and run your first job within two minutes. No card, no subscription, nothing left behind if you uninstall.",
+    h2: "Run your model on Aetox",
+    p: "Install, connect the model you already use, give it a job you know well, and compare. No card, no subscription.",
     btn: "Download the installer",
   },
   // One entry per page of the site (lib/site.ts PAGES). `title` and `sub` open
@@ -389,7 +399,7 @@ export const en = {
     },
     download: {
       title: "Download Aetox for Windows",
-      sub: "One installer file from GitHub. Install and run your first job within two minutes. No card, no account, no key needed to start.",
+      sub: "One installer file from GitHub. Install, connect a model you already use or a local one, and run your first job. No card, no account of ours.",
       metaTitle: "Download Aetox harness for Windows: installer, Aetox CLI, Microsoft Store",
       metaDescription: "Download the Aetox installer from GitHub ({INSTALLER_MB} MB, {DISK_MB} MB on disk), the Aetox CLI for your terminal, or get it from the Microsoft Store with one winget command. Uninstalls in one click.",
       setup: "Download the installer",

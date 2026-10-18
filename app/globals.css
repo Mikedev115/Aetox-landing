@@ -164,6 +164,19 @@ section{padding:clamp(5rem,10vw,7.5rem) 0}
 .sec-title{font-size:clamp(1.9rem,4vw,3rem);line-height:1.17;max-width:22ch;margin:0}
 .sec-sub{color:var(--muted);max-width:48ch;margin:1rem 0 0;font-size:1.125rem;line-height:1.5;text-wrap:pretty}
 .eyebrow{font-size:13px;color:var(--dim);letter-spacing:.01em;margin-bottom:.75rem}
+.hero-eyebrow{font-family:var(--mono);margin:0 auto 1rem}
+
+/* ── proof band under the hero: three same-model results, the losses in the note ── */
+.proof-band{padding:clamp(3rem,6vw,4.5rem) 0;border-bottom:1px solid var(--line)}
+.proof-title{font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.3;max-width:48ch;margin:0;text-wrap:balance}
+.proof-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.75rem}
+.pstat{border:1px solid var(--line);background:var(--bg-card);border-radius:var(--r-md);padding:1.25rem;display:grid;gap:.35rem;align-content:start;min-width:0}
+.pstat .n{margin:0;font-size:clamp(1.9rem,3.6vw,2.4rem);font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums;color:var(--text);display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .5rem}
+.pstat .n small{font-size:.9rem;font-weight:400;color:var(--muted)}
+.pstat h3{margin:0;font-size:1rem}
+.pstat .s{margin:0;font-size:.875rem;color:var(--muted);line-height:1.55}
+.proof-note{margin-top:1.25rem;font-size:.8125rem;color:var(--dim);line-height:1.6;max-width:80ch}
+@media (max-width:820px){.proof-stats{grid-template-columns:1fr}}
 
 /* ── sub-page opening: eyebrow, title, one line ── */
 .phead{padding:clamp(3.5rem,8vw,6rem) 0 0}

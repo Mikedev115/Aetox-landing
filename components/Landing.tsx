@@ -3,6 +3,7 @@ import { dict, type Lang } from "@/lib/i18n";
 import { SITE_URL, pageUrl } from "@/lib/site";
 import { Shell, load } from "./Page";
 import Hero from "./Hero";
+import Proof from "./Proof";
 import Network from "./Network";
 import Modes from "./Modes";
 import Company from "./Company";
@@ -22,6 +23,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
   return (
     <Shell lang={lang} page="home" t={t} version={version}>
       <Hero t={t.hero} lang={lang} />
+      <Proof t={t.proof} />
       <Network t={t.network} />
       <Modes t={t.modes} lang={lang} />
       <Company t={t.company} lang={lang} />
