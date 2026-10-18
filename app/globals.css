@@ -188,6 +188,15 @@ section + .policies,section + .cases{padding-top:0}
 .mode .body p{padding-top:.75rem}
 .mode .body .lead{color:var(--text)}
 .mode.active .body{grid-template-rows:1fr}
+.mode .proof{margin-top:1rem;padding:.9rem 1rem;border:1px solid var(--line);background:var(--bg-card);display:grid;gap:.45rem;font-size:13px}
+.mode .proof .k{color:var(--dim);font-size:12px;margin-bottom:.15rem}
+.mode .proof .row{display:grid;grid-template-columns:5.5rem minmax(0,1fr) 3.25rem;align-items:center;gap:.6rem}
+.mode .proof .row i{height:8px;background:var(--bg-card2);position:relative}
+.mode .proof .row b{position:absolute;inset:0 auto 0 0;background:var(--line-strong)}
+.mode .proof .row em{font-style:normal;font-family:var(--mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+.mode .proof .row.us{color:var(--text);font-weight:500}
+.mode .proof .row.us b{background:linear-gradient(90deg,var(--blue),var(--blue-2))}
+.mode .body .proof .note{padding-top:.35rem;font-size:12px;color:var(--dim);line-height:1.6}
 .mode:not(.active){opacity:.5}
 .mode:not(.active):hover{opacity:.85}
 .modes .stage{position:sticky;top:calc(var(--head-h) + 1.5rem)}

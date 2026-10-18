@@ -63,6 +63,10 @@ export const en = {
         title: "Code",
         lead: "For reading code, building systems and debugging.",
         body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
+        proof: {
+          label: "Secure code, same model · CWEval func-sec@1 on GPT-6 Luna",
+          note: "593 runs judged by hidden tests, Aetox 1.10.0. The lead comes from the security skill it ships with; with that skill off, Aetox lands with the rest. It loses on one SWE-bench bug on Luna and on time on Terra, and uses more tokens. [Read the report](CODING_BENCH)",
+        },
         addr: "Aetox · code",
         alt: "Code door: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
       },
@@ -174,7 +178,7 @@ export const en = {
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
-    foot: "Smaller than Claude Code **2×** · Cursor **8×** · VS Code **10×**, rounded to whole numbers. Different categories, of course: a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 2 Oct 2026 on v1.9.5, both files. Method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
+    foot: "Smaller than Claude Code **2×** · Cursor **7×** · VS Code **10×**, rounded to whole numbers. Different categories, of course: a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 18 Oct 2026 on v1.9.28, both files. Method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
     kpis: [
       { unit: "MB", k: "Disk on your machine", s: "Two files · installer {INSTALLER_MB} MB" },
       { unit: "tests", k: "Pass before release", s: "Go {TESTS_GO} · UI {TESTS_UI}" },
@@ -270,7 +274,7 @@ export const en = {
       {
         q: "Is there a scheduler",
         a: [
-          "No, deliberately. Aetox has no cloud, so a timer inside the program would mean your work only runs while you leave the machine on, a promise that cannot be kept. n8n and Windmill are clocks. Aetox is a pair of hands.",
+          "Yes. You can schedule an Aetox chat to run on its own, and see every scheduled job in the command center. Jobs run while Aetox is open; a run missed while the machine was off happens once when you open the app again. For work that must keep running with the machine off, n8n or Windmill is still the better fit.",
         ],
       },
       {

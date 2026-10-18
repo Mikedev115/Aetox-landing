@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { Dict, Lang } from "@/lib/i18n";
+import { CODING_SECURE } from "@/lib/numbers";
 import { asset } from "@/lib/site";
+import Rich from "./ui/Rich";
 
 // One loop per mode, in the order of t.items: `mode-<name>-<lang>.mp4` with a
 // PNG poster of its last frame, 1148×718 — the 574 px stage at 2x, 16:10.
@@ -59,6 +61,15 @@ export default function Modes({ t, lang }: { t: Dict["modes"]; lang: Lang }) {
                 <div className="body"><div>
                   <p className="lead">{m.lead}</p>
                   <p>{m.body}</p>
+                  {m.proof && (
+                    <div className="proof">
+                      <div className="k">{m.proof.label}</div>
+                      {CODING_SECURE.map(([name, v], j) => (
+                        <div key={name} className={`row${j === 0 ? " us" : ""}`}><span>{name}</span><i><b style={{ width: `${v}%` }} /></i><em>{v.toFixed(1)}%</em></div>
+                      ))}
+                      <Rich className="note" text={m.proof.note} />
+                    </div>
+                  )}
                 </div></div>
               </div>
             ))}

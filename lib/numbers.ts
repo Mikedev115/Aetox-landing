@@ -4,11 +4,11 @@
 // {DISK_MB} and the like, and dict() fills those in — so a new release means
 // editing this file, not hunting through two dictionaries.
 //
-// Package sizes: 17 Oct 2026, v1.9.27; providers: 30 Sep 2026. Other figures retain their
+// Package sizes: 18 Oct 2026, v1.9.28; providers: 30 Sep 2026. Other figures retain their
 // own measurement dates; the test counts below are historical, not recounted.
 export const NUMBERS = {
-  DISK_MB: "114.6", // v1.9.27: 71,459,328 + 48,719,360 bytes, rounded from the byte total
-  INSTALLER_MB: "46.0", // aetox-amd64-installer.exe on v1.9.27 (48,234,330 bytes)
+  DISK_MB: "122.3", // v1.9.28 portable zip: 79,546,368 + 48,733,696 bytes, rounded from the byte total
+  INSTALLER_MB: "48.7", // aetox-amd64-installer.exe on v1.9.28 (51,022,716 bytes)
   TESTS: "5,754", // Go + UI, measured on v1.7.2 on 17 Sep 2026 (dated in the app README)
   TESTS_GO: "3,648",
   TESTS_UI: "2,106",
@@ -17,6 +17,12 @@ export const NUMBERS = {
   TOKENS_PER_REQUEST: "10,700",
   PROVIDERS: "28", // the app's internal/provider/catalog.go, not counting the built-in aetox
 } as const;
+
+// CWEval func-sec@1 on GPT-6 Luna, same account for every harness: 593 runs judged
+// by hidden tests, Aetox 1.10.0 (app repo docs/reports/coding-harness-1.10.0).
+export const CODING_SECURE: readonly (readonly [string, number])[] = [
+  ["Aetox", 93.3], ["omp", 68.9], ["OpenCode", 66.7], ["Codex CLI", 66.7], ["pi", 64.4],
+];
 
 const TOKEN = /\{([A-Z_]+)\}/g;
 

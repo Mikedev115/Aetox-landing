@@ -48,6 +48,7 @@ export const ISSUES = `${GITHUB}/issues`;
 // The measurement shelf moved under docs/reports/ on 2026-09-20; ARCHITECTURE.md
 // is a private record since 2026-09-19 and has no public address any more.
 export const BENCHMARK_MD = `${GITHUB}/blob/main/docs/reports/BENCHMARK.md`;
+export const CODING_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.10.0/README.md`;
 export const LICENSE = `${GITHUB}/blob/main/LICENSE`;
 export const THIRD_PARTY = `${GITHUB}/blob/main/THIRD-PARTY-NOTICES.md`;
 export const CONTACT_MAIL = "mailto:phrmsawanachyphl@gmail.com";
