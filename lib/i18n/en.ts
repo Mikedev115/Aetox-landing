@@ -37,7 +37,7 @@ export const en = {
     h1Before: "The best harness ",
     h1Highlight: "for the AI you already use", // no-break spaces keep "for the" off the first line
     h1After: "",
-    lede: "Don't change your model. Change the harness. Aetox runs everything around the model, the tools, skills, context and the checks before it hands work back, so your model works at full strength on documents, websites and code. On Windows.",
+    lede: "Don't change your model. Change the harness. The AI you already use becomes an assistant that gets real work done, and the strongest Code mode on the same model. On Windows.",
     download: "Download the installer",
     other: "All ways to install",
     fine: "One {INSTALLER_MB} MB .exe from GitHub · bring your own model, or run one locally for free · uninstall in one click",
@@ -46,13 +46,45 @@ export const en = {
     frameAddr: "Aetox · plan 4/4",
   },
   proof: {
-    h2: "Same model, same tasks, judged by hidden tests",
-    stats: [
-      { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", k: "Secure code", s: "GPT-6 Luna, against the best of four other harnesses (CWEval func-sec@1)" },
-      { n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%", k: "Long multi-turn coding", s: "Tests passed on GPT-5.6 Terra, and the top score on both models (SlopCodeBench)" },
-      { n: "{PRICE_X}×", vs: "cheaper model", k: "The same range, in less time", s: "GPT-6 Luna on Aetox passes {CHEAP_PCT}% in {CHEAP_MIN} min. GPT-5.6 Terra on the others passes {BIG_PCT}% in {BIG_MIN} min" },
+    assist: {
+      k: "Assistant",
+      h: "Real work, finished as files",
+      jobs: [
+        { b: "Record a meeting", s: "and get a summary with times; tick the action items into tasks", file: "summary + tasks" },
+        { b: "Drop a folder of receipts", s: "and get an Excel table with working totals", file: ".xlsx" },
+        { b: "Hand it a long video", s: "and get short clips with subtitles you can keep editing", file: ".cut" },
+        { b: "Give it the data", s: "and get a slide deck, exported to PowerPoint", file: ".pptx" },
+      ],
+    },
+    code: {
+      k: "Code",
+      h: "The strongest on the same model",
+      stats: [
+        { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", s: "Secure code with the same budget GPT model, against the best of four other harnesses" },
+        { n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%", s: "Long multi-turn coding with the same large GPT model, top with both models" },
+        { n: "{CHEAP_MIN} min", vs: "vs {BIG_MIN}", s: "A {PRICE_X}× cheaper model on Aetox lands in the same range as the large one elsewhere ({CHEAP_PCT}% vs {BIG_PCT}%)" },
+      ],
+      foot: "Runs the project's own tests before it says done · drives the Claude Code, OpenCode or Antigravity you installed",
+    },
+    note: "Coding: 11 tasks × 2 models × 3 rounds, judged by hidden tests. Measured with GPT-6 Luna (budget) and GPT-5.6 Terra (large) driving, the same model and account on every harness. Aetox isn't tied to either: it works with {PROVIDERS} providers. It uses more tokens, and loses one SWE-bench bug on the budget model. [Read the report](CODING_BENCH)",
+  },
+  security: {
+    eyebrow: "aetox-security",
+    h2: "Our own security skill makes AI write code that holds up to attacks, 20+ points ahead of other harnesses",
+    sub: "Tested with the same GPT models on every harness: {SECURE_US}% vs {SECURE_NEXT}%, and {SECURE_TERRA}% vs {SECURE_TERRA_NEXT}%.",
+    chart: "Switch on this one skill and the same model writes {SKILL_ON} of 15 functions that both work and hold up, instead of {SKILL_OFF}.",
+    models: { budget: "Budget GPT model", large: "Large GPT model" },
+    off: "Skill off",
+    on: "Skill on",
+    others: "Other harnesses",
+    holesTitle: "Holes that closed · runs that leaked, out of 10",
+    holes: [
+      { b: "SSRF: the server fetches a URL an attacker chose", n: "{HOLE_SSRF}" },
+      { b: "New lines injected into an HTTP header", n: "{HOLE_HEADER}" },
+      { b: "New lines injected into a log", n: "{HOLE_LOG}" },
+      { b: "A user's regex that eats the machine", n: "{HOLE_REGEX}" },
     ],
-    note: "11 coding tasks × 2 models × 3 rounds, the same account for every harness. The secure-code lead comes from the security skill Aetox ships with. Aetox uses more tokens and loses one SWE-bench bug on Luna. [Read the report](CODING_BENCH)",
+    note: "The code works just as well with the skill on; it adds the defences without costing function. With the skill off, Aetox lands with the other harnesses: the lead is this skill, on from install. Measured with GPT-6 Luna (budget) and GPT-5.6 Terra (large), CWEval, 5 rounds per setting. [Read the test](SECURITY_BENCH)",
   },
   network: {
     lines: [
@@ -64,18 +96,18 @@ export const en = {
     items: [
       {
         title: "Assistant",
-        lead: "Let your AI work at full strength.",
+        lead: "An assistant that finishes the work, not just answers.",
         body: "Point it at a folder of receipts, a two-hour meeting recording, or a question that needs twenty websites. It reads on its own, keeps your tasks and meeting notes, reads your calendar, and the result lands in your folder as a real file, not text in a chat box. For a bigger job it hands the whole thing to a team, a department or the whole company you appointed, from the same chat.",
         addr: "Aetox · assistant",
         alt: "Assistant door: asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
       },
       {
         title: "Code",
-        lead: "We multiply the model by owning the whole harness.",
+        lead: "It writes, runs the tests, and passes before it says done.",
         body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, runs the project's own tests before it says done, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
         proof: {
-          label: "Secure code, same model · CWEval func-sec@1 on GPT-6 Luna",
-          note: "11 tasks × 2 models × 3 rounds, judged by hidden tests. The lead comes from the security skill it ships with; with that skill off, Aetox lands with the rest. It loses on one SWE-bench bug on Luna and on time on Terra, and uses more tokens. [Read the report](CODING_BENCH)",
+          label: "Secure code, same model · CWEval func-sec@1, budget GPT model",
+          note: "11 tasks × 2 models × 3 rounds, judged by hidden tests. The lead comes from the security skill it ships with; with that skill off, Aetox lands with the rest. It loses on one SWE-bench bug with the budget model and on time with the large one, and uses more tokens. [Read the report](CODING_BENCH)",
         },
         addr: "Aetox · code",
         alt: "Code door: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",

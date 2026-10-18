@@ -51,6 +51,8 @@ export const ISSUES = `${GITHUB}/issues`;
 // is a private record since 2026-09-19 and has no public address any more.
 export const BENCHMARK_MD = `${GITHUB}/blob/main/docs/reports/BENCHMARK.md`;
 export const CODING_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.10.0/README.md`;
+// The security-skill on/off test (section 2 of that release's report).
+export const SECURITY_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.9.27/README.md#2-ชนะ-cweval-เพราะอะไร`;
 export const LICENSE = `${GITHUB}/blob/main/LICENSE`;
 export const THIRD_PARTY = `${GITHUB}/blob/main/THIRD-PARTY-NOTICES.md`;
 export const CONTACT_MAIL = "mailto:phrmsawanachyphl@gmail.com";

@@ -4,6 +4,7 @@ import { SITE_URL, pageUrl } from "@/lib/site";
 import { Shell, load } from "./Page";
 import Hero from "./Hero";
 import Proof from "./Proof";
+import SecuritySkill from "./SecuritySkill";
 import Network from "./Network";
 import Modes from "./Modes";
 import Company from "./Company";
@@ -25,6 +26,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
     <Shell lang={lang} page="home" t={t} version={version}>
       <Hero t={t.hero} lang={lang} />
       <Proof t={t.proof} />
+      <SecuritySkill t={t.security} />
       <Network t={t.network} />
       <Modes t={t.modes} lang={lang} />
       <Company t={t.company} lang={lang} />

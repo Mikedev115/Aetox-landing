@@ -29,7 +29,27 @@ export const NUMBERS = {
   BIG_PCT: "91.3–92.8", // the other harnesses on GPT-5.6 Terra, same column
   BIG_MIN: "46–63", // their minutes on GPT-5.6 Terra
   PRICE_X: "20", // GPT-5.6 Terra costs about 20× GPT-6 Luna per token (models.dev list prices)
+  SECURE_TERRA: "97.8", // CWEval func-sec@1, GPT-5.6 Terra
+  SECURE_TERRA_NEXT: "77.8", // the best other harness on Terra
+  SKILL_OFF: "10.2", // GPT-6 Luna, security skill off (of 15, mean of 5 rounds, coding-harness-1.9.27 §2)
+  SKILL_ON: "14.0", // the same with it on
+  // Security skill on/off on the same build: runs out of 10 (Luna 5 + Terra 5) that work but
+  // fail the attack test, skill off → skill on (coding-harness-1.9.27 §2).
+  HOLE_SSRF: "4 → 0", // CWE-918
+  HOLE_HEADER: "7 → 0", // CWE-113
+  HOLE_LOG: "5 → 0", // CWE-117
+  HOLE_REGEX: "10 → 1", // CWE-400
 } as const;
+
+// CWEval functions that both work and pass the attack tests, out of 15, mean of 5 rounds,
+// with only aetox-security switched (coding-harness-1.9.27 §2). `others` is the range of
+// OpenCode, Codex CLI, omp and pi on the same task. The band draws its bars from these.
+// `size` names the row by model size, not vendor: the copy names GPT-6 Luna (budget) and
+// GPT-5.6 Terra (large) once, in the note, because Aetox is not tied to either.
+export const SECURITY_SKILL: readonly { size: "budget" | "large"; off: number; on: number; others: readonly [number, number] }[] = [
+  { size: "budget", off: 10.2, on: 14.0, others: [9.7, 10.3] },
+  { size: "large", off: 11.6, on: 14.4, others: [11.0, 11.7] },
+];
 
 // CWEval func-sec@1 on GPT-6 Luna, same account for every harness, judged by hidden
 // tests (app repo docs/reports/coding-harness-1.10.0).
