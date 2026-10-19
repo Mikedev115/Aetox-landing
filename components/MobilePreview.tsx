@@ -13,11 +13,22 @@ export function MobilePreview({ lang }: { lang: Lang }) {
           <h2 id="mobile-preview-title">{copy.title}</h2>
           <p className="mobile-preview-body">{copy.body}</p>
           <p className="mobile-preview-requirement">{copy.requirement}</p>
-          <div className="cta">
-            <PillLink href={MOBILE_APK}>{copy.apk}</PillLink>
-            <PillLink href={MOBILE_RELEASE} variant="soft">{copy.notes}</PillLink>
+          <div className="mobile-preview-phones">
+            <div id="android" className="mobile-preview-phone">
+              <h3>{copy.android.title}</h3>
+              <ol>{copy.android.steps.map((step) => <li key={step}>{step}</li>)}</ol>
+              <div className="cta">
+                <PillLink href={MOBILE_APK}>{copy.apk}</PillLink>
+                <PillLink href={MOBILE_RELEASE} variant="soft">{copy.notes}</PillLink>
+              </div>
+              <p className="fine">{copy.android.note}</p>
+            </div>
+            <div id="iphone" className="mobile-preview-phone">
+              <h3>{copy.iphone.title}</h3>
+              <ol>{copy.iphone.steps.map((step) => <li key={step}>{step}</li>)}</ol>
+              <p className="fine">{copy.iphone.note}</p>
+            </div>
           </div>
-          <p className="fine mobile-preview-iphone">{copy.iphone}</p>
           <p className="fine">{copy.pending}</p>
         </div>
       </div>
