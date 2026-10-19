@@ -29,7 +29,6 @@ export function MobilePreview({ lang }: { lang: Lang }) {
               <p className="fine">{copy.iphone.note}</p>
             </div>
           </div>
-          <p className="fine">{copy.pending}</p>
         </div>
       </div>
     </section>

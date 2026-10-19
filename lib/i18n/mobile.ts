@@ -1,11 +1,11 @@
 export const mobileCopy = {
   en: {
-    status: "MOBILE · TESTING PREVIEW",
+    status: "MOBILE",
     title: "Keep working from your phone.",
     body: "Watch answers stream in live with every tool step, see every chat sorted by project, open delivered files full screen, pick the model and answer approvals. Or talk to the same assistant through Telegram or Discord. Windows still runs the work and keeps your data; provider keys never leave the PC.",
     requirement: "Needs Aetox for Windows 1.9.28 or later (it carries Aetox Link) and Tailscale with HTTPS on the PC and the phone. Keep Windows and Aetox running. Start on the PC: Settings › Mobile, wait for the three Tailscale checks to turn green, press Let my phone connect, and a pairing QR appears.",
-    apk: "Download Android test APK",
-    notes: "Read preview requirements",
+    apk: "Download Android APK",
+    notes: "Release notes",
     android: {
       title: "Android · app 0.3.2",
       steps: [
@@ -24,15 +24,14 @@ export const mobileCopy = {
       ],
       note: "There is no IPA. The profile adds only this full-screen web app (no VPN, MDM or certificate), is made for your own PC's address and can be removed in Settings › General › VPN & Device Management. Updates arrive with Aetox for Windows.",
     },
-    pending: "Voice, the camera and installing on a physical phone are not verified yet. This is not a production mobile release.",
   },
   th: {
-    status: "มือถือ · รุ่นทดลอง",
+    status: "มือถือ",
     title: "ทำงานต่อจากมือถือ",
     body: "เห็นคำตอบไหลออกมาสดพร้อมขั้นตอนเครื่องมือ เห็นทุกแชทแยกตามโปรเจกต์ เปิดไฟล์ที่ส่งมอบได้เต็มจอ เลือกโมเดล และตอบคำขออนุญาต หรือคุยกับผู้ช่วยตัวเดียวกันผ่าน Telegram และ Discord ทุกงานยังรันและเก็บข้อมูลบน Windows ส่วน provider key ไม่ออกจากเครื่อง PC",
     requirement: "ต้องใช้ Aetox บน Windows รุ่น 1.9.28 ขึ้นไป (มี Aetox Link) และ Tailscale ที่เปิด HTTPS ทั้งบน PC และมือถือ ต้องเปิด Windows กับ Aetox ค้างไว้ เริ่มที่ PC: ตั้งค่า › มือถือ รอให้ช่องตรวจ Tailscale ขึ้นถูกครบสามข้อ กด เปิดให้มือถือเชื่อมต่อ แล้ว QR สำหรับจับคู่จะขึ้นมา",
-    apk: "ดาวน์โหลด APK ทดสอบ Android",
-    notes: "อ่านเงื่อนไขรุ่นทดลอง",
+    apk: "ดาวน์โหลด APK สำหรับ Android",
+    notes: "รายละเอียดรุ่น",
     android: {
       title: "Android · แอป 0.3.2",
       steps: [
@@ -51,6 +50,5 @@ export const mobileCopy = {
       ],
       note: "ไม่มีไฟล์ IPA โปรไฟล์เพิ่มแค่เว็บแอปเต็มจอนี้ (ไม่มี VPN, MDM หรือใบรับรอง) ทำมาสำหรับที่อยู่ PC ของคุณ และลบได้ที่ ตั้งค่า › ทั่วไป › VPN และการจัดการอุปกรณ์ ของใหม่มากับ Aetox บน Windows",
     },
-    pending: "ยังไม่ได้ตรวจการคุยด้วยเสียง การถ่ายรูป และการติดตั้งบนมือถือจริง ไม่ใช่ mobile production release",
   },
 };
