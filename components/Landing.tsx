@@ -3,40 +3,26 @@ import { dict, type Lang } from "@/lib/i18n";
 import { SITE_URL, pageUrl } from "@/lib/site";
 import { Shell, load } from "./Page";
 import Hero from "./Hero";
-import Proof from "./Proof";
-import SecuritySkill from "./SecuritySkill";
-import Network from "./Network";
-import Modes from "./Modes";
-import Company from "./Company";
-import VideoCut from "./VideoCut";
-import UseCases from "./UseCases";
-import PricingTeaser from "./PricingTeaser";
-import Safety from "./Safety";
-import RealWork from "./RealWork";
-import FinalCta from "./FinalCta";
-import { MobilePreview } from "./MobilePreview";
+import Why from "./Why";
+import Demo from "./Demo";
+import Models from "./Models";
+import Areas from "./Areas";
+import HomeClose from "./HomeClose";
 
-// The home page: the story in short. Each block past the modes is a teaser
-// for one of the site's pages and links there — the detail (all eleven jobs,
-// the pricing paths and benchmark, the access scope, the FAQ) lives on those
-// pages, not here.
+// The home page says one thing: the same model does better work here. The hero
+// carries the proof for every area; the rest explains why, shows one job, and
+// leads to each area's page. The detail (modes, teams, the studio, the security
+// test, every provider, all eleven jobs) lives on /features/, not here.
 export default async function Landing({ lang }: { lang: Lang }) {
   const { t, version } = await load(lang);
   return (
     <Shell lang={lang} page="home" t={t} version={version}>
-      <Hero t={t.hero} lang={lang} />
-      <Proof t={t.proof} />
-      <SecuritySkill t={t.security} />
-      <Network t={t.network} />
-      <Modes t={t.modes} lang={lang} />
-      <Company t={t.company} lang={lang} />
-      <VideoCut t={t.video} lang={lang} />
-      <UseCases t={t.uses} lang={lang} more={t.pages.features.all} />
-      <PricingTeaser t={t.pages.pricing.teaser} price={t.pricing.local.price} lang={lang} />
-      <Safety t={t.safety} lang={lang} teaser={t.pages.safety.more} />
-      <RealWork t={t.work} lang={lang} teaser={t.pages.work.more} />
-      <MobilePreview lang={lang} />
-      <FinalCta t={t.cta} />
+      <Hero t={t.hero} wall={t.wall} lang={lang} />
+      <Why t={t.why} />
+      <Demo t={t.demo} lang={lang} />
+      <Models t={t.models} lang={lang} />
+      <Areas t={t.areas} lang={lang} />
+      <HomeClose t={t.close} lang={lang} />
     </Shell>
   );
 }

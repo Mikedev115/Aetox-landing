@@ -8,10 +8,10 @@
 
 export const en = {
   meta: {
-    title: "Aetox · The best harness for the AI you already use",
+    title: "Aetox · Same model. Better work.",
     description:
-      "Aetox is the best harness for the AI you already use. It runs everything around the model, the tools, skills, context and the checks before it hands work back, so your model does better work on documents, websites and code. Free, for Windows.",
-    ogDescription: "Don't change your model. Change the harness. Same model, same tasks: Aetox gets more out of it.",
+      "Aetox is the harness around the AI you already use. Same model, measured with and without Aetox: better code, slides, documents and long jobs. Free, for Windows.",
+    ogDescription: "Don't change your model. Change the harness.",
   },
   nav: {
     overview: "Overview",
@@ -34,43 +34,70 @@ export const en = {
   },
   hero: {
     eyebrow: "The Model Multiplier.",
-    h1Before: "The best harness ",
-    h1Highlight: "for the AI you already use", // no-break spaces keep "for the" off the first line
+    h1Before: "Same model. ",
+    h1Highlight: "Better work.",
     h1After: "",
-    lede: "Don't change your model. Change the harness. The AI you already use becomes an assistant that gets real work done, and the strongest Code mode on the same model. On Windows.",
-    download: "Download the installer",
+    lede: "Don't change your model. Change the harness. Code, slides, documents, teams and video, each measured on the same model with and without Aetox.",
+    download: "Download for Windows",
     other: "All ways to install",
-    fine: "One {INSTALLER_MB} MB .exe from GitHub · bring your own model, or run one locally for free · uninstall in one click",
+    fine: "One {INSTALLER_MB} MB installer · bring your own model, or run one locally for free",
+  },
+  // The proof wall under the hero: one card per area, every card the same shape.
+  // `n` is Aetox, `vs` what it was compared with, `cond` the model and the test.
+  wall: {
+    cards: [
+      { k: "Code · security", n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%, the next harness", cond: "Secure code on CWEval · GPT-6 Luna · 3 rounds, hidden tests" },
+      { k: "Code · long runs", n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%, the next harness", cond: "Tests passed on SlopCodeBench · GPT-5.6 Terra · 3 rounds" },
+      { k: "Slides", n: "{SLIDES_ON}", vs: "vs {SLIDES_OFF}, the same app with skills off", cond: "Thai deck, automatic checks · GPT-6 Luna · 3 runs" },
+      { k: "Thai tax invoice", n: "{INVOICE_US}", vs: "vs {INVOICE_OTHERS}, two other harnesses", cond: "VAT, withholding, Buddhist-era dates · 17 hidden tests · GPT-6 Luna" },
+      { k: "Teams", n: "{CTX_HELPERS}", vs: "vs {CTX_ALONE}, the same job without helpers", cond: "Main agent's context in one real session · cost down {HELPER_SAVE}% on non-OpenAI prices" },
+      { k: "Video", n: "{CUT_TO} s", vs: "from {CUT_FROM} s, the raw take", cond: "Four silences folded, one filler cut · a real file you keep editing" },
+    ],
+    note: "Same model on both sides of every card. Where Aetox trails: it spends more tokens than other harnesses (about 90% of them cached), and on large models it is not the fastest. [Method, every round and where it loses](REPORTS)",
+  },
+  why: {
+    h2: "The model thinks. The harness does the rest.",
+    items: [
+      { b: "Hands.", s: "Real files, a real browser, a real terminal. The model writes; Aetox hands back the .xlsx, the deck, the commit." },
+      { b: "Knowledge the model doesn't have.", s: "Skills carry what a model can't guess: the 1280×720 frame of a slide room, how an attacker breaks a path check, how a Thai tax invoice rounds." },
+      { b: "Skills built into the system, not bolted on.", s: "Each skill is written against Aetox's own tools, checks and file builders, so the model reads it and acts on it with hands that fit. Every new or tuned skill is measured on the same model with it on and off; skills that did not help were taken out." },
+      { b: "A check before it hands work back.", s: "It runs the tests, opens the file it made, and says what it could not prove." },
+    ],
+    foot: "The same harness drives all {PROVIDERS} providers, so the gain moves with you when you change models.",
+  },
+  demo: {
+    h2: "One job, start to finish",
+    sub: "A one-page coffee shop site: the plan, every tool step, and the finished page, in the app as it runs.",
+    note: "Scripted walkthrough of the real app, not a benchmark run.",
     imgAlt:
       "The Aetox window: a request for a one-page coffee shop site, a four-step plan appearing in the chat and ticking off one step at a time, while the artifacts panel on the right shows the full plan and how it will know it is done",
     frameAddr: "Aetox · plan 4/4",
   },
-  proof: {
-    assist: {
-      k: "Assistant",
-      h: "Real work, finished as files",
-      jobs: [
-        { b: "Record a meeting", s: "and get a summary with times; tick the action items into tasks", file: "summary + tasks" },
-        { b: "Drop a folder of receipts", s: "and get an Excel table with working totals", file: ".xlsx" },
-        { b: "Hand it a long video", s: "and get short clips with subtitles you can keep editing", file: ".cut" },
-        { b: "Give it the data", s: "and get a slide deck, exported to PowerPoint", file: ".pptx" },
-      ],
-    },
-    code: {
-      k: "Code",
-      h: "The strongest on the same model",
-      stats: [
-        { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", s: "Secure code with the same budget GPT model, against the best of four other harnesses" },
-        { n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%", s: "Long multi-turn coding with the same large GPT model, top with both models" },
-        { n: "{CHEAP_MIN} min", vs: "vs {BIG_MIN}", s: "A {PRICE_X}× cheaper model on Aetox lands in the same range as the large one elsewhere ({CHEAP_PCT}% vs {BIG_PCT}%)" },
-      ],
-      foot: "Runs the project's own tests before it says done · drives the Claude Code, OpenCode or Antigravity you installed",
-    },
-    note: "Coding: 11 tasks × 2 models × 3 rounds, judged by hidden tests. Measured with GPT-6 Luna (budget) and GPT-5.6 Terra (large) driving, the same model and account on every harness. Aetox isn't tied to either: it works with {PROVIDERS} providers. It uses more tokens, and loses one SWE-bench bug on the budget model. [Read the report](CODING_BENCH)",
+  models: {
+    h2: "Bring the model you already pay for",
+    p: "Sign in with ChatGPT, GitHub Copilot or OpenRouter, paste a key for any of {PROVIDERS} providers, or run a model on your own machine with LM Studio or Ollama for free. Switch mid-chat and the whole context comes with you.",
+    more: "Every provider",
+  },
+  areas: {
+    h2: "Look inside, one area at a time",
+    rows: [
+      { k: "Code", s: "Agent mode works through your project; Editor mode lets you write while it helps. Also in your terminal." },
+      { k: "Assistant", s: "Meetings, receipts, research and data become files that open: summaries, Excel, Word, PowerPoint." },
+      { k: "Teams", s: "Hand a whole job to a ready-made team. You see who did what, what each handed over and what it cost." },
+      { k: "Studio", s: "A long video becomes short clips with subtitles you keep editing." },
+      { k: "Phone", s: "Your PC's Aetox on Android or iPhone. Keys never leave the PC." },
+    ],
+  },
+  close: {
+    h2: "Your machine, your keys, your call",
+    p: "Chats and files stay on your disk, with no server of ours in between. Keys are locked to your Windows account. You choose how much it may do without asking.",
+    safety: "Safety in detail",
+    btn: "Download for Windows",
+    ways: "Microsoft Store · Installer · CLI",
   },
   security: {
     eyebrow: "aetox-security",
-    h2: "Our own security skill makes AI write code that holds up to attacks, 20+ points ahead of other harnesses",
+    h2: "Our security skill: the same model writes code that holds up to attacks",
     sub: "Tested with the same GPT models on every harness: {SECURE_US}% vs {SECURE_NEXT}%, and {SECURE_TERRA}% vs {SECURE_TERRA_NEXT}%.",
     chart: "Switch on this one skill and the same model writes {SKILL_ON} of 15 functions that both work and hold up, instead of {SKILL_OFF}.",
     models: { budget: "Budget GPT model", large: "Large GPT model" },
@@ -383,7 +410,7 @@ export const en = {
   pages: {
     features: {
       title: "What it does",
-      sub: "Eleven jobs Aetox does on its own, on your machine, each one a real run with a real file at the end.",
+      sub: "Code, Assistant, teams, the studio and the models it runs on, then eleven jobs Aetox does on its own, each one a real run with a real file at the end.",
       metaTitle: "What Aetox harness does: receipts, research, browsers, code, video",
       metaDescription: "The jobs Aetox handles on its own on a Windows machine: reading receipts into Excel, research across twenty sites, driving real websites, Git, code maps, video, and what each one looks like.",
       all: "See everything it does",

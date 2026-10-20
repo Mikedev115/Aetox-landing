@@ -1,10 +1,12 @@
 import type { Dict, Lang } from "@/lib/i18n";
-import { APP_SETUP_URL, asset, pagePath } from "@/lib/site";
-import Frame from "./ui/Frame";
+import { APP_SETUP_URL, pagePath } from "@/lib/site";
 import HeroLight from "./ui/HeroLight";
 import { PillLink } from "./ui/Pill";
+import ProofWall from "./ProofWall";
 
-export default function Hero({ t, lang }: { t: Dict["hero"]; lang: Lang }) {
+// One claim, and the proof of it on the same first screen: six areas, each a
+// card of the same shape (Aetox · what it was compared with · model and test).
+export default function Hero({ t, wall, lang }: { t: Dict["hero"]; wall: Dict["wall"]; lang: Lang }) {
   return (
     <div className="hero">
       <HeroLight />
@@ -17,9 +19,7 @@ export default function Hero({ t, lang }: { t: Dict["hero"]; lang: Lang }) {
           <PillLink variant="soft" href={pagePath(lang, "download")}>{t.other}</PillLink>
         </div>
         <p className="fine">{t.fine}</p>
-        <div className="hero-visual">
-          <Frame addr={t.frameAddr} shot={{ src: asset(`hero-${lang}.png`), video: asset(`hero-${lang}.mp4`), alt: t.imgAlt, width: 2016, height: 1198, eager: true }} />
-        </div>
+        <ProofWall t={wall} />
       </div>
     </div>
   );

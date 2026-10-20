@@ -39,6 +39,16 @@ export const NUMBERS = {
   HOLE_HEADER: "7 → 0", // CWE-113
   HOLE_LOG: "5 → 0", // CWE-117
   HOLE_REGEX: "10 → 1", // CWE-400
+  // The home page's proof wall: one card per area, the same model on both sides of each.
+  SLIDES_ON: "98", // SL2 Thai deck, GPT-6 Luna, skills on, 3 runs (app repo docs/reports/SKILL-BENCH.md §3.3, round 6)
+  SLIDES_OFF: "49", // the same build with every skill off, 3 runs
+  INVOICE_US: "100", // F2 Thai tax invoice, 17 hidden tests, GPT-6 Luna, 3 runs (SKILL-BENCH.md §3.3)
+  INVOICE_OTHERS: "94", // Codex CLI and OpenCode on the same task and model, 1 run each
+  CTX_HELPERS: "107k", // main agent's context at the end of one real session with helpers
+  CTX_ALONE: "190k", // the same session with the helpers' reading kept in the main agent
+  HELPER_SAVE: "18–30", // % cost saved on non-OpenAI prices (LIVING-REALM-DELEGATION-TOKENS + MODEL-COST-SIMULATION, 4 Oct 2026)
+  CUT_FROM: "17.5", // seconds, the raw screen tour in the cutting-room loop
+  CUT_TO: "11.1", // seconds after four silences folded and one filler cut
 } as const;
 
 // CWEval functions that both work and pass the attack tests, out of 15, mean of 5 rounds,

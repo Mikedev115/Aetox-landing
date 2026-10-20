@@ -50,6 +50,8 @@ export const ISSUES = `${GITHUB}/issues`;
 // The measurement shelf moved under docs/reports/ on 2026-09-20; ARCHITECTURE.md
 // is a private record since 2026-09-19 and has no public address any more.
 export const BENCHMARK_MD = `${GITHUB}/blob/main/docs/reports/BENCHMARK.md`;
+// Every report and the latest edition of each subject: the proof wall's method link.
+export const REPORTS = `${GITHUB}/blob/main/docs/reports/README.md`;
 export const CODING_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.10.0/README.md`;
 // The security-skill on/off test (section 2 of that release's report).
 export const SECURITY_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.9.27/README.md#2-ชนะ-cweval-เพราะอะไร`;
