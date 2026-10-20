@@ -62,3 +62,6 @@ export const DEMO_VIDEO = "https://www.youtube.com/watch?v=FcbsND9iRhk";
 
 /** A file served from this site's public/ folder. */
 export const asset = (name: string) => `${BASE}/assets/${name}`;
+
+/** The share card for a page, one per language (the home hero and its proof). */
+export const ogImage = (lang: "en" | "th") => new URL(lang === "th" ? "assets/og-th.png" : "assets/og.png", SITE_URL).toString();

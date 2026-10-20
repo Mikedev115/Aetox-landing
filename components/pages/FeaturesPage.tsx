@@ -1,5 +1,6 @@
 import type { Lang } from "@/lib/i18n";
 import { PageHead, Shell, load } from "@/components/Page";
+import ProofWall from "@/components/ProofWall";
 import Modes from "@/components/Modes";
 import SecuritySkill from "@/components/SecuritySkill";
 import Company from "@/components/Company";
@@ -15,6 +16,7 @@ export default async function FeaturesPage({ lang }: { lang: Lang }) {
   return (
     <Shell lang={lang} page="features" t={t} version={version}>
       <PageHead title={t.pages.features.title} sub={t.pages.features.sub} />
+      <div className="wrap"><ProofWall t={t.wall} /></div>
       <span id="code" className="anchor" /><span id="assistant" className="anchor" />
       <Modes t={t.modes} lang={lang} />
       <SecuritySkill t={t.security} />

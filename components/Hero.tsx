@@ -2,11 +2,10 @@ import type { Dict, Lang } from "@/lib/i18n";
 import { APP_SETUP_URL, pagePath } from "@/lib/site";
 import HeroLight from "./ui/HeroLight";
 import { PillLink } from "./ui/Pill";
-import ProofWall from "./ProofWall";
 
-// One claim, and the proof of it on the same first screen: six areas, each a
-// card of the same shape (Aetox · what it was compared with · model and test).
-export default function Hero({ t, wall, lang }: { t: Dict["hero"]; wall: Dict["wall"]; lang: Lang }) {
+// One neutral line over both doors: you hand the work over, Aetox runs it.
+// The doors right under it carry each side's own promise and proof.
+export default function Hero({ t, lang }: { t: Dict["hero"]; lang: Lang }) {
   return (
     <div className="hero">
       <HeroLight />
@@ -18,8 +17,7 @@ export default function Hero({ t, wall, lang }: { t: Dict["hero"]; wall: Dict["w
           <PillLink href={APP_SETUP_URL}>{t.download}</PillLink>
           <PillLink variant="soft" href={pagePath(lang, "download")}>{t.other}</PillLink>
         </div>
-        <p className="fine">{t.fine}</p>
-        <ProofWall t={wall} />
+        <p className="fine hero-fine">{t.fine}</p>
       </div>
     </div>
   );

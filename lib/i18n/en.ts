@@ -8,10 +8,11 @@
 
 export const en = {
   meta: {
-    title: "Aetox · Same model. Better work.",
+    title: "Aetox · Hand it over. We'll run it.",
     description:
-      "Aetox is the harness around the AI you already use. Same model, measured with and without Aetox: better code, slides, documents and long jobs. Free, for Windows.",
-    ogDescription: "Don't change your model. Change the harness.",
+      "Say what you want and Aetox runs the work: a company of agents on your computer for everyday jobs, and a coding system that gets more out of the model you already use. Free, for Windows.",
+    ogDescription: "Build a company on your computer. An ordinary model can do more than you think.",
+    ogAlt: "Aetox: Hand it over. We'll run it. Build a company on your computer. An ordinary model can do more than you think: secure code 93.3% vs 68.9% on the same model",
   },
   nav: {
     overview: "Overview",
@@ -34,15 +35,46 @@ export const en = {
   },
   hero: {
     eyebrow: "The Model Multiplier.",
-    h1Before: "Same model. ",
-    h1Highlight: "Better work.",
+    h1Before: "Hand it over. ",
+    h1Highlight: "We'll run it.",
     h1After: "",
-    lede: "Don't change your model. Change the harness. Code, slides, documents, teams and video, each measured on the same model with and without Aetox.",
+    lede: "Say what you want. Aetox lines up the team and the tools, and hands back finished work.",
     download: "Download for Windows",
     other: "All ways to install",
     fine: "One {INSTALLER_MB} MB installer · bring your own model, or run one locally for free",
   },
-  // The proof wall under the hero: one card per area, every card the same shape.
+  // The two doors under the hero, each selling one thing (AGENTS.md § Product direction):
+  // the assistant lets you delegate more, Code lets the model finish more.
+  doors: {
+    ceo: {
+      k: "Assistant · Teams",
+      h1: "Build a company ",
+      hl: "on your computer",
+      kicker: "You're the CEO. The rest is your team.",
+      p: "Set the goal and hand over the whole job. Heads split the work, teams do it, and the finished files come back in one chat; you approve what goes out. The Content team ships with the installer, so you start with a team, not an org chart.",
+      chain: ["You", "Assistant", "Company", "Department", "Team", "Agent"],
+      feed: [
+        { who: "content", what: "Cocoa launch post drafted, sent to editor" },
+        { who: "editor", what: "Reviewed, sent back with 2 word fixes" },
+        { who: "video", what: "15-second clip rendered · menu-cocoa.mp4" },
+        { who: "waiting on you", what: "Approve the post for the shop page", ask: true },
+      ],
+      more: "How teams work",
+    },
+    code: {
+      k: "Code",
+      h1: "An ordinary model ",
+      hl: "can do more than you think",
+      p: "The difference is the system around the model. For code, Aetox tunes its skills and every layer of the system to work as one. Same model, and on some measures the results are clear: it writes better code on Aetox than on other harnesses.",
+      nums: [
+        { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", s: "Secure code · GPT-6 Luna" },
+        { n: "{SECURE_TERRA}%", vs: "vs {SECURE_TERRA_NEXT}%", s: "Secure code · GPT-5.6 Terra" },
+      ],
+      cond: "CWEval, hidden tests, 3 rounds, against the next-best harness; the same model on every harness. [The report and where Aetox loses](REPORTS)",
+      more: "How the Code desk works",
+    },
+  },
+  // The proof wall on /features/: one card per area, every card the same shape.
   // `n` is Aetox, `vs` what it was compared with, `cond` the model and the test.
   wall: {
     cards: [
@@ -75,8 +107,14 @@ export const en = {
   },
   models: {
     h2: "Bring the model you already pay for",
-    p: "Sign in with ChatGPT, GitHub Copilot or OpenRouter, paste a key for any of {PROVIDERS} providers, or run a model on your own machine with LM Studio or Ollama for free. Switch mid-chat and the whole context comes with you.",
-    more: "Every provider",
+    p: "Three ways in; use the one you already have. Switch models mid-chat and the whole context comes with you.",
+    ways: [
+      { k: "Sign in", h: "You have an account", s: "Sign in, no key to copy." },
+      { k: "Paste a key", h: "A provider you pay", s: "An API key from any of them, or an OpenAI-compatible endpoint of your own." },
+      { k: "On your machine", h: "Pay nothing", s: "What you type never leaves the machine, and it keeps working offline." },
+    ],
+    free: "Free",
+    more: "See all {PROVIDERS}",
   },
   areas: {
     h2: "Look inside, one area at a time",
