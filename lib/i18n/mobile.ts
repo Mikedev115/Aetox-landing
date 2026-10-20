@@ -7,7 +7,7 @@ export const mobileCopy = {
     apk: "Download Android APK",
     notes: "Release notes",
     android: {
-      title: "Android · app 0.3.2",
+      title: "Android · app 0.3.4",
       steps: [
         "Install Tailscale on the phone and sign in to the same account as the PC.",
         "Download the APK below and open it. Android asks once to allow installs from your browser.",
@@ -33,7 +33,7 @@ export const mobileCopy = {
     apk: "ดาวน์โหลด APK สำหรับ Android",
     notes: "รายละเอียดรุ่น",
     android: {
-      title: "Android · แอป 0.3.2",
+      title: "Android · แอป 0.3.4",
       steps: [
         "ติดตั้ง Tailscale บนมือถือ แล้ว login บัญชีเดียวกับ PC",
         "ดาวน์โหลด APK ด้านล่างแล้วเปิดไฟล์ Android จะถามครั้งเดียวให้อนุญาตติดตั้งจากเบราว์เซอร์",
