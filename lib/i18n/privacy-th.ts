@@ -7,7 +7,7 @@ export const privacyTh: PolicyDict = {
   title: "นโยบายความเป็นส่วนตัว",
   updated: "ปรับปรุงล่าสุด 24 สิงหาคม 2026",
   description: "Aetox ทำงานบนเครื่องของคุณ ผู้พัฒนาไม่มีเซิร์ฟเวอร์ที่รับบทสนทนา ไฟล์ หรือคีย์ของคุณ และไม่มีการเก็บสถิติการใช้งานใด ๆ ทั้งสิ้น",
-  storeNote: "นโยบายฉบับนี้เป็นฉบับเดียวกับที่ Microsoft Store ชี้ไปที่ [mikedev115.github.io/Aetox/privacy.html](https://mikedev115.github.io/Aetox/privacy.html)",
+  storeNote: "นโยบายฉบับนี้เป็นฉบับเดียวกับที่เผยแพร่คู่กับแอปที่ [mikedev115.github.io/Aetox-Harness/privacy.html](https://mikedev115.github.io/Aetox-Harness/privacy.html) ซึ่งเป็นที่อยู่สำหรับหน้า Microsoft Store",
   blocks: [
     { t: "lede", text: "**สรุปหนึ่งบรรทัด:** Aetox ทำงานบนเครื่องของคุณ ผู้พัฒนาไม่มีเซิร์ฟเวอร์ที่รับบทสนทนา ไฟล์ หรือคีย์ของคุณ และไม่มีการเก็บสถิติการใช้งานใด ๆ ทั้งสิ้น" },
 

@@ -21,7 +21,7 @@ export const privacyEn: PolicyDict = {
   description:
     "Aetox runs on your machine. The developer operates no server that receives your conversations, your files, or your keys, and the app collects no usage data of any kind.",
   storeNote:
-    "This is the same policy the Microsoft Store listing points to at [mikedev115.github.io/Aetox/privacy.html](https://mikedev115.github.io/Aetox/privacy.html).",
+    "This is the same policy published with the app at [mikedev115.github.io/Aetox-Harness/privacy.html](https://mikedev115.github.io/Aetox-Harness/privacy.html), the address for the Microsoft Store listing.",
   blocks: [
     { t: "lede", text: "**In one line:** Aetox runs on your machine. The developer operates no server that receives your conversations, your files, or your keys, and the app collects no usage data of any kind." },
 
