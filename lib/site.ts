@@ -60,6 +60,11 @@ export const CODING_LUNA_TH = `${CODING_BENCH}#gpt-6-luna--ความคิด
 export const CODING_TERRA_TH = `${CODING_BENCH}#gpt-56-terra--ความคิด-medium`;
 // The security-skill on/off test (section 2 of that release's report).
 export const SECURITY_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.9.27/README.md#2-ชนะ-cweval-เพราะอะไร`;
+// The two models every same-model number was measured on, on OpenAI's own pages.
+export const MODEL_LUNA = "https://developers.openai.com/api/docs/models/gpt-6-luna";
+export const MODEL_TERRA = "https://developers.openai.com/api/docs/models/gpt-5.6-terra";
+// The Thai tax invoice card's tests, written by the Aetox team.
+export const INVOICE_TESTS = `${GITHUB}/tree/main/docs/reports/coding-harness-2026-09-27/tasks/F2-thai-invoice/hidden-tests`;
 export const LICENSE = `${GITHUB}/blob/main/LICENSE`;
 export const THIRD_PARTY = `${GITHUB}/blob/main/THIRD-PARTY-NOTICES.md`;
 export const CONTACT_MAIL = "mailto:phrmsawanachyphl@gmail.com";

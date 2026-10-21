@@ -13,7 +13,7 @@ export default function ProofWall({ t }: { t: Dict["wall"] }) {
             <p className="wk">{c.k}</p>
             <p className="wn">{c.n}</p>
             <Rich className="wv" text={c.vs} />
-            <p className="wc">{c.cond}</p>
+            <Rich className="wc" text={c.cond} />
           </li>
         ))}
       </ul>

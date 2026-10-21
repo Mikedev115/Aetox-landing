@@ -81,11 +81,11 @@ export const en = {
       { k: "Code · security", n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%, the next harness: [{SECURE_NEXT_NAME}](CODING_LUNA)", cond: "Secure code on CWEval · GPT-6 Luna · 3 rounds, hidden tests" },
       { k: "Code · long runs", n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%, the next harness: [{MULTI_NEXT_NAME}](CODING_TERRA)", cond: "Tests passed on SlopCodeBench · GPT-5.6 Terra · 3 rounds" },
       { k: "Slides", n: "{SLIDES_ON}", vs: "vs {SLIDES_OFF}, the same app with skills off", cond: "Thai deck, automatic checks · GPT-6 Luna · 3 runs" },
-      { k: "Thai tax invoice", n: "{INVOICE_US}", vs: "vs {INVOICE_OTHERS}, two other harnesses", cond: "VAT, withholding, Buddhist-era dates · 17 hidden tests · GPT-6 Luna" },
+      { k: "Thai tax invoice", n: "{INVOICE_US}", vs: "vs {INVOICE_OTHERS}, two other harnesses", cond: "VAT, withholding, Buddhist-era dates · [17 hidden tests, written by us](INVOICE_TESTS) · GPT-6 Luna" },
       { k: "Teams", n: "{CTX_HELPERS}", vs: "vs {CTX_ALONE}, the same job without helpers", cond: "Main agent's context only, in one real session, not a controlled test · cost down {HELPER_SAVE}% on non-OpenAI prices" },
       { k: "Video", n: "{CUT_TO} s", vs: "from {CUT_FROM} s, the raw take", cond: "Four silences folded, one filler cut · a real file you keep editing" },
     ],
-    note: "Same model on both sides of every card. Where Aetox trails: it spends more tokens than other harnesses (about 90% of them cached), and on large models it is not the fastest. [Method, every round and where it loses](REPORTS)",
+    note: "Same model on both sides of every card, public OpenAI models: [GPT-6 Luna](MODEL_LUNA) and [GPT-5.6 Terra](MODEL_TERRA). Where Aetox trails: it spends more tokens than other harnesses (about 90% of them cached), and on large models it is not the fastest. [Method, every round and where it loses](REPORTS)",
   },
   why: {
     h2: "The model thinks. The harness does the rest.",
@@ -400,6 +400,7 @@ export const en = {
         a: [
           "With a project open, it stays in that folder plus the ones you added. With no project open, it sees the whole machine, and the files it writes land in that session's output folder.",
           "What it can never open in any mode is the key and password stores: `.ssh` `.aws` `.gnupg`, the Windows credential store and every brand's browser profile. How often it asks first depends on the permission level you pick; publishing anything outside is asked about at every level, and every command is logged.",
+          "These rules are checks in Aetox's own code, not an operating-system sandbox. On a machine with data you cannot lose, give Aetox an API key of its own and run it in a VM or Windows Sandbox.",
         ],
       },
       {

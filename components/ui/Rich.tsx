@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
-import { BENCHMARK_MD, CASE_STUDIES_URL, CODING_BENCH, CODING_LUNA, CODING_LUNA_TH, CODING_TERRA, CODING_TERRA_TH, RELEASES, REPORTS, SECURITY_BENCH, STORE_PRIVACY_URL } from "@/lib/site";
+import { BENCHMARK_MD, CASE_STUDIES_URL, CODING_BENCH, CODING_LUNA, CODING_LUNA_TH, CODING_TERRA, CODING_TERRA_TH, INVOICE_TESTS, MODEL_LUNA, MODEL_TERRA, RELEASES, REPORTS, SECURITY_BENCH, STORE_PRIVACY_URL } from "@/lib/site";
 
 // Copy in lib/i18n carries a little inline markup so translators do not have
 // to touch JSX: **bold**, `code`, [text](url). A url may also be one of the
 // named links below, so the dictionaries never hard-code a URL that lib/site.ts
 // already owns.
-const NAMED_LINKS: Record<string, string> = { CASE_STUDIES_URL, STORE_PRIVACY_URL, BENCHMARK_MD, RELEASES, CODING_BENCH, CODING_LUNA, CODING_TERRA, CODING_LUNA_TH, CODING_TERRA_TH, SECURITY_BENCH, REPORTS };
+const NAMED_LINKS: Record<string, string> = { CASE_STUDIES_URL, STORE_PRIVACY_URL, BENCHMARK_MD, RELEASES, CODING_BENCH, CODING_LUNA, CODING_TERRA, CODING_LUNA_TH, CODING_TERRA_TH, INVOICE_TESTS, MODEL_LUNA, MODEL_TERRA, SECURITY_BENCH, REPORTS };
 
 const TOKEN = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
 
