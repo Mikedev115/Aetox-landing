@@ -53,6 +53,11 @@ export const BENCHMARK_MD = `${GITHUB}/blob/main/docs/reports/BENCHMARK.md`;
 // Every report and the latest edition of each subject: the proof wall's method link.
 export const REPORTS = `${GITHUB}/blob/main/docs/reports/README.md`;
 export const CODING_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.10.0/README.md`;
+// The score tables the proof wall's "next harness" names point at, one per model and language.
+export const CODING_LUNA = `${GITHUB}/blob/main/docs/reports/coding-harness-1.10.0/README.en.md#gpt-6-luna--reasoning-medium`;
+export const CODING_TERRA = `${GITHUB}/blob/main/docs/reports/coding-harness-1.10.0/README.en.md#gpt-56-terra--reasoning-medium`;
+export const CODING_LUNA_TH = `${CODING_BENCH}#gpt-6-luna--ความคิด-medium`;
+export const CODING_TERRA_TH = `${CODING_BENCH}#gpt-56-terra--ความคิด-medium`;
 // The security-skill on/off test (section 2 of that release's report).
 export const SECURITY_BENCH = `${GITHUB}/blob/main/docs/reports/coding-harness-1.9.27/README.md#2-ชนะ-cweval-เพราะอะไร`;
 export const LICENSE = `${GITHUB}/blob/main/LICENSE`;

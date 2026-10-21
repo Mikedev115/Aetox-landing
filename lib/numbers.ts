@@ -22,8 +22,10 @@ export const NUMBERS = {
   // OpenCode, Codex CLI, omp and pi on that column.
   SECURE_US: "93.3", // CWEval func-sec@1, GPT-6 Luna
   SECURE_NEXT: "68.9", // omp, the best other harness on Luna
+  SECURE_NEXT_NAME: "omp 18.3.4", // named on the proof wall (feedback 21 Oct 2026: an unnamed rival reads as a shadow)
   MULTI_US: "95.2", // SlopCodeBench % tests passed, GPT-5.6 Terra
   MULTI_NEXT: "92.8", // OpenCode, the best other harness on Terra
+  MULTI_NEXT_NAME: "OpenCode 1.18.32",
   CHEAP_PCT: "91.6", // SlopCodeBench % tests passed, GPT-6 Luna on Aetox
   CHEAP_MIN: "26", // minutes for all 11 tasks, GPT-6 Luna on Aetox
   BIG_PCT: "91.3–92.8", // the other harnesses on GPT-5.6 Terra, same column

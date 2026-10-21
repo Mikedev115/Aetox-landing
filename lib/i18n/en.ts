@@ -70,7 +70,7 @@ export const en = {
         { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", s: "Secure code · GPT-6 Luna" },
         { n: "{SECURE_TERRA}%", vs: "vs {SECURE_TERRA_NEXT}%", s: "Secure code · GPT-5.6 Terra" },
       ],
-      cond: "CWEval, hidden tests, 3 rounds, against the next-best harness; the same model on every harness. [The report and where Aetox loses](REPORTS)",
+      cond: "CWEval, hidden tests, 3 rounds, against the next-best harness (omp on Luna; OpenCode, omp and pi tie on Terra); the same model on every harness. [The report and where Aetox loses](REPORTS)",
       more: "How the Code desk works",
     },
   },
@@ -78,11 +78,11 @@ export const en = {
   // `n` is Aetox, `vs` what it was compared with, `cond` the model and the test.
   wall: {
     cards: [
-      { k: "Code · security", n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%, the next harness", cond: "Secure code on CWEval · GPT-6 Luna · 3 rounds, hidden tests" },
-      { k: "Code · long runs", n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%, the next harness", cond: "Tests passed on SlopCodeBench · GPT-5.6 Terra · 3 rounds" },
+      { k: "Code · security", n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%, the next harness: [{SECURE_NEXT_NAME}](CODING_LUNA)", cond: "Secure code on CWEval · GPT-6 Luna · 3 rounds, hidden tests" },
+      { k: "Code · long runs", n: "{MULTI_US}%", vs: "vs {MULTI_NEXT}%, the next harness: [{MULTI_NEXT_NAME}](CODING_TERRA)", cond: "Tests passed on SlopCodeBench · GPT-5.6 Terra · 3 rounds" },
       { k: "Slides", n: "{SLIDES_ON}", vs: "vs {SLIDES_OFF}, the same app with skills off", cond: "Thai deck, automatic checks · GPT-6 Luna · 3 runs" },
       { k: "Thai tax invoice", n: "{INVOICE_US}", vs: "vs {INVOICE_OTHERS}, two other harnesses", cond: "VAT, withholding, Buddhist-era dates · 17 hidden tests · GPT-6 Luna" },
-      { k: "Teams", n: "{CTX_HELPERS}", vs: "vs {CTX_ALONE}, the same job without helpers", cond: "Main agent's context in one real session · cost down {HELPER_SAVE}% on non-OpenAI prices" },
+      { k: "Teams", n: "{CTX_HELPERS}", vs: "vs {CTX_ALONE}, the same job without helpers", cond: "Main agent's context only, in one real session, not a controlled test · cost down {HELPER_SAVE}% on non-OpenAI prices" },
       { k: "Video", n: "{CUT_TO} s", vs: "from {CUT_FROM} s, the raw take", cond: "Four silences folded, one filler cut · a real file you keep editing" },
     ],
     note: "Same model on both sides of every card. Where Aetox trails: it spends more tokens than other harnesses (about 90% of them cached), and on large models it is not the fastest. [Method, every round and where it loses](REPORTS)",

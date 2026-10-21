@@ -12,7 +12,7 @@ export default function ProofWall({ t }: { t: Dict["wall"] }) {
           <li className="wall-card" key={c.k}>
             <p className="wk">{c.k}</p>
             <p className="wn">{c.n}</p>
-            <p className="wv">{c.vs}</p>
+            <Rich className="wv" text={c.vs} />
             <p className="wc">{c.cond}</p>
           </li>
         ))}
