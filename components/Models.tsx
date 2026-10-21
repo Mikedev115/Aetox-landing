@@ -18,9 +18,11 @@ const KEY: [string, string, string][] = [
   ["lg-kilo", "Kilo", "#FFB020"], ["lg-opencode", "OpenCode", INK], ["lg-ollama", "Ollama Cloud", INK],
 ];
 const LOCAL: [string, string, string][] = [["lg-ollama", "Ollama", INK], ["lg-lmstudio", "LM Studio", "#5C7CFA"]];
-// Pictures on your own GPU: Stable Diffusion WebUI (Forge / A1111). Named from the
-// dictionary because the "pictures" half of the label is copy, not a brand.
-const PICS: [string, string] = ["lg-automatic", "#E00054"];
+// Pictures on your own GPU: ComfyUI (the main one) and Stable Diffusion WebUI
+// (Forge / A1111). Named from the dictionary because the "pictures" half of
+// each label is copy, not a brand. ComfyUI's own yellow vanishes on the light
+// theme, so it takes the ink.
+const PICS: [string, string, "comfy" | "sd"][] = [["lg-comfyui", INK, "comfy"], ["lg-automatic", "#E00054", "sd"]];
 
 const Mark = ({ icon, color }: { icon: string; color: string }) => (
   <svg aria-hidden="true" style={{ color }}><use href={`#${icon}`} /></svg>
@@ -50,7 +52,7 @@ export default function Models({ t }: { t: Dict["models"] }) {
             <span className="way-free">{t.free}</span>
             <ul className="way-big">
               {LOCAL.map(([i, n, c]) => <li key={n}><Mark icon={i} color={c} />{n}</li>)}
-              <li><Mark icon={PICS[0]} color={PICS[1]} />{t.pics}</li>
+              {PICS.map(([i, c, k]) => <li key={k}><Mark icon={i} color={c} />{t.pics[k]}</li>)}
             </ul>
             <p className="ws">{local.s}</p>
           </div>

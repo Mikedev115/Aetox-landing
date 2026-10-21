@@ -114,7 +114,7 @@ export const en = {
       { k: "On your machine", h: "Pay nothing", s: "What you type never leaves the machine, and it keeps working offline." },
     ],
     free: "Free",
-    pics: "Stable Diffusion WebUI · pictures",
+    pics: { comfy: "ComfyUI · pictures", sd: "Stable Diffusion WebUI · pictures" },
     more: "See all {PROVIDERS}",
   },
   areas: {
