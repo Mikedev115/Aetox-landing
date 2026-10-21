@@ -7,6 +7,8 @@ import type { Dict } from "@/lib/i18n";
 const LOCAL = [
   ["ollama", "https://ollama.com", "lg-ollama"],
   ["lmstudio", "https://lmstudio.ai", "lg-lmstudio"],
+  // 22 Oct 2026: pictures on your own GPU, Forge Neo / Forge / A1111 (one API).
+  ["stable diffusion webui (pictures)", "https://github.com/Haoming02/sd-webui-forge-classic/tree/neo", "lg-automatic"],
 ] as const;
 const PROVIDERS = [
   ["github copilot", "https://github.com/features/copilot", "lg-copilot"],

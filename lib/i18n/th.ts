@@ -107,6 +107,7 @@ export const th: Dict = {
       { k: "ในเครื่องคุณ", h: "ไม่ต้องจ่าย", s: "ข้อความไม่ออกจากเครื่อง ใช้ได้แม้เน็ตหลุด" },
     ],
     free: "ฟรี",
+    pics: "Stable Diffusion WebUI · สร้างภาพ",
     more: "ดูทั้ง {PROVIDERS} เจ้า",
   },
   areas: {
