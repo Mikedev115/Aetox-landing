@@ -324,7 +324,7 @@ export const en = {
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
-    foot: "Smaller than Claude Code **2×** · Cursor **7×** · VS Code **9×**, rounded to whole numbers. Different categories, of course: a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 20 Oct 2026 on v1.10.6, both files. Method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
+    foot: "Smaller than Claude Code **2×** · Cursor **7×** · VS Code **9×**, rounded to whole numbers. Different categories, of course: a CLI has no window and an IDE is a tool for a different job; the fair comparison is the disk each takes on a machine like yours. Competitors measured 27 Jul 2026, Aetox 26 Oct 2026 on v1.10.17, both files. Method in [BENCHMARK.md](https://github.com/Mikedev115/Aetox/blob/main/docs/reports/BENCHMARK.md). Test counts and runtime figures retain the dates in the README.",
     kpis: [
       { unit: "MB", k: "Disk on your machine", s: "Two files · installer {INSTALLER_MB} MB" },
       { unit: "tests", k: "Pass before release", s: "Go {TESTS_GO} · UI {TESTS_UI}" },
