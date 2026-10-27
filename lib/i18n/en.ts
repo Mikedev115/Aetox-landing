@@ -85,12 +85,13 @@ export const en = {
       { k: "Teams", n: "{CTX_HELPERS}", vs: "vs {CTX_ALONE}, the same job without helpers", cond: "Main agent's context only, in one real session, not a controlled test · cost down {HELPER_SAVE}% on non-OpenAI prices" },
       { k: "Video", n: "{CUT_TO} s", vs: "from {CUT_FROM} s, the raw take", cond: "Four silences folded, one filler cut · a real file you keep editing" },
     ],
-    note: "Same model on both sides of every card, public OpenAI models: [GPT-6 Luna](MODEL_LUNA) and [GPT-5.6 Terra](MODEL_TERRA). Where Aetox trails: it spends more tokens than other harnesses (about 90% of them cached), and on large models it is not the fastest. [Method, every round and where it loses](REPORTS)",
+    note: "Same model on both sides of every card, public OpenAI models: [GPT-6 Luna](MODEL_LUNA) and [GPT-5.6 Terra](MODEL_TERRA). Where Aetox trails: it spends more tokens than other harnesses (about 90% of them cached) — the price of handing a big job its breadth once instead of a slice at a time; ordinary jobs do not cost more. On large models it is also not the fastest. [Method, every round and where it loses](REPORTS)",
   },
   why: {
     h2: "The model thinks. The harness does the rest.",
     items: [
       { b: "Hands.", s: "Real files, a real browser, a real terminal. The model writes; Aetox hands back the .xlsx, the deck, the commit." },
+      { b: "A context architecture of its own.", s: "Nothing is sent because it exists. What the system knows is mapped into a structure — grouped into categories and linked to each other — and a run sends only the points a job touches, so the prompt is assembled per job. Skills and MCP servers are a shelf of names the model pays for only when it opens one: fifty skills cost what five cost, and every agent takes its own." },
       { b: "Knowledge the model doesn't have.", s: "Skills carry what a model can't guess: the 1280×720 frame of a slide room, how an attacker breaks a path check, how a Thai tax invoice rounds." },
       { b: "Skills built into the system, not bolted on.", s: "Each skill is written against Aetox's own tools, checks and file builders, so the model reads it and acts on it with hands that fit. Every new or tuned skill is measured on the same model with it on and off; skills that did not help were taken out." },
       { b: "A check before it hands work back.", s: "It runs the tests, opens the file it made, and says what it could not prove." },
