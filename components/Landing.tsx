@@ -39,7 +39,7 @@ export async function landingMetadata(lang: Lang): Promise<Metadata> {
     description: t.meta.description,
     alternates: {
       canonical: url,
-      languages: { en: SITE_URL, th: pageUrl("th"), "x-default": SITE_URL },
+      languages: { en: SITE_URL, th: pageUrl("th"), zh: pageUrl("zh"), "x-default": SITE_URL },
     },
     openGraph: {
       type: "website", siteName: "Aetox", locale: lang === "th" ? "th_TH" : "en_US", url,

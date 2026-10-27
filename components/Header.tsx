@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import type { Dict, Lang } from "@/lib/i18n";
+import { LANG_CODE, LANG_LABEL, LANGS, LANG_TAG, type Dict, type Lang } from "@/lib/i18n";
 import { GITHUB, RELEASES, pagePath, type PageKey } from "@/lib/site";
 import { PillLink } from "./ui/Pill";
 import ThemeToggle from "./ThemeToggle";
@@ -12,7 +12,7 @@ import ThemeToggle from "./ThemeToggle";
 // linking to the release notes — the version used to be a badge in the bar.
 export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lang: Lang; page: PageKey; version: string }) {
   const [open, setOpen] = useState(false);
-  const other: Lang = lang === "en" ? "th" : "en";
+  const others = LANGS.filter((l) => l !== lang);
   const links: [PageKey, string][] = [
     ["home", t.overview],
     ["faq", t.faq],
@@ -44,7 +44,16 @@ export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lan
           <a href={GITHUB}>GitHub</a>
         </nav>
         <div className="tools">
-          <a className="icon-btn" href={pagePath(other, page)} title={t.langTitle} lang={other}>{other.toUpperCase()}</a>
+          <details className="lang-menu">
+            <summary className="icon-btn" title={t.langTitle} aria-label={t.langTitle}>{LANG_CODE[lang]}</summary>
+            <div className="nav-flyout">
+              {others.map((l) => (
+                <a key={l} href={pagePath(l, page)} lang={LANG_TAG[l]} hrefLang={LANG_TAG[l]}>
+                  <span>{LANG_LABEL[l]}</span><span className="code">{LANG_CODE[l]}</span>
+                </a>
+              ))}
+            </div>
+          </details>
           <ThemeToggle label={t.theme} />
           <PillLink href={pagePath(lang, "download")} className="sm" aria-current={page === "download" ? "page" : undefined}>{t.download}</PillLink>
           <button className="icon-btn menu-btn" type="button" aria-label={t.menu} aria-controls="nav" aria-expanded={open} onClick={() => setOpen((v) => !v)}>

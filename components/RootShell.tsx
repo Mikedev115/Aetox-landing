@@ -1,5 +1,5 @@
 import { IBM_Plex_Sans_Thai, Inter } from "next/font/google";
-import type { Lang } from "@/lib/i18n";
+import { LANG_TAG, type Lang } from "@/lib/i18n";
 import { BASE } from "@/lib/site";
 import "@/app/globals.css";
 
@@ -13,11 +13,12 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], 
 // React effect — it has to be the very first script in <head>.
 const themeScript = `(function(){try{var s=localStorage.getItem("aetox-theme");var t=s||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}})();`;
 
-// One <html> for both languages. Each language has its own root layout only
-// so that lang= is right in the static HTML — everything else is shared here.
+// One <html> for all three languages. Each language has its own root layout
+// only so that lang= is right in the static HTML — everything else is shared
+// here. lang= takes the full tag where the language needs one (zh-Hans).
 export default function RootShell({ lang, children }: { lang: Lang; children: React.ReactNode }) {
   return (
-    <html lang={lang} suppressHydrationWarning className={`${plex.variable} ${inter.variable}`}>
+    <html lang={LANG_TAG[lang]} suppressHydrationWarning className={`${plex.variable} ${inter.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="icon" href={`${BASE}/favicon.svg`} type="image/svg+xml" />

@@ -1,5 +1,5 @@
 import type { Dict, Lang } from "@/lib/i18n";
-import { asset } from "@/lib/site";
+import { asset, assetLang } from "@/lib/site";
 import Frame from "./ui/Frame";
 import Reveal from "./ui/Reveal";
 import Rich from "./ui/Rich";
@@ -14,7 +14,7 @@ export default function VideoCut({ t, lang }: { t: Dict["video"]; lang: Lang }) 
       <div className="wrap">
         <div className="vcut-grid">
           <Frame className="vcut-frame" addr={t.addr}
-            shot={{ src: asset(`cut-${lang}.png`), video: asset(`cut-${lang}.mp4`), width: 1148, height: 718, alt: t.alt }} />
+            shot={{ src: asset(`cut-${assetLang(lang)}.png`), video: asset(`cut-${assetLang(lang)}.mp4`), width: 1148, height: 718, alt: t.alt }} />
           <div className="vcut-copy">
             <div className="eyebrow">{t.kick}</div>
             <Reveal as="h2" className="sec-title">{t.h2}</Reveal>

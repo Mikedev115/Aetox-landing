@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Dict, Lang } from "@/lib/i18n";
 import { CODING_SECURE } from "@/lib/numbers";
-import { asset } from "@/lib/site";
+import { asset, assetLang } from "@/lib/site";
 import Rich from "./ui/Rich";
 
 // One loop per mode, in the order of t.items: `mode-<name>-<lang>.mp4` with a
@@ -79,7 +79,7 @@ export default function Modes({ t, lang }: { t: Dict["modes"]; lang: Lang }) {
               <div className="chrome" aria-hidden="true"><i /><i /><i /><span className="addr">{cur.addr}</span></div>
               {LOOPS.map((name, i) => (
                 <video key={name} ref={(el) => { vids.current[i] = el; }} className={`layer${i === active ? " on" : ""}`}
-                  src={asset(`mode-${name}-${lang}.mp4`)} poster={asset(`mode-${name}-${lang}.png`)}
+                  src={asset(`mode-${name}-${assetLang(lang)}.mp4`)} poster={asset(`mode-${name}-${assetLang(lang)}.png`)}
                   width={1148} height={718} aria-label={t.items[i].alt} muted loop playsInline preload={i === 0 ? "auto" : "metadata"} />
               ))}
             </div>

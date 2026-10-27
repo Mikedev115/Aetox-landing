@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { Dict, Lang } from "@/lib/i18n";
-import { asset, pagePath } from "@/lib/site";
+import { asset, assetLang, pagePath } from "@/lib/site";
 import Frame from "./ui/Frame";
 import { PillLink } from "./ui/Pill";
 import Reveal from "./ui/Reveal";
@@ -76,7 +76,7 @@ export default function UseCases({ t, lang, more, layout = "carousel" }: { t: Di
       <article className="ucard" key={c.title}>
         <div className="txt"><h3>{c.title}</h3><p>{c.body}</p></div>
         {pic && "name" in pic ? (
-          <div className="pic"><Frame shot={{ src: asset(`${pic.name}-${lang}.png`), width: 748, height: 542, alt: c.alt }} /></div>
+          <div className="pic"><Frame shot={{ src: asset(`${pic.name}-${assetLang(lang)}.png`), width: 748, height: 542, alt: c.alt }} /></div>
         ) : pic ? (
           <div className="pic"><Frame><Slot id={pic.slot} /></Frame></div>
         ) : (

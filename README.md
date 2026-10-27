@@ -30,16 +30,17 @@ npm run build      # ส่งออกไป out/
 /privacy/    นโยบายความเป็นส่วนตัว
 ```
 
-ทุกหน้ามีคู่ภาษาไทยที่ `/th/…` เหมือนกันหมด
+ทุกหน้ามีคู่ภาษาไทยที่ `/th/…` และภาษาจีนที่ `/zh/…` เหมือนกันหมด · ปุ่มภาษาในหัวเว็บเป็นเมนูเดียวที่ listing ทุกภาษา (เลือกแบบ C ในข้อเสนอ 27 ต.ค. 2026)
 
 ```
 app/(en)/        route /      — layout ตั้ง <html lang="en">  · โฟลเดอร์ละหน้า page.tsx บรรทัดเดียว
 app/(th)/th/     route /th/   — layout ตั้ง <html lang="th">  · โครงเดียวกัน
+app/(zh)/zh/     route /zh/   — layout ตั้ง <html lang="zh-Hans">  · โครงเดียวกัน
 app/globals.css  design tokens + สไตล์ทั้งหมด (ธีมมืดเป็นค่าเริ่มต้น, สว่างผ่าน data-theme)
 components/      Page.tsx = Shell (header/footer/dialogs) + PageHead + pageMetadata ที่ทุกหน้าใช้
                  Landing.tsx = หน้าแรก · pages/ = หน้าละไฟล์ · section ละไฟล์ · ui/ dialogs/ icons/
-lib/i18n/        en.ts เป็นฐาน · th.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ) · pages.* คือหัวหน้าและ meta ของแต่ละหน้า
-lib/site.ts      PAGES + pagePath() กำหนดว่ามีหน้าอะไรบ้าง · ลิงก์นอกทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ)
+lib/i18n/        en.ts เป็นฐาน · th.ts และ zh.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ) · privacy-*.ts คือหน้าละภาษา · pages.* คือหัวหน้าและ meta ของแต่ละหน้า
+lib/site.ts      PAGES + pagePath() กำหนดว่ามีหน้าอะไรบ้าง · ลิงก์นอกทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ) · assetLang() บอกว่าวิดีโอ/ภาพชุดไหนใช้กับภาษาไหน
 lib/version.ts   ดึงเลขรุ่นจาก GitHub Releases ตอน build — ที่นี่ไม่มีสำเนาเลขรุ่น
 public/assets/   ภาพและวิดีโอของแอป (ดูหัวข้อ "ภาพและวิดีโอ") · og.png · promptpay-qr.png
 ```

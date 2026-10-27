@@ -40,6 +40,9 @@
 /* English pages set Inter first; Thai pages keep Plex Sans Thai first so Thai
    glyphs come from the Thai family and Latin falls through to Inter. */
 html[lang="en"]{--sans:var(--font-latin),var(--font-sans),"Segoe UI",Tahoma,sans-serif}
+/* Chinese first for its own pages: neither bundled face carries CJK glyphs, so
+   the stack names the two the systems actually ship before falling back. */
+html[lang^="zh"]{--sans:var(--font-latin),"Microsoft YaHei","PingFang SC","Noto Sans SC","Segoe UI",Tahoma,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.5;overflow-x:hidden;overflow-wrap:break-word;
@@ -692,6 +695,22 @@ nav.primary .nav-flyout a:hover{background:var(--bg-card2)}
   .nav-group summary{padding:.8rem .5rem;font-size:1.05rem}
   .nav-flyout{position:static;min-width:0;margin:.25rem 0 0;padding:.25rem;background:transparent;border:0;box-shadow:none}
   nav.primary .nav-flyout a{padding:.7rem 1rem;font-size:1rem}
+}
+
+/* ── language button: the code you are reading, a caret, the other two under it.
+   It stays a drop-down at every width, so the rules above for the mobile nav
+   flyout are put back here. ── */
+.lang-menu{position:relative}
+.lang-menu summary{width:auto;padding:0 8px;gap:.3rem;cursor:pointer;list-style:none;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.lang-menu summary::-webkit-details-marker{display:none}
+.lang-menu summary::after{content:"";width:5px;height:5px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:translateY(-1px) rotate(45deg);transition:transform .15s}
+.lang-menu[open] summary::after{transform:translateY(1px) rotate(225deg)}
+.lang-menu .nav-flyout{right:0;left:auto;min-width:172px;z-index:5}
+.lang-menu .nav-flyout a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .7rem;border-radius:var(--r-sm);font-size:14px;color:var(--muted)}
+.lang-menu .nav-flyout a:hover{background:var(--bg-card2);color:var(--text)}
+.lang-menu .code{font:500 11px var(--mono);color:var(--muted)}
+@media (max-width:1040px){
+  .lang-menu .nav-flyout{position:absolute;min-width:172px;margin:0;padding:.35rem;background:var(--bg-card);border:1px solid var(--line);box-shadow:0 16px 40px rgba(0,0,0,.4)}
 }
 
 /* Aetox in the terminal (download page): the button and the note sit

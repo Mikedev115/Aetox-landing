@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { dict, policy, type Lang } from "@/lib/i18n";
+import { OG_LOCALE, dict, policy, type Lang } from "@/lib/i18n";
 import { pageUrl } from "@/lib/site";
 import { currentVersion } from "@/lib/version";
 import { Shell } from "./Page";
@@ -34,8 +34,8 @@ export async function privacyMetadata(lang: Lang): Promise<Metadata> {
   return {
     title: `${p.title} · Aetox`,
     description: p.description,
-    alternates: { canonical: path(lang), languages: { en: path("en"), th: path("th"), "x-default": path("en") } },
-    openGraph: { type: "article", siteName: "Aetox", locale: lang === "th" ? "th_TH" : "en_US", url: path(lang), title: `${p.title} · Aetox`, description: p.description },
+    alternates: { canonical: path(lang), languages: { en: path("en"), th: path("th"), zh: path("zh"), "x-default": path("en") } },
+    openGraph: { type: "article", siteName: "Aetox", locale: OG_LOCALE[lang], url: path(lang), title: `${p.title} · Aetox`, description: p.description },
     robots: { index: true, follow: true },
     other: { "theme-color": "#000000" },
   };

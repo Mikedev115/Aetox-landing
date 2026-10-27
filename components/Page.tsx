@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { dict, type Dict, type Lang } from "@/lib/i18n";
+import { OG_LOCALE, dict, type Dict, type Lang } from "@/lib/i18n";
 import { ogImage, pageUrl, type PageKey } from "@/lib/site";
 import { currentVersion } from "@/lib/version";
 import BrandSprite from "./icons/BrandSprite";
@@ -60,9 +60,9 @@ export async function pageMetadata(lang: Lang, page: Sub): Promise<Metadata> {
   return {
     title: p.metaTitle,
     description: p.metaDescription,
-    alternates: { canonical: url, languages: { en: pageUrl("en", page), th: pageUrl("th", page), "x-default": pageUrl("en", page) } },
+    alternates: { canonical: url, languages: { en: pageUrl("en", page), th: pageUrl("th", page), zh: pageUrl("zh", page), "x-default": pageUrl("en", page) } },
     openGraph: {
-      type: "website", siteName: "Aetox", locale: lang === "th" ? "th_TH" : "en_US", url,
+      type: "website", siteName: "Aetox", locale: OG_LOCALE[lang], url,
       title: p.metaTitle, description: p.metaDescription,
       images: [{ url: og, width: 1200, height: 630, alt: t.meta.ogAlt, type: "image/png" }],
     },

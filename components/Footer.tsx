@@ -1,10 +1,10 @@
-import type { Dict, Lang } from "@/lib/i18n";
+import { LANG_LABEL, LANGS, LANG_TAG, type Dict, type Lang } from "@/lib/i18n";
 import { BENCHMARK_MD, CONTACT_MAIL, GITHUB, ISSUES, LICENSE, RELEASES, THIRD_PARTY, pagePath, type PageKey } from "@/lib/site";
 
 // Same footer on every page. Four lists: this site's pages, the app repo,
 // the policies, and how to reach a person.
 export default function Footer({ t, nav, lang, page }: { t: Dict["footer"]; nav: Dict["nav"]; lang: Lang; page: PageKey }) {
-  const other: Lang = lang === "en" ? "th" : "en";
+  const others = LANGS.filter((l) => l !== lang);
   const site: [PageKey, string][] = [
     ["home", nav.overview], ["features", nav.uses], ["pricing", nav.pricing], ["safety", nav.safety],
     ["work", nav.work], ["faq", nav.faq], ["supporters", nav.supporters], ["download", nav.download],
@@ -47,10 +47,12 @@ export default function Footer({ t, nav, lang, page }: { t: Dict["footer"]; nav:
         </div>
         <div className="foot-bottom">
           <span>© 2026 Mikedev115 · {t.rights}</span>
-          <a className="lang" href={pagePath(other, page)} lang={other} title={nav.langTitle}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" /></svg>
-            <span>{nav.lang}</span>
-          </a>
+          {others.map((l) => (
+            <a key={l} className="lang" href={pagePath(l, page)} lang={LANG_TAG[l]} title={nav.langTitle}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" /></svg>
+              <span>{LANG_LABEL[l]}</span>
+            </a>
+          ))}
         </div>
       </div>
     </footer>

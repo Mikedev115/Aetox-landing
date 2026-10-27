@@ -1,7 +1,7 @@
 "use client";
 import { Fragment, useEffect, useRef, useState } from "react";
 import type { Dict, Lang } from "@/lib/i18n";
-import { asset } from "@/lib/site";
+import { asset, assetLang } from "@/lib/site";
 
 // The company room: the studio's take of the app's 3D campus (fixed camera),
 // with the camera move done in CSS: a wide shot of the whole campus, then a
@@ -76,7 +76,7 @@ export default function Company({ t, lang }: { t: Dict["company"]; lang: Lang })
       <div className="co-wide">
         <div className="co-stage" ref={stage}>
           <div className="co-cam">
-            <video ref={video} src={asset(`company-${lang}.mp4`)} poster={asset(`company-${lang}.jpg`)} width={PIC.w} height={PIC.h}
+            <video ref={video} src={asset(`company-${assetLang(lang)}.mp4`)} poster={asset(`company-${assetLang(lang)}.jpg`)} width={PIC.w} height={PIC.h}
               aria-label={t.alt} muted loop playsInline preload="none" />
             <svg className="co-ov" viewBox={`0 0 ${PIC.w} ${PIC.h}`} aria-hidden="true">
               <defs><radialGradient id="co-glow"><stop offset="0" stopColor="#7fe8ff" stopOpacity=".55" /><stop offset="1" stopColor="#7fe8ff" stopOpacity="0" /></radialGradient></defs>

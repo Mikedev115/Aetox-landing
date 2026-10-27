@@ -1,5 +1,6 @@
 // Every outward link on the page, in one place. The Store id and the winget
 // line are the two that change if the listing is ever re-published.
+import type { Lang } from "@/lib/i18n";
 
 export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -26,11 +27,11 @@ const SLUG: Record<PageKey, string> = {
   home: "", features: "features/", pricing: "pricing/", safety: "safety/", work: "work/", faq: "faq/", supporters: "supporters/", download: "download/", privacy: "privacy/",
 };
 /** Site-relative href of a page, e.g. /Aetox-landing/th/pricing/ */
-export const pagePath = (lang: "en" | "th", page: PageKey = "home") => `${BASE}${lang === "en" ? "/" : "/th/"}${SLUG[page]}`;
+export const pagePath = (lang: Lang, page: PageKey = "home") => `${BASE}${lang === "en" ? "/" : `/${lang}/`}${SLUG[page]}`;
 /** Absolute URL of a page, for canonical/alternate/og tags. */
-export const pageUrl = (lang: "en" | "th", page: PageKey = "home") => new URL(`${lang === "en" ? "" : "th/"}${SLUG[page]}`, SITE_URL).toString();
-export const privacyPath = (lang: "en" | "th") => pagePath(lang, "privacy");
-export const homePath = (lang: "en" | "th") => pagePath(lang, "home");
+export const pageUrl = (lang: Lang, page: PageKey = "home") => new URL(`${lang === "en" ? "" : `${lang}/`}${SLUG[page]}`, SITE_URL).toString();
+export const privacyPath = (lang: Lang) => pagePath(lang, "privacy");
+export const homePath = (lang: Lang) => pagePath(lang, "home");
 export const CASE_STUDIES_URL = `https://mikedev115.github.io/Aetox-Harness/case-studies/web-pages/restaurant.html`;
 
 export const STORE_URL = "https://apps.microsoft.com/detail/9N4KKBRRSCZZ";
@@ -73,5 +74,11 @@ export const DEMO_VIDEO = "https://www.youtube.com/watch?v=FcbsND9iRhk";
 /** A file served from this site's public/ folder. */
 export const asset = (name: string) => `${BASE}/assets/${name}`;
 
+// The screen recordings and card pictures were shot in English and Thai only
+// (README, "Images and video"). Chinese pages borrow the English set until a
+// zh shoot exists, rather than asking for files that are not there.
+export const assetLang = (lang: Lang): "en" | "th" => (lang === "th" ? "th" : "en");
+
 /** The share card for a page, one per language (the home hero and its proof). */
-export const ogImage = (lang: "en" | "th") => new URL(lang === "th" ? "assets/og-th.png" : "assets/og.png", SITE_URL).toString();
+// Chinese has no card of its own yet, so it shares the English one.
+export const ogImage = (lang: Lang) => new URL(lang === "th" ? "assets/og-th.png" : "assets/og.png", SITE_URL).toString();
