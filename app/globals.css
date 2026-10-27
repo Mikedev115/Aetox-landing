@@ -14,7 +14,7 @@
   --blue:#3b78ff; --blue-2:#7fb0ff; --blue-3:#a8f0ff;
   --gold:#ffc56b; --gold-2:#ffe2a8; /* the CEO door only */
   --badge-bg:rgba(8,55,155,.25); --badge:#638efd;
-  --light:255,255,255;
+  --light:214,231,255; --dots:rgba(255,255,255,.07);
   --header-bg:rgba(0,0,0,.72);
   --shadow:0 24px 60px -30px rgba(0,0,0,.9);
   --sans:var(--font-sans),var(--font-latin),"Leelawadee UI","Segoe UI",Tahoma,sans-serif;
@@ -33,7 +33,7 @@
   --blue:#2f6bff; --blue-2:#4c8bff; --blue-3:#1fb6d6;
   --gold:#b26b00; --gold-2:#d18a1c;
   --badge-bg:rgba(47,107,255,.12); --badge:#2f6bff;
-  --light:47,107,255;
+  --light:120,160,255; --dots:rgba(17,17,17,.07);
   --header-bg:rgba(255,255,255,.78);
   --shadow:0 24px 48px -30px rgba(0,0,0,.25);
 }
@@ -113,11 +113,60 @@ nav.primary a:hover,nav.primary a[aria-current="page"]{color:var(--text)}
 }
 
 /* ── hero: the light, the line, two buttons, the window ── */
+/* The light stays inside the hero: lifted above its top edge it sat behind the
+   header, whose backdrop-filter turned it into a hard-edged band across the
+   bar. The dotted grid behind the light is drawn here. */
 .hero{position:relative;isolation:isolate;overflow:clip;padding:clamp(3.5rem,8vw,6.5rem) 0 0;text-align:center;border-bottom:1px solid var(--line)}
-.hero-light{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--dots) 1px,transparent 1px);background-size:22px 22px}
+
+/* The light theme is not a beam on white: the hero is a sky. Pale blue at the
+   top, soft clouds made of white washes, and white by the end of the section so
+   the page below carries on without an edge. The beam, its canvas and the dot
+   grid belong to the dark room only. */
+:root[data-theme="light"] .hero{
+  background:
+    radial-gradient(36% 26% at 15% 16%,#ffffff 0%,rgba(255,255,255,0) 70%),
+    radial-gradient(30% 22% at 85% 10%,#ffffff 0%,rgba(255,255,255,0) 72%),
+    radial-gradient(48% 32% at 57% 2%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 74%),
+    radial-gradient(26% 18% at 74% 44%,rgba(255,255,255,.8) 0%,rgba(255,255,255,0) 76%),
+    radial-gradient(22% 14% at 34% 52%,rgba(255,255,255,.7) 0%,rgba(255,255,255,0) 78%),
+    linear-gradient(180deg,#b7d6ff 0%,#d5e8ff 38%,#f1f8ff 74%,#ffffff 100%);
+}
+:root[data-theme="light"] .hero-light,
+:root[data-theme="light"] .hero::before{display:none}
+/* Clouds still move in the light theme: one extra layer drifts a couple of
+   percent each way over three quarters of a minute, so the sky is never a
+   still picture. Nothing moves when the reader asked for reduced motion. */
+:root[data-theme="light"] .hero::after{content:"";position:absolute;inset:-25% -15%;pointer-events:none;
+  background:
+    radial-gradient(26% 20% at 32% 42%,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 70%),
+    radial-gradient(22% 16% at 68% 32%,rgba(255,255,255,.8) 0%,rgba(255,255,255,0) 72%);
+  animation:sky-drift 46s ease-in-out infinite alternate}
+@keyframes sky-drift{from{transform:translate3d(-2.5%,0,0)}to{transform:translate3d(2.5%,1.5%,0)}}
+@media (prefers-reduced-motion: reduce){:root[data-theme="light"] .hero::after{animation:none}}
+/* No negative z-index on the light: inside the isolated, clipped hero Chrome
+   composited it as a layer behind the content and kept a stale raster the size
+   of its half-resolution buffer, which showed as a hard-edged patch in the
+   top-left corner (seen 27 Oct 2026). The canvas comes first in the markup and
+   every piece of content after it is positioned, so it still paints underneath
+   without asking for a layer of its own. */
+/* The top of the canvas is masked out: the beam is brightest where it enters,
+   and against the dark bar above the hero that edge read as a cut line. */
+.hero-light{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 70%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 70%,transparent 100%)}
 .hero .wrap{position:relative}
-.hero h1{font-size:clamp(2.1rem,4.4vw,3rem);line-height:1.17;max-width:22ch;margin:0 auto;color:var(--text)}
-.hero h1 .hl{background:linear-gradient(90deg,var(--blue) 0%,var(--blue-2) 55%,var(--blue-3) 100%);
+/* overflow-wrap:normal so Thai breaks at word boundaries, which the browser's
+   own dictionary knows; the page-wide break-word split it mid-word. */
+/* 28ch, not 22: Thai is narrower per character than the Latin measure the old
+   width assumed, so the highlighted half of the line wrapped inside itself and
+   left a lone ง outside the heading's box. */
+.hero h1{font-size:clamp(2.1rem,4.4vw,3rem);line-height:1.17;max-width:28ch;margin:0 auto;color:var(--text);overflow-wrap:normal}
+/* inline-block keeps the gradient's box on this line: as a plain inline box the
+   clipped background drew the word's last Thai glyph a second time, below the
+   line (seen 27 Oct 2026). */
+.hero h1 .hl{display:inline-block;background:linear-gradient(90deg,var(--blue) 0%,var(--blue-2) 55%,var(--blue-3) 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .04em}
 .hero .lede{max-width:56ch;margin:1.25rem auto 0;color:var(--muted);font-size:clamp(1rem,1.4vw,1.125rem);line-height:1.55;text-wrap:pretty}
 .cta{display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:2rem;flex-wrap:wrap}
@@ -178,7 +227,9 @@ section{padding:clamp(5rem,10vw,7.5rem) 0}
 .door .dk{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .door.ceo .dk{color:var(--gold)}
 .door.code .dk{color:var(--blue-2)}
-.door h2{margin:0;font-size:clamp(1.75rem,3.2vw,2.4rem);line-height:1.18;text-wrap:balance}
+/* pretty, not balance: balancing split a Thai loanword (โปรเจกต์) across the two
+   lines; pretty fills the first line and breaks where the language allows. */
+.door h2{margin:0;font-size:clamp(1.75rem,3.2vw,2.4rem);line-height:1.18;text-wrap:pretty;overflow-wrap:normal}
 .door .hl{display:block}
 .door.ceo .hl{background:linear-gradient(90deg,var(--gold),var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .door.code .hl{background:linear-gradient(90deg,var(--blue) 0%,var(--blue-2) 55%,var(--blue-3) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -577,7 +628,10 @@ a.u:hover{color:var(--text)}
 .doc .store-note{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:13px;color:var(--dim)}
 
 /* ── dialogs ── */
-dialog{border:0;padding:0;background:transparent;color:var(--text);max-width:min(96vw,1400px);max-height:94vh}
+/* margin:auto is what centres a modal dialog, and the reset at the top of this
+   file (*{margin:0}) was overriding it, so every dialog opened in the page's
+   top-left corner instead of the middle. */
+dialog{border:0;padding:0;margin:auto;background:transparent;color:var(--text);max-width:min(96vw,1400px);max-height:94vh}
 dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(6px)}
 #lightbox img{max-width:min(96vw,1400px);max-height:90vh;object-fit:contain;border-radius:var(--r-md)}
 .lb-close{position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:var(--r-btn);background:var(--bg-card2);box-shadow:0 0 0 1px var(--line);color:var(--text);font-size:1rem}
