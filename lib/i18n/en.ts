@@ -48,10 +48,10 @@ export const en = {
   doors: {
     ceo: {
       k: "Assistant · Teams",
-      h1: "Build a company ",
-      hl: "on your computer",
-      kicker: "You're the CEO. The rest is your team.",
-      p: "Set the goal and hand over the whole job. Heads split the work, teams do it, and the finished files come back in one chat; you approve what goes out. The Content team ships with the installer, so you start with a team, not an org chart.",
+      h1: "Fits your work — ",
+      hl: "you don't fit yourself to it",
+      kicker: "Build a company on your computer: you're the CEO, the rest is your team.",
+      p: "Meeting audio, receipts, files or research return as real files in your folder, not chat text. It knows you in parts without carrying everything in every request. Set the goal and hand over the whole job: the Content team ships with the installer ready to work; you approve what goes out.",
       chain: ["You", "Assistant", "Company", "Department", "Team", "Agent"],
       feed: [
         { who: "content", what: "Cocoa launch post drafted, sent to editor" },
@@ -59,19 +59,19 @@ export const en = {
         { who: "video", what: "15-second clip rendered · menu-cocoa.mp4" },
         { who: "waiting on you", what: "Approve the post for the shop page", ask: true },
       ],
-      more: "How teams work",
+      more: "How Assistant & Teams work",
     },
     code: {
-      k: "Code",
-      h1: "An ordinary model ",
-      hl: "can do more than you think",
-      p: "The difference is the system around the model. For code, Aetox tunes its skills and every layer of the system to work as one. Same model, and on some measures the results are clear: it writes better code on Aetox than on other harnesses.",
+      k: "Developer",
+      h1: "Code that runs — ",
+      hl: "and it remembers what this project decided",
+      p: "Opens the real project: real files, an editor, a terminal, language server and git. Runs the project's own tests before saying done, and remembers per project so nothing needs explaining twice. The system makes the model write better code — that is the only thing we sell for code.",
       nums: [
         { n: "{SECURE_US}%", vs: "vs {SECURE_NEXT}%", s: "Secure code · GPT-6 Luna" },
         { n: "{SECURE_TERRA}%", vs: "vs {SECURE_TERRA_NEXT}%", s: "Secure code · GPT-5.6 Terra" },
       ],
       cond: "CWEval, hidden tests, 3 rounds, against the next-best harness (omp on Luna; OpenCode, omp and pi tie on Terra); the same model on every harness. [The report and where Aetox loses](REPORTS)",
-      more: "How the Code desk works",
+      more: "How the Developer desk works",
     },
   },
   // The proof wall on /features/: one card per area, every card the same shape.
@@ -115,16 +115,18 @@ export const en = {
     ],
     free: "Free",
     pics: { comfy: "ComfyUI · pictures", sd: "Stable Diffusion WebUI · pictures" },
+    picsNote: "Draw on your own GPU through ComfyUI or Stable Diffusion WebUI (Forge Neo, Forge or A1111), FLUX.2 klein included",
     more: "See all {PROVIDERS}",
   },
   areas: {
     h2: "Look inside, one area at a time",
     rows: [
-      { k: "Code", s: "Agent mode works through your project; Editor mode lets you write while it helps. Also in your terminal." },
+      { k: "Developer", s: "Agent mode works through your project; Editor mode lets you write while it helps. Real language server, Git, and terminal." },
       { k: "Assistant", s: "Meetings, receipts, research and data become files that open: summaries, Excel, Word, PowerPoint." },
       { k: "Teams", s: "Hand a whole job to a ready-made team. You see who did what, what each handed over and what it cost." },
       { k: "Studio", s: "A long video becomes short clips with subtitles you keep editing." },
       { k: "Phone", s: "Your PC's Aetox on Android or iPhone. Keys never leave the PC." },
+      { k: "CLI", s: "Code desk in your terminal, sharing keys, chat and memory with the app." },
     ],
   },
   close: {
@@ -168,15 +170,15 @@ export const en = {
         alt: "Assistant door: asked which items sold best, it reads the sales files tool by tool, answers with a top-three table, and the Excel summary it wrote opens beside the chat",
       },
       {
-        title: "Code",
+        title: "Developer",
         lead: "It writes, runs the tests, and passes before it says done.",
-        body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, runs the project's own tests before it says done, hooks up to the n8n or Windmill you run yourself, and writes down what it could not verify instead of reporting all clear.",
+        body: "A file tree, a code editor and a real terminal, as many tabs as you like. It works inside the project you opened, reads AETOX.md or CLAUDE.md, runs the project's own tests before it says done, remembers per project, and writes down plainly what it could not verify.",
         proof: {
           label: "Secure code, same model · CWEval func-sec@1, budget GPT model",
           note: "11 tasks × 2 models × 3 rounds, judged by hidden tests. The lead comes from the security skill it ships with; with that skill off, Aetox lands with the rest. It loses on one SWE-bench bug with the budget model and on time with the large one, and uses more tokens. [Read the report](CODING_BENCH)",
         },
-        addr: "Aetox · code",
-        alt: "Code door: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
+        addr: "Aetox · developer",
+        alt: "Developer desk: asked to fix a wrong total with stacked coupons, it reads the code, edits two files with diffs, and runs npm test in the terminal beside it: all 42 pass",
       },
     ],
   },
@@ -291,7 +293,7 @@ export const en = {
   },
   pricing: {
     h2: "Free. Choose who does the thinking",
-    p: "The program costs nothing: no subscription of ours, no paid tier, no account to sign up for. You only choose which model thinks for you, and you can switch mid-conversation.",
+    p: "The program costs nothing: no subscription of ours, no paid tier, no account to sign up for. You only choose which model thinks for you, and you can switch mid-conversation. Free to use, but no free cloud models are included: real work needs a model, whether an account or key you already have, or one running on your machine.",
     all: "See all providers",
     local: {
       title: "Run it on your own machine",
@@ -347,7 +349,7 @@ export const en = {
     ],
     more: "Learn more",
     scope:
-      "On scope, let us be precise: with a project open it works inside that folder plus the ones you added. With no project open it sees the whole machine, and the files it writes land in that session's output folder. How often it asks first depends on the permission level you pick; publishing anything outside is asked about at every level, and every command is logged.",
+      "On scope, let us be precise: with a project open it works inside that folder plus the ones you added. With no project open it sees the whole machine, and the files it writes land in that session's output folder. How often it asks first depends on the permission level you pick; publishing anything outside is asked about at every level, and every command is logged. These rules are checks inside Aetox's own code, not an operating-system sandbox: if the machine holds data you cannot lose, use an API key dedicated to Aetox and run it in a VM or Windows Sandbox.",
   },
   work: {
     h2: "Real work, not staged demos",
@@ -409,6 +411,14 @@ export const en = {
         a: [
           "The program is free. No subscription of ours, no paid tier, no account to sign up for.",
           "With a local model there is no cost at all. With another provider's key, you pay them for what you use. We are not in the middle and add nothing on top.",
+        ],
+      },
+      {
+        q: "Is it open source",
+        a: [
+          "No. Aetox is free to use, install on as many machines as you like and use for commercial work, but the licence forbids modifying, redistributing, rebranding or selling it. Skills, agents, prompts and MCP servers you write yourself are yours, and you can sell them.",
+          "Source in the public repo stops at v1.7.0 and stays there to read and audit. Later releases ship as installers only, so the build you run has no source to read.",
+          "What you can check without source: every release has a `checksums.txt` with each file's SHA-256, signed with the app's update key, and builds after 21 Oct 2026 include an `sbom.txt` listing every Go module and web package that went in. The Microsoft Store build is signed by Microsoft.",
         ],
       },
       {

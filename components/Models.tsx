@@ -54,6 +54,7 @@ export default function Models({ t }: { t: Dict["models"] }) {
               {LOCAL.map(([i, n, c]) => <li key={n}><Mark icon={i} color={c} />{n}</li>)}
               {PICS.map(([i, c, k]) => <li key={k}><Mark icon={i} color={c} />{t.pics[k]}</li>)}
             </ul>
+            <p className="ws">{t.picsNote}</p>
             <p className="ws">{local.s}</p>
           </div>
         </div>

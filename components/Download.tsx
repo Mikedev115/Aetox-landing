@@ -36,6 +36,7 @@ export default function Download({ t, version }: { t: Dict["pages"]["download"];
           </div>
           <Reveal className="scard uninstall"><h3>{t.oneChannel.title}</h3><p>{t.oneChannel.body}</p></Reveal>
           <Reveal className="scard uninstall">
+            <span id="cli" className="anchor" />
             <h3>{t.cli.title}</h3>
             <Rich text={t.cli.body} />
             <div className="cli-get"><PillLink variant="ghost" trail="arrow" href={CLI_SETUP_URL}>{t.cli.button}</PillLink></div>

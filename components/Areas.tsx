@@ -5,7 +5,7 @@ import Reveal from "./ui/Reveal";
 // Each area in one line, leading to where it is shown in full. The rows of the
 // dictionary come in this order; the anchors live on those pages.
 const LINKS: [PageKey, string][] = [
-  ["features", "code"], ["features", "assistant"], ["features", "teams"], ["features", "studio"], ["download", "mobile-preview"],
+  ["features", "developer"], ["features", "assistant"], ["features", "teams"], ["features", "studio"], ["download", "mobile-preview"], ["download", "cli"],
 ];
 
 export default function Areas({ t, lang }: { t: Dict["areas"]; lang: Lang }) {

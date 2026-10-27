@@ -17,7 +17,7 @@ export default async function FeaturesPage({ lang }: { lang: Lang }) {
     <Shell lang={lang} page="features" t={t} version={version}>
       <PageHead title={t.pages.features.title} sub={t.pages.features.sub} />
       <div className="wrap"><ProofWall t={t.wall} /></div>
-      <span id="code" className="anchor" /><span id="assistant" className="anchor" />
+      <span id="developer" className="anchor" /><span id="code" className="anchor" /><span id="assistant" className="anchor" />
       <Modes t={t.modes} lang={lang} />
       <SecuritySkill t={t.security} />
       <span id="teams" className="anchor" />
