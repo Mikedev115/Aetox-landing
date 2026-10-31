@@ -7,7 +7,7 @@ export const mobileCopy = {
     apk: "Download Android APK",
     notes: "Release notes",
     android: {
-      title: "Android · app 0.3.5",
+      title: "Android · app 0.3.6",
       steps: [
         "Install Tailscale on the phone and sign in to the same account as the PC.",
         "Download the APK below and open it. Android asks once to allow installs from your browser.",
