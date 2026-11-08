@@ -14,6 +14,11 @@ export type Supporter =
 // from this list, while supporter names are shown without individual amounts.
 export const SUPPORTERS: readonly Supporter[] = [
   {
+    name: "คุณภูมิพัชญ์ อั****",
+    amount: 1000,
+    supportedOn: "2026-11-08",
+  },
+  {
     name: "เฉลิมพงษ์ อัศ****",
     amount: 600,
     supportedOn: "2026-10-31",
