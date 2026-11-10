@@ -5,6 +5,7 @@ import { Shell, load } from "./Page";
 import Hero from "./Hero";
 import Doors from "./Doors";
 import Why from "./Why";
+import OwnTeaser from "./OwnTeaser";
 import Demo from "./Demo";
 import Models from "./Models";
 import Areas from "./Areas";
@@ -22,6 +23,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
       <Hero t={t.hero} lang={lang} />
       <Doors t={t.doors} lang={lang} />
       <Why t={t.why} />
+      <OwnTeaser t={t.own.teaser} lang={lang} />
       <Demo t={t.demo} lang={lang} />
       <Models t={t.models} />
       <Areas t={t.areas} lang={lang} />

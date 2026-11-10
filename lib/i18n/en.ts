@@ -155,6 +155,32 @@ export const en = {
     ],
     note: "The code works just as well with the skill on; it adds the defences without costing function. With the skill off, Aetox lands with the other harnesses: the lead is this skill, on from install. Measured with GPT-6 Luna (budget) and GPT-5.6 Terra (large), CWEval, 5 rounds per setting. [Read the test](SECURITY_BENCH)",
   },
+  own: {
+    title: "Build an environment of your own",
+    items: [
+      { k: "Add your own tools", s: "have the agent build a new one to your need" },
+      { k: "Build your own work room", s: "design the 3D space on the right as you like" },
+      { k: "Make the system look like yours", s: "set the background to your own style" },
+    ],
+    powered: "Powered by Aetox Harness",
+    poweredSub: "A context-management architecture that lets the agent extend what it can do, without carrying every detail all the time.",
+    points: [
+      "A specialised tool is kept as an index; the real detail loads only when it is called",
+      "A tool's token cost drops by up to 10×",
+      "Tools can be added freely, without swelling the context",
+      "Skills and specialised commands: the system names them, and the agent opens the one the job needs",
+      "Memory is split by category and by detail, so the agent reaches what it needs without loading all of it at once",
+    ],
+    teaser: {
+      h2: "Build an environment of your own",
+      p: "Add the tools you need, a work room of your own and your own look — the context architecture keeps it cheap.",
+      btn: "What you can add",
+    },
+    result: {
+      lead: "The result:",
+      body: "the agent reaches every tool and every piece of knowledge it needs, using only the context that requires it — saving tokens, and carrying nothing it is not using.",
+    },
+  },
   network: {
     lines: [
       "Every model, every editor, every runtime you already use,",

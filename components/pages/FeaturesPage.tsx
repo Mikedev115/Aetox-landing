@@ -3,6 +3,7 @@ import { PageHead, Shell, load } from "@/components/Page";
 import ProofWall from "@/components/ProofWall";
 import Modes from "@/components/Modes";
 import SecuritySkill from "@/components/SecuritySkill";
+import OwnEnvironment from "@/components/OwnEnvironment";
 import Company from "@/components/Company";
 import VideoCut from "@/components/VideoCut";
 import Network from "@/components/Network";
@@ -19,6 +20,7 @@ export default async function FeaturesPage({ lang }: { lang: Lang }) {
       <div className="wrap"><ProofWall t={t.wall} /></div>
       <span id="developer" className="anchor" /><span id="code" className="anchor" /><span id="assistant" className="anchor" />
       <Modes t={t.modes} lang={lang} />
+      <OwnEnvironment t={t.own} />
       <SecuritySkill t={t.security} />
       <span id="teams" className="anchor" />
       <Company t={t.company} lang={lang} />
