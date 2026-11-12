@@ -35,12 +35,12 @@ export const docsEn: DocsDict = {
     {
       slug: "overview",
       title: "What Aetox is",
-      sub: "One window, two desks, four rooms, and a model you bring yourself. Read this before installing and the rest of the setup makes sense.",
+      sub: "A harness for AI agents: one window, two desks, four rooms, and a model you bring yourself. Read this before installing and the rest of the setup makes sense.",
       metaTitle: "What Aetox is — docs",
-      metaDescription: "Aetox is a desktop harness: it gives a model real hands — files, a terminal, a browser, a language server — and holds what the project already decided. Two desks, four rooms.",
+      metaDescription: "Aetox is a harness for AI agents: a real terminal, real files, a real browser, a language server, memory it may keep and skills it opens on demand — with the model you bring.",
       blocks: [
-        { t: "p", text: "Aetox is a desktop app for Windows. You bring a model — one you already pay for, or one running on your own GPU — and Aetox is the part around it that does the work: it opens real files, runs commands in a real terminal, drives a real browser, and checks its own result before it tells you it is done." },
-        { t: "p", text: "The word for that part is a **harness**. The model thinks; the harness decides what it can reach, what it remembers, and what it must prove." },
+        { t: "p", text: "Aetox is a **harness for AI agents**. An agent is the model plus the hands, the memory and the rules it works under — and the harness is everything around the model: a real terminal, real files, a real browser, a language server, memory it is allowed to keep, skills it opens when a job calls for one, and the checks that must pass before it says the work is done." },
+        { t: "p", text: "You bring the model — an account you already pay for, or one running on your own GPU. The model thinks; the harness is what lets it act on your machine instead of only talking about it." },
         { t: "h2", text: "Two desks in one app" },
         { t: "table", head: ["Desk", "For", "What it gets"], rows: [
           ["**Assistant**", "Documents, meetings, research, pictures, day-to-day work", "Files, browser, terminal, the office and its teams"],
@@ -49,7 +49,7 @@ export const docsEn: DocsDict = {
         { t: "p", text: "Switch between them from the bar at the top. They are two desks, not two apps: each has its own instructions and **its own memory**, so a conversation about code does not fill up the desk you use for documents." },
         { t: "h2", text: "Four rooms in the same window" },
         { t: "p", text: "The conversation sits next to the work: a **slide**, a **browser**, **files** and a **terminal**. The Code desk adds git and a language server. You watch a step happen instead of reading that it happened, and you can stop it at any step." },
-        { t: "h2", text: "What it does with the model you pick" },
+        { t: "h2", text: "What the harness gives an agent" },
         { t: "ul", items: [
           "**Hands.** Every step is a real tool call: write the file, run the command, open the page, click it.",
           "**A context of its own.** What it knows is grouped and linked, and a run sends only the points the job touches — not everything that exists.",
