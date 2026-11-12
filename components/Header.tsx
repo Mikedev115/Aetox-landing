@@ -10,7 +10,7 @@ import ThemeToggle from "./ThemeToggle";
 // the bar; it lives in the footer with the other policies. Under the bar sits
 // one line of announcement: the current release, as a badge plus a sentence,
 // linking to the release notes — the version used to be a badge in the bar.
-export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lang: Lang; page: PageKey; version: string }) {
+export default function Header({ t, lang, page, version, suffix = "" }: { t: Dict["nav"]; lang: Lang; page: PageKey; version: string; suffix?: string }) {
   const [open, setOpen] = useState(false);
   const others = LANGS.filter((l) => l !== lang);
   const links: [PageKey, string][] = [
@@ -49,7 +49,7 @@ export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lan
             <summary className="icon-btn" title={t.langTitle} aria-label={t.langTitle}>{LANG_CODE[lang]}</summary>
             <div className="nav-flyout">
               {others.map((l) => (
-                <a key={l} href={pagePath(l, page)} lang={LANG_TAG[l]} hrefLang={LANG_TAG[l]}>
+                <a key={l} href={`${pagePath(l, page)}${suffix}`} lang={LANG_TAG[l]} hrefLang={LANG_TAG[l]}>
                   <span>{LANG_LABEL[l]}</span><span className="code">{LANG_CODE[l]}</span>
                 </a>
               ))}

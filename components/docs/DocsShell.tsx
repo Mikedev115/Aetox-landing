@@ -17,7 +17,7 @@ export default function DocsShell({ lang, t, version, doc }: { lang: Lang; t: Di
   const md = docMarkdown(doc, docsUrl(lang), new Set(docSlugs(d)));
   const toc = doc.blocks.filter((b) => b.t === "h2").map((b) => ({ id: anchor(b.text), text: b.text }));
   return (
-    <Shell lang={lang} page="docs" t={t} version={version}>
+    <Shell lang={lang} page="docs" t={t} version={version} suffix={`${doc.slug}/`}>
       <div className="wrap docs">
         <DocsNav lang={lang} d={d} slug={doc.slug} />
         <article className="docs-art">

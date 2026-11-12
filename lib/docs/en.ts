@@ -48,7 +48,7 @@ export const docsEn: DocsDict = {
         ] },
         { t: "p", text: "Switch between them from the bar at the top. They are two desks, not two apps: each has its own instructions and **its own memory**, so a conversation about code does not fill up the desk you use for documents." },
         { t: "h2", text: "Four rooms in the same window" },
-        { t: "p", text: "The conversation sits next to the work: a **slide**, a **browser**, **files** and a **terminal**. The Code desk adds git and a timeline. You watch a step happen instead of reading that it happened, and you can stop it at any step." },
+        { t: "p", text: "The conversation sits next to the work: a **slide**, a **browser**, **files** and a **terminal**. The Code desk adds git and a language server. You watch a step happen instead of reading that it happened, and you can stop it at any step." },
         { t: "h2", text: "What it does with the model you pick" },
         { t: "ul", items: [
           "**Hands.** Every step is a real tool call: write the file, run the command, open the page, click it.",
@@ -88,7 +88,7 @@ export const docsEn: DocsDict = {
         { t: "note", kind: "warn", title: "\"Windows protected your PC\"", text: "The installer is not code-signed yet, so SmartScreen asks once. Choose **More info → Run anyway**, or install from the Store, which Microsoft signs. Aetox will not ask you to turn off your antivirus." },
         { t: "h2", text: "What it needs" },
         { t: "ul", items: [
-          "**Windows 10 or 11, 64-bit.** The full list per feature is [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md).",
+          "**Windows, 64-bit.** Linux and macOS are ports in progress and [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) says exactly how far each one is.",
           "**A model to talk to** — an account, an API key, or LM Studio / Ollama on the same machine. Nothing else is required to start.",
           "**Disk** — the installer is about 49 MB; the app keeps its chats, its database and its logs under your Windows profile.",
         ] },
@@ -144,7 +144,7 @@ export const docsEn: DocsDict = {
       metaTitle: "Connect a model — docs",
       metaDescription: "How to connect ChatGPT, GitHub Copilot, OpenRouter, an API key from any provider, or a local model in LM Studio or Ollama — and how to switch models without losing the conversation.",
       blocks: [
-        { t: "p", text: "Aetox has no model of its own and takes no cut from anyone. You connect one in **Settings › Models**, three ways, and all three give the model the same tools." },
+        { t: "p", text: "Aetox has no model of its own and takes no cut from anyone. You connect one in **Settings › Model settings**, three ways, and all three give the model the same tools." },
         { t: "h2", text: "The three routes" },
         { t: "table", head: ["Route", "Who it is for", "What you need"], rows: [
           ["**Sign in**", "You already pay for a monthly plan", "A ChatGPT, GitHub Copilot or OpenRouter account — no key to copy"],
@@ -157,7 +157,7 @@ export const docsEn: DocsDict = {
         { t: "note", kind: "tip", title: "The list is not a hard limit", text: "A model name the table has never heard of is sent to the provider to decide, not refused here. If the provider accepts it, Aetox uses it." },
         { t: "h2", text: "Local models are first-class" },
         { t: "p", text: "LM Studio and Ollama get the same tools a frontier model gets: files, terminal, browser, tests. Point Aetox at the server's address and pick the model — nothing is uploaded, and it keeps working with the network off." },
-        { t: "p", text: "For pictures, point Aetox at **ComfyUI** or **Stable Diffusion WebUI** (Forge Neo, Forge or A1111) and it draws on your own GPU, FLUX.2 klein included. The full walk-through is [LOCAL-IMAGES.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/docs/LOCAL-IMAGES.md)." },
+        { t: "p", text: "For pictures, point Aetox at **ComfyUI** or **Stable Diffusion WebUI** (Forge Neo, Forge or A1111) and it draws on your own GPU, FLUX.2 klein included. Nothing it draws leaves your machine." },
         { t: "h2", text: "Switching later" },
         { t: "ul", items: [
           "Switch model mid-chat from the picker beside the message box — the whole conversation comes with it.",
@@ -214,7 +214,7 @@ export const docsEn: DocsDict = {
         ] },
         { t: "h2", text: "A first task worth trying" },
         { t: "steps", items: [
-          { title: "Open the folder", text: "**File › Open project**, or drop the folder on the window. Nothing is copied or uploaded." },
+          { title: "Open the folder", text: "Press **Open Folder** on the Code desk, or drop the folder on the window. Nothing is copied or uploaded." },
           { title: "Ask a question first", text: "*\"How does this project run its tests?\"* — it reads the README and the config, and tells you what it found." },
           { title: "Then a small change", text: "*\"Add a test for the empty case in this file and run the suite.\"* Watch which files it touches." },
           { title: "Read the result", text: "Pass or fail, it says which test failed and what it changed. A failing test is a result, not a failure of the app." },
@@ -258,7 +258,6 @@ export const docsEn: DocsDict = {
         { t: "p", text: "Every agent runs on the model you connected, so a team spends more tokens than one agent — and the screen says which agent spent them. Start with a team on a cheap model and move the important seat to a better one." },
         { t: "h2", text: "Building your own" },
         { t: "ul", items: [
-          "A team that ships with the app can be duplicated and edited; the copy is yours.",
           "An agent's instructions, skills and tools are per agent — one can be strict and one can be quick.",
           "Selling a team, a skill or an agent you wrote is allowed; see the licence in the app repository.",
         ] },
@@ -294,7 +293,7 @@ export const docsEn: DocsDict = {
         ] },
         { t: "note", kind: "tip", title: "A skill is measured, not assumed", text: "Every skill shipped with Aetox was run on the same model with it on and off. Ones that did not help were taken out — so a skill in the library is there because it earned the place." },
         { t: "h2", text: "MCP: tools someone else wrote" },
-        { t: "p", text: "An MCP server adds tools Aetox does not ship: your own database, a tracker, a service you use. Add one in **Capabilities › MCP server** — an address or a command, a key if it needs one — then press **Test**, which connects, initialises and lists the tools that came back." },
+        { t: "p", text: "An MCP server adds tools Aetox does not ship: your own database, a tracker, a service you use. Add one in **Capabilities › MCP servers** — an address or a command, a key if it needs one — then press **Test**, which connects, initialises and lists the tools that came back." },
         { t: "ul", items: [
           "A server is listed for the desks and agents you tick, not for everything at once.",
           "Every tool that comes from an MCP server asks before it runs, at every permission level.",
@@ -332,7 +331,7 @@ export const docsEn: DocsDict = {
         ] },
         { t: "h2", text: "The first things to try" },
         { t: "ul", items: [
-          "**The model answers with an error** — check the key or the sign-in in **Settings › Models**; a key that expires mid-day looks like a broken app.",
+          "**The model answers with an error** — check the key or the sign-in in **Settings › Model settings**; a key that expires mid-day looks like a broken app.",
           "**It cannot see a file** — `.ssh`, `.aws`, browser profiles and Aetox's own key files are refused by design, at every permission level.",
           "**A step waits forever** — the approval card may be behind the window, or the level is **Ask** and the call is waiting for a click.",
           "**The window opens empty** — read `engine.log`; the engine failed to start and the log says which line.",

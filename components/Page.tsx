@@ -20,16 +20,16 @@ export async function load(lang: Lang) {
 // about content, only that the header knows which page it is on (so the nav
 // marks it and the language button lands on the same page in the other
 // language).
-export function Shell({ lang, page, t, version, main, children }: {
-  lang: Lang; page: PageKey; t: Dict; version: string; main?: string; children: ReactNode;
+export function Shell({ lang, page, t, version, main, suffix, children }: {
+  lang: Lang; page: PageKey; t: Dict; version: string; main?: string; suffix?: string; children: ReactNode;
 }) {
   return (
     <LightboxProvider label={t.lightbox.label} close={t.lightbox.close}>
       <ProviderDialogProvider t={t.providers}>
         <BrandSprite />
-        <Header t={t.nav} lang={lang} page={page} version={version} />
+        <Header t={t.nav} lang={lang} page={page} version={version} suffix={suffix} />
         <main className={main}>{children}</main>
-        <Footer t={t.footer} nav={t.nav} lang={lang} page={page} />
+        <Footer t={t.footer} nav={t.nav} lang={lang} page={page} suffix={suffix} />
       </ProviderDialogProvider>
     </LightboxProvider>
   );
