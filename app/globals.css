@@ -754,7 +754,9 @@ nav.primary .nav-flyout a:hover{background:var(--bg-card2)}
    filled cards except the ones that are a link. Reading column ≈ 620px. */
 .docs{display:grid;grid-template-columns:190px minmax(0,1fr) 160px;gap:2rem;padding-top:3rem;padding-bottom:5rem;align-items:start}
 .docs-narrow{grid-template-columns:190px minmax(0,1fr)}
-.docs-side{position:sticky;top:calc(var(--head-h) + 1.5rem);display:grid;gap:1.25rem;min-width:0}
+.docs-side{position:sticky;top:calc(var(--head-h) + 1.5rem);display:grid;gap:1.25rem;min-width:0;
+  max-height:calc(100vh - var(--head-h) - 3rem);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;
+  padding-right:.35rem;margin-right:-.35rem}
 .docs-art{min-width:0}
 .docs-art h1{font-size:clamp(1.9rem,3.6vw,2.5rem);line-height:1.16;margin:0}
 .docs-art .sub{color:var(--muted);font-size:1.0625rem;line-height:1.55;margin:.9rem 0 0;max-width:62ch}
@@ -883,7 +885,7 @@ html[lang="zh"] .docs-art h1,html[lang="zh"] .docs-art h2,html[lang="zh"] .docs-
 @media (max-width:1180px){.docs{grid-template-columns:190px minmax(0,1fr)}.docs-toc{display:none}}
 @media (max-width:900px){
   .docs,.docs-narrow{grid-template-columns:minmax(0,1fr);gap:1.5rem;padding-top:1.75rem;padding-bottom:3rem}
-  .docs-side{position:static;gap:.85rem}
+  .docs-side{position:static;gap:.85rem;max-height:none;overflow:visible;padding-right:0;margin-right:0}
   .docs-nav{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.35rem}
   .docs-nav .grp{display:contents}
   .docs-nav .grp>p{display:none}
