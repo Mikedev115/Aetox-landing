@@ -15,6 +15,7 @@ export default function Header({ t, lang, page, version }: { t: Dict["nav"]; lan
   const others = LANGS.filter((l) => l !== lang);
   const links: [PageKey, string][] = [
     ["home", t.overview],
+    ["docs", t.docs],
     ["faq", t.faq],
   ];
   const isUsesPage = ["features", "pricing", "safety", "work"].includes(page);

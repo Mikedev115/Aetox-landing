@@ -21,16 +21,20 @@ export const STORE_PRIVACY_URL = `${AETOX_PAGES}privacy.html`;
 // The site's pages. Every one exists in both languages: English at the root,
 // Thai under /th/. The header, the footer and the language switch all draw
 // from this list, so adding a page here is what makes it reachable.
-export const PAGES = ["home", "features", "pricing", "safety", "work", "faq", "supporters", "download", "privacy"] as const;
+export const PAGES = ["home", "features", "pricing", "safety", "work", "docs", "faq", "supporters", "download", "privacy"] as const;
 export type PageKey = (typeof PAGES)[number];
 const SLUG: Record<PageKey, string> = {
-  home: "", features: "features/", pricing: "pricing/", safety: "safety/", work: "work/", faq: "faq/", supporters: "supporters/", download: "download/", privacy: "privacy/",
+  home: "", features: "features/", pricing: "pricing/", safety: "safety/", work: "work/", docs: "docs/", faq: "faq/", supporters: "supporters/", download: "download/", privacy: "privacy/",
 };
 /** Site-relative href of a page, e.g. /Aetox-landing/th/pricing/ */
 export const pagePath = (lang: Lang, page: PageKey = "home") => `${BASE}${lang === "en" ? "/" : `/${lang}/`}${SLUG[page]}`;
 /** Absolute URL of a page, for canonical/alternate/og tags. */
 export const pageUrl = (lang: Lang, page: PageKey = "home") => new URL(`${lang === "en" ? "" : `${lang}/`}${SLUG[page]}`, SITE_URL).toString();
 export const privacyPath = (lang: Lang) => pagePath(lang, "privacy");
+/** One page of the docs section: /Aetox-landing/docs/first-run/ · no slug is the index. */
+export const docsPath = (lang: Lang, slug?: string) => `${pagePath(lang, "docs")}${slug ? `${slug}/` : ""}`;
+/** Absolute URL of a docs page, for its canonical tag. */
+export const docsUrl = (lang: Lang, slug?: string) => (slug ? new URL(`${slug}/`, pageUrl(lang, "docs")).toString() : pageUrl(lang, "docs"));
 export const homePath = (lang: Lang) => pagePath(lang, "home");
 export const CASE_STUDIES_URL = `https://mikedev115.github.io/Aetox-Harness/case-studies/web-pages/restaurant.html`;
 

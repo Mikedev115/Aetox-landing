@@ -22,6 +22,7 @@ export const en = {
     safety: "Safety",
     work: "Real work",
     faq: "FAQ",
+    docs: "Docs",
     supporters: "Support the project",
     download: "Download",
     privacy: "Privacy",
@@ -536,6 +537,12 @@ export const en = {
       more: "See the real work",
       cases: "Browse the case studies",
       casesSub: "More pages and files Aetox has built, kept as they came out, in the app repo's case studies.",
+    },
+    docs: {
+      title: "Aetox docs",
+      sub: "Setup, the desks, memory and updates — the pages a person reads before the first job and after the first surprise.",
+      metaTitle: "Aetox docs: install, setup and troubleshooting",
+      metaDescription: "Nine pages of Aetox documentation in English and Thai: install, first run, connecting a model, the Code desk, teams, memory and skills, updating and fixing.",
     },
     faq: {
       title: "Questions",

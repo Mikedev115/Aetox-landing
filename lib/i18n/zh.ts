@@ -22,6 +22,7 @@ export const zh = {
     safety: "安全",
     work: "真实工作",
     faq: "常见问题",
+    docs: "文档",
     supporters: "支持项目",
     download: "下载",
     privacy: "隐私",
@@ -527,6 +528,12 @@ export const zh = {
       more: "看真实的活",
       cases: "看案例研究",
       casesSub: "Aetox 做过的更多页面和文件，按出来的样子留着，在应用仓库的案例研究里。",
+    },
+    docs: {
+      title: "Aetox docs",
+      sub: "Setup, the desks, memory and updates — the pages a person reads before the first job and after the first surprise.",
+      metaTitle: "Aetox docs: install, setup and troubleshooting",
+      metaDescription: "Nine pages of Aetox documentation: install, first run, connecting a model, the Code desk, teams, memory and skills, updating and fixing. English only for now.",
     },
     faq: {
       title: "常见问题",

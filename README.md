@@ -26,6 +26,7 @@ npm run build      # ส่งออกไป out/
 /safety/     การ์ดความปลอดภัย + ขอบเขตการเข้าถึง + ลิงก์นโยบายทั้งหมด
 /work/       งานจริง 3 ชิ้น + case studies
 /faq/        คำถามทั้งหมด
+/docs/       เอกสาร 9 หน้า — เริ่มต้น · ใช้งาน · ปรับให้เป็นของคุณ · ดูแล (เนื้อหาอยู่ที่ lib/docs/*.ts)
 /download/   Store · winget · GitHub Releases · รุ่น/ขนาด · การถอน
 /privacy/    นโยบายความเป็นส่วนตัว
 ```
@@ -44,6 +45,16 @@ lib/site.ts      PAGES + pagePath() กำหนดว่ามีหน้า�
 lib/version.ts   ดึงเลขรุ่นจาก GitHub Releases ตอน build — ที่นี่ไม่มีสำเนาเลขรุ่น
 public/assets/   ภาพและวิดีโอของแอป (ดูหัวข้อ "ภาพและวิดีโอ") · og.png · promptpay-qr.png
 ```
+
+## เอกสาร · docs
+
+`/docs/` เป็นโซนของเว็บนี้เอง ไม่ใช่เว็บที่สอง — หัวเว็บ ท้ายเว็บ ธีม และปุ่มสลับภาษาจึงเป็นชุดเดิม เนื้อหาเป็นข้อมูลใน `lib/docs/en.ts` กับ `lib/docs/th.ts` (จีนใช้ฉบับอังกฤษพร้อมหมายเหตุใน `lib/docs/zh.ts`) ไม่มี markdown ถูกแปลงตอน build: หน้าเว็บวาดจาก block ในไฟล์นั้น และปุ่ม "คัดลอกหน้านี้" กับ `out/llms.txt` สร้าง Markdown จาก block ชุดเดียวกัน (`lib/docs/md.ts`)
+
+- เพิ่มหน้า: ใส่ object ใน `pages` ของ en.ts **และ** th.ts (TypeScript บังคับให้จำนวนหน้าตรงกัน) แล้วใส่ slug ใน `groups` ของทั้งสองไฟล์ — route, เมนู, ค้นหา, ปุ่มก่อน/ถัดไป เกิดขึ้นเอง
+- ตัว block ที่ใช้ได้: `p` `h2` `h3` `ul` `ol` `steps` `code` `cmds` `note` `table` `cards` `dl` (นิยามอยู่ใน `lib/docs/types.ts`)
+- มาร์กอัปในข้อความใช้ของเว็บเดิม — `**หนา**` `` `โค้ด` `` `[ข้อความ](url)` — บวก `[ข้อความ](docs:slug)` สำหรับลิงก์ไปหน้าอื่นในโซนเดียวกัน
+- `app/llms.txt/route.ts` คือดัชนีโซนนี้สำหรับเอเจนต์ สร้างจากรายการหน้าเดียวกันเสมอ
+- เนื้อหาต้องมาจากของจริง: วิซาร์ดเปิดครั้งแรก ระดับสิทธิ์ และ path ต่าง ๆ อ่านจากโค้ดแอป (`desktop/frontend/src/lib/Onboarding.svelte`, `internal/config/config.go`) ไม่ใช่จากการเดา
 
 เพิ่มหน้าใหม่: ใส่คีย์ใน `PAGES` ของ `lib/site.ts` → เพิ่ม `pages.<key>` ใน en.ts/th.ts → เขียน `components/pages/<Key>Page.tsx` → วาง `page.tsx` ใน `app/(en)/<key>/` และ `app/(th)/th/<key>/` เมนูบน footer และปุ่มสลับภาษาจะรู้จักหน้านั้นเอง
 
