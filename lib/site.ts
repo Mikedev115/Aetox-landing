@@ -50,7 +50,7 @@ export const APP_SETUP_URL = `${GITHUB}/releases/latest/download/aetox-amd64-ins
 // label in every language all read it, so a bump is one edit. It must equal
 // mobile/android/app/build.gradle in the app repo — mobile/tests/version.test.ts
 // checks that when the two checkouts sit side by side.
-export const MOBILE_VERSION = "0.3.6";
+export const MOBILE_VERSION = "0.3.7";
 export const MOBILE_RELEASE = `https://github.com/Mikedev115/Aetox-Harness/releases/tag/mobile-v${MOBILE_VERSION}`;
 export const MOBILE_APK = `https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v${MOBILE_VERSION}/Aetox-Mobile-Android-Test.apk`;
 // The console's own installer (app repo DECISIONS §333): a separate download
