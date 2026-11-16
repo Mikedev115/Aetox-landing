@@ -248,6 +248,30 @@ export const en = {
     addr: "Aetox · Cutting room · promo.cut",
     alt: "The Aetox cutting room beside the chat: a promo cut from a screen tour on a multi-track timeline with a title, the talking clip, subtitles, words and a music bed. The person double-clicks the first subtitle, fixes the misheard app name, and plays it: the title grows in and the subtitles follow the voice.",
   },
+  docs: {
+    kick: "Documents and spreadsheets",
+    h2: "The file that leaves is the work",
+    lead: "A quotation that goes out under your name, and a workbook someone else has to keep using. Both come back as real files — printed, opened and read back before they are handed over.",
+    doc: {
+      title: "A page in the reader's language — Thai, English, Chinese",
+      body: "Ask for **\"a quotation for the website job\"** and it picks the page standard that language prints to, not a generic web page. **Thai**: TH Sarabun New at the official size, a 30 mm binding edge, พ.ศ. dates, withholding stated rather than deducted, the total again in words. **English**: one-inch margins, decimal-numbered sections, the block letter. **Chinese**: the GB/T 9704-2012 page with its 公文 headings and the parts of a 函. Then it prints the page and reads the printed file back — fonts embedded, no row clipped at a page edge, contents numbers taken off the print — and nothing on it says Aetox.",
+      chips: ["TH Sarabun New · A4", "GB/T 9704-2012", "ISO 2145 sections", "Printed and read back"],
+      captions: ["Thai · ใบเสนอราคา", "English · report", "中文 · 函"],
+      alts: [
+        "A Thai quotation printed on one A4 page: item lines with right-aligned amounts, 7% VAT and the total repeated in baht words",
+        "Page 1 of an English report in the report layout: the cover with its title and summary",
+        "A Chinese 函 printed on one A4 page: 發文字號, 主送機關, the body and 成文日期",
+      ],
+    },
+    sheet: {
+      title: "A workbook someone else can keep using",
+      body: "Numbers go in as numbers, so `SUM` returns a total and dates sort; a value starting with `=` becomes a live formula, and a chart is drawn from the table. And when the workbook already exists, it opens **that file** and works on it — a styled range, rows inserted or sorted, a validation rule, a conditional highlight, the formulas it really holds — leaving what you did not ask about alone, instead of rebuilding the sheet and handing back a photograph of it.",
+      chips: ["SUM that adds up", "Charts and live formulas", "Format, rows, validation", "Edits the file you already have"],
+      addr: "quote-sheet.xlsx",
+      alt: "The workbook open in Excel: item lines, a SUM total and a VAT row computed by formula",
+    },
+    note: "Both halves are this project's own template and writer, filled and printed — nothing was redrawn for this page.",
+  },
   uses: {
     h2: "Let Aetox handle the work you repeat every day, on your machine, not in someone's cloud",
     prev: "Previous",

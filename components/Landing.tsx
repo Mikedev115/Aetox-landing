@@ -7,6 +7,7 @@ import Doors from "./Doors";
 import Why from "./Why";
 import OwnTeaser from "./OwnTeaser";
 import Demo from "./Demo";
+import Documents from "./Documents";
 import Models from "./Models";
 import Areas from "./Areas";
 import HomeClose from "./HomeClose";
@@ -25,6 +26,7 @@ export default async function Landing({ lang }: { lang: Lang }) {
       <Why t={t.why} />
       <OwnTeaser t={t.own.teaser} lang={lang} />
       <Demo t={t.demo} lang={lang} />
+      <Documents t={t.docs} />
       <Models t={t.models} />
       <Areas t={t.areas} lang={lang} />
       <HomeClose t={t.close} lang={lang} />
