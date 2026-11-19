@@ -48,7 +48,7 @@ export const NUMBERS = {
   INVOICE_OTHERS: "94", // Codex CLI and OpenCode on the same task and model, 1 run each
   CTX_HELPERS: "107k", // main agent's context at the end of one real session with helpers
   CTX_ALONE: "190k", // the same session with the helpers' reading kept in the main agent
-  HELPER_SAVE: "18–30", // % cost saved on non-OpenAI prices (LIVING-REALM-DELEGATION-TOKENS + MODEL-COST-SIMULATION, 4 Oct 2026)
+  HELPER_SAVE: "18–30", // % cost saved on non-OpenAI prices (app repo docs/reports/WINS.md §4, 4 Oct 2026)
   CUT_FROM: "17.5", // seconds, the raw screen tour in the cutting-room loop
   CUT_TO: "11.1", // seconds after four silences folded and one filler cut
 } as const;
