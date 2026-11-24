@@ -83,7 +83,7 @@ export const zh = {
       { k: "团队", n: "{CTX_HELPERS}", vs: "对 {CTX_ALONE}，同样的活但不用帮手", cond: "只算主智能体的上下文，在一次真实会话里，不是控制变量的实验 · 非 OpenAI 价格下成本降低 {HELPER_SAVE}%" },
       { k: "视频", n: "{CUT_TO} 秒", vs: "从原片 {CUT_FROM} 秒", cond: "掐掉四段静音、剪掉一处口头语 · 是真文件，可以继续剪" },
     ],
-    note: "每张卡两边用的是同一个模型，都是 OpenAI 的公开模型：[GPT-6 Luna](MODEL_LUNA) 和 [GPT-5.6 Terra](MODEL_TERRA)。Aetox 落后之处：比别的 harness 花更多 token（约 90% 是缓存命中）—— 这是把广度一次性交给大任务的代价，而不是一片一片地要；普通任务不会多花。在大模型上也不是最快的。[方法、每一轮结果和它输在哪里](REPORTS)",
+    note: "每张卡两边用的是同一个模型，都是 OpenAI 的公开模型：[GPT-6 Luna](MODEL_LUNA) 和 [GPT-5.6 Terra](MODEL_TERRA)。测到的最高数字是 CWEval func-sec@1 93.3%，这一差距来自随应用带的安全技能。[方法与每一轮结果](REPORTS)",
   },
   why: {
     h2: "模型负责想，其余交给这套环境",
@@ -205,7 +205,7 @@ export const zh = {
         body: "文件树、编辑器、真实终端，标签页想开多少开多少。它在你打开的项目里干活，读 AETOX.md 或 CLAUDE.md，说完工之前先跑项目自己的测试，按项目记忆，并直白写下哪部分它没法验证。",
         proof: {
           label: "同一个模型下的安全代码 · CWEval func-sec@1，GPT 经济款模型",
-          note: "11 个任务 × 2 个模型 × 3 轮，用隐藏测试判定。领先来自随应用带的安全技能；关掉它，Aetox 就和其他几份落在同一档。输的地方是经济款模型上的一个 SWE-bench bug，以及大模型上的耗时，另外它花更多 token。[看报告](CODING_BENCH)",
+          note: "11 个任务 × 2 个模型 × 3 轮，用隐藏测试判定。领先来自随应用带的安全技能；关掉它，Aetox 就和其他几份落在同一档。[看报告](CODING_BENCH)",
         },
         addr: "Aetox · 开发",
         alt: "开发台：要求修一个叠加优惠券算错的总额，它读代码，改两个文件并给出 diff，然后在旁边的终端跑 npm test：42 个全过",
