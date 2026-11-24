@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="%lang%">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Decides the theme before first paint. Choosing after the stylesheet
+		has painted is what causes the white/dark flash on load, so this cannot
+		be component code — it has to be the very first script in <head>. -->
+		<script>
+			(function () {
+				try {
+					var s = localStorage.getItem("aetox-theme");
+					var t = s || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+					document.documentElement.dataset.theme = t;
+				} catch (e) {
+					document.documentElement.dataset.theme = "dark";
+				}
+			})();
+		</script>
+
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

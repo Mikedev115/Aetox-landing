@@ -1,6 +1,6 @@
 # aetox-landing
 
-แลนดิ้งเพจของ [Aetox](https://github.com/Mikedev115/Aetox) — Next.js (App Router) ส่งออกเป็นไฟล์นิ่ง แล้ว GitHub Actions เอาขึ้น GitHub Pages ที่
+แลนดิ้งเพจของ [Aetox](https://github.com/Mikedev115/Aetox) — SvelteKit (Svelte 5) prerender เป็นไฟล์นิ่งทั้ง 90 หน้า แล้ว GitHub Actions เอาขึ้น GitHub Pages ที่
 <https://mikedev115.github.io/Aetox-landing/> (อังกฤษ) และ <https://mikedev115.github.io/Aetox-landing/th/> (ไทย)
 
 แยกออกมาจากรีโปแอปตั้งแต่ 11 ก.ย. 2026 เพื่อให้คนที่ fork แอปไม่ต้องได้เว็บการตลาดติดไปด้วย และให้เว็บปล่อยได้โดยไม่ต้องผ่าน CI ของแอป
@@ -9,11 +9,13 @@
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000/Aetox-landing/
-npm run build      # ส่งออกไป out/
+npm run dev        # http://localhost:5173/Aetox-landing/
+npm run build      # เขียนไฟล์นิ่งลง build/
+npm run preview    # เสิร์ฟ build/ ให้ดูแบบเดียวกับที่ Pages ได้
+npm run check      # svelte-check
 ```
 
-ตอน dev และ GitHub Pages, `basePath` เป็น `/Aetox-landing` เพื่อให้ URL ตรงกับ project site; Vercel ตั้ง `VERCEL=1` ระหว่าง build จึงเสิร์ฟจากโดเมนรากโดยไม่มี path นำหน้า
+ตอน dev และ GitHub Pages, base path เป็น `/Aetox-landing` เพื่อให้ URL ตรงกับ project site; Vercel ตั้ง `VERCEL=1` ระหว่าง build จึงเสิร์ฟจากโดเมนรากโดยไม่มี path นำหน้า — ค่าอยู่ที่เดียวใน `vite.config.ts` และ `src/lib/base.ts` อ่านกลับมาใช้
 
 ## โครงสร้าง
 
@@ -34,35 +36,35 @@ npm run build      # ส่งออกไป out/
 ทุกหน้ามีคู่ภาษาไทยที่ `/th/…` และภาษาจีนที่ `/zh/…` เหมือนกันหมด · ปุ่มภาษาในหัวเว็บเป็นเมนูเดียวที่ listing ทุกภาษา (เลือกแบบ C ในข้อเสนอ 27 ต.ค. 2026)
 
 ```
-app/(en)/        route /      — layout ตั้ง <html lang="en">  · โฟลเดอร์ละหน้า page.tsx บรรทัดเดียว
-app/(th)/th/     route /th/   — layout ตั้ง <html lang="th">  · โครงเดียวกัน
-app/(zh)/zh/     route /zh/   — layout ตั้ง <html lang="zh-Hans">  · โครงเดียวกัน
-app/globals.css  design tokens + สไตล์ทั้งหมด (ธีมมืดเป็นค่าเริ่มต้น, สว่างผ่าน data-theme)
-components/      Page.tsx = Shell (header/footer/dialogs) + PageHead + pageMetadata ที่ทุกหน้าใช้
-                 Landing.tsx = หน้าแรก · pages/ = หน้าละไฟล์ · section ละไฟล์ · ui/ dialogs/ icons/
-lib/i18n/        en.ts เป็นฐาน · th.ts และ zh.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ) · privacy-*.ts คือหน้าละภาษา · pages.* คือหัวหน้าและ meta ของแต่ละหน้า
-lib/site.ts      PAGES + pagePath() กำหนดว่ามีหน้าอะไรบ้าง · ลิงก์นอกทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ) · assetLang() บอกว่าวิดีโอ/ภาพชุดไหนใช้กับภาษาไหน
-lib/version.ts   ดึงเลขรุ่นจาก GitHub Releases ตอน build — ที่นี่ไม่มีสำเนาเลขรุ่น
-public/assets/   ภาพและวิดีโอของแอป (ดูหัวข้อ "ภาพและวิดีโอ") · og.png · promptpay-qr.png
+src/routes/+layout.svelte   Shell: Header · Footer · lightbox · provider dialog · อ่าน data.t/data.lang จาก +layout.server.ts
+src/routes/                 หน้าละไฟล์: +page.svelte (en) · th/+page.svelte · zh/+page.svelte · docs/[slug] + llms.txt
+src/lib/route.ts            path → หน้า/lang/slug · src/lib/head.ts = title/canonical/hreflang/OG ของทุกหน้า
+src/lib/lang.ts             path → ภาษา · ตัด base path ออกก่อนเสมอ
+src/globals.css             design tokens + สไตล์ทั้งหมด (ธีมมืดเป็นค่าเริ่มต้น, สว่างผ่าน data-theme)
+src/lib/components/         Landing.svelte = หน้าแรก · pages/ = หน้าละไฟล์ · section ละไฟล์ · ui/ dialogs/ icons/
+src/lib/i18n/               en.ts เป็นฐาน · th.ts และ zh.ts ต้องมีคีย์ครบเท่ากัน (TypeScript บังคับ) · privacy-*.ts คือหน้าละภาษา · pages.* คือหัวหน้าและ meta ของแต่ละหน้า
+src/lib/site.ts             PAGES + pagePath() กำหนดว่ามีหน้าอะไรบ้าง · ลิงก์นอกทุกอันที่เดียว (Store, winget, GitHub, อีเมล, วิดีโอ) · assetLang() บอกว่าวิดีโอ/ภาพชุดไหนใช้กับภาษาไหน
+src/lib/version.ts          ดึงเลขรุ่นจาก GitHub Releases ตอน build — ที่นี่ไม่มีสำเนาเลขรุ่น
+static/assets/              ภาพและวิดีโอของแอป (ดูหัวข้อ "ภาพและวิดีโอ") · og.png · promptpay-qr.png
 ```
 
 ## เอกสาร · docs
 
-`/docs/` เป็นโซนของเว็บนี้เอง ไม่ใช่เว็บที่สอง — หัวเว็บ ท้ายเว็บ ธีม และปุ่มสลับภาษาจึงเป็นชุดเดิม เนื้อหาเป็นข้อมูลใน `lib/docs/en.ts`, `lib/docs/th.ts` และ `lib/docs/zh.ts` — สามฉบับต้องมีหน้าและ block เท่ากัน (`node` เทียบโครงได้ด้วยสคริปต์เดียว ดู "เอกสาร" ด้านล่าง) ไม่มี markdown ถูกแปลงตอน build: หน้าเว็บวาดจาก block ในไฟล์นั้น และปุ่ม "คัดลอกหน้านี้" กับ `out/llms.txt` สร้าง Markdown จาก block ชุดเดียวกัน (`lib/docs/md.ts`)
+`/docs/` เป็นโซนของเว็บนี้เอง ไม่ใช่เว็บที่สอง — หัวเว็บ ท้ายเว็บ ธีม และปุ่มสลับภาษาจึงเป็นชุดเดิม เนื้อหาเป็นข้อมูลใน `src/lib/docs/en.ts`, `src/lib/docs/th.ts` และ `src/lib/docs/zh.ts` — สามฉบับต้องมีหน้าและ block เท่ากัน (`node` เทียบโครงได้ด้วยสคริปต์เดียว ดู "เอกสาร" ด้านล่าง) ไม่มี markdown ถูกแปลงตอน build: หน้าเว็บวาดจาก block ในไฟล์นั้น และปุ่ม "คัดลอกหน้านี้" กับ `build/llms.txt` สร้าง Markdown จาก block ชุดเดียวกัน (`src/lib/docs/md.ts`)
 
 - เพิ่มหน้า: ใส่ object ใน `pages` ของทั้งสามภาษา — en.ts, th.ts **และ** zh.ts — แล้วใส่ slug ใน `groups` ของทั้งสามไฟล์ (เทียบโครงด้วยสคริปต์ใน `package.json`) — route, เมนู, ค้นหา, ปุ่มก่อน/ถัดไป เกิดขึ้นเอง
-- ตัว block ที่ใช้ได้: `p` `h2` `h3` `ul` `ol` `steps` `code` `cmds` `note` `table` `cards` `dl` (นิยามอยู่ใน `lib/docs/types.ts`)
+- ตัว block ที่ใช้ได้: `p` `h2` `h3` `ul` `ol` `steps` `code` `cmds` `note` `table` `cards` `dl` (นิยามอยู่ใน `src/lib/docs/types.ts`)
 - มาร์กอัปในข้อความใช้ของเว็บเดิม — `**หนา**` `` `โค้ด` `` `[ข้อความ](url)` — บวก `[ข้อความ](docs:slug)` สำหรับลิงก์ไปหน้าอื่นในโซนเดียวกัน
-- `app/llms.txt/route.ts` คือดัชนีโซนนี้สำหรับเอเจนต์ สร้างจากรายการหน้าเดียวกันเสมอ
+- `src/routes/llms.txt/+server.ts` คือดัชนีโซนนี้สำหรับเอเจนต์ สร้างจากรายการหน้าเดียวกันเสมอ (prerender เป็น text/plain)
 - เนื้อหาต้องมาจากของจริง: วิซาร์ดเปิดครั้งแรก ระดับสิทธิ์ และ path ต่าง ๆ อ่านจากโค้ดแอป (`desktop/frontend/src/lib/Onboarding.svelte`, `internal/config/config.go`) ไม่ใช่จากการเดา
 
-เพิ่มหน้าใหม่: ใส่คีย์ใน `PAGES` ของ `lib/site.ts` → เพิ่ม `pages.<key>` ใน en.ts/th.ts → เขียน `components/pages/<Key>Page.tsx` → วาง `page.tsx` ใน `app/(en)/<key>/` และ `app/(th)/th/<key>/` เมนูบน footer และปุ่มสลับภาษาจะรู้จักหน้านั้นเอง
+เพิ่มหน้าใหม่: ใส่คีย์ใน `PAGES` ของ `src/lib/site.ts` → เพิ่ม `pages.<key>` ใน en.ts/th.ts/zh.ts → เขียน `src/lib/components/pages/<Key>Page.svelte` → วาง `+page.svelte` ใน `src/routes/<key>/`, `src/routes/th/<key>/` และ `src/routes/zh/<key>/` เมนูบน footer และปุ่มสลับภาษาจะรู้จักหน้านั้นเอง · หน้าใหม่ที่ไม่มีใน `PAGES` จะถูกมองว่าเป็น 404
 
 ## ดีไซน์
 
-ภาษาภาพตั้งแต่ 20 ก.ย. 2026 ถอดมาจาก tryprofound.com: พื้นดำล้วน หมึกเดียว (#edf2f5) เส้นขอบสีเดียว (#232323) ที่วาดทุกกรอบ หัวเรื่อง Inter น้ำหนัก 500 ขนาด 48px tracking -0.0225em ปุ่มสูง 32px มุม 8px คอนเทนเนอร์ 1088px มีเส้นประแนวตั้งสองข้าง ระยะห่างระหว่าง section 120px หัว section ชิดซ้าย การ์ดใหญ่เป็นสี่เหลี่ยมมีขอบ ไม่ถมสี ทั้งหมดอยู่ใน token ต้นไฟล์ `app/globals.css`
+ภาษาภาพตั้งแต่ 20 ก.ย. 2026 ถอดมาจาก tryprofound.com: พื้นดำล้วน หมึกเดียว (#edf2f5) เส้นขอบสีเดียว (#232323) ที่วาดทุกกรอบ หัวเรื่อง Inter น้ำหนัก 500 ขนาด 48px tracking -0.0225em ปุ่มสูง 32px มุม 8px คอนเทนเนอร์ 1088px มีเส้นประแนวตั้งสองข้าง ระยะห่างระหว่าง section 120px หัว section ชิดซ้าย การ์ดใหญ่เป็นสี่เหลี่ยมมีขอบ ไม่ถมสี ทั้งหมดอยู่ใน token ต้นไฟล์ `src/globals.css`
 
-สองชิ้นที่เป็น canvas: `components/ui/HeroLight.tsx` (ลำแสงหลัง h1 บนหน้าแรก) และ `components/Network.tsx` (สนามโหนดจากไอคอน provider ใน sprite + ประโยคที่ค่อยชัดจากเบลอตามการเลื่อน, section สูง 250vh ข้างในติดหนึบ) ทั้งคู่ปิดแอนิเมชันเมื่อ `prefers-reduced-motion`
+สองชิ้นที่เป็น canvas: `src/lib/components/ui/HeroLight.svelte` (ลำแสงหลัง h1 บนหน้าแรก) และ `src/lib/components/Network.svelte` (สนามโหนดจากไอคอน provider ใน sprite + ประโยคที่ค่อยชัดจากเบลอตามการเลื่อน, section สูง 250vh ข้างในติดหนึบ) ทั้งคู่ปิดแอนิเมชันเมื่อ `prefers-reduced-motion`
 
 ## ภาพและวิดีโอ
 
@@ -79,10 +81,10 @@ CTA ท้ายหน้าไม่มีภาพ · การ์ด "คว�
 | `mode-assist/code/team-*.mp4` + `.png` | 3 โหมด (เล่นเฉพาะแท็บที่เลือก) | 574 × 359 | 1148 × 718 วิดีโอวน ~13 วิ |
 | `uc-*-*.png` | การ์ดใน carousel / `/features/` | 374 × 271 | 748 × 542 |
 | `company-*.mp4` + `.png` + `.json` | section "บริษัท AI ของคุณ" (ห้องบริษัท 3D, กล้องนิ่ง แพน/ซูมด้วย CSS) | 1008 × 599 | 2016 × 1198 วิดีโอวน ~21 วิ · `.json` = ตำแหน่ง px บน poster ของเอเจนต์ โต๊ะ และโฮโลแกรม สำหรับวางป้าย |
-| `cut-*.mp4` + `.png` | section "สร้างและตัดวิดีโอ" (ห้องตัดต่อข้างแชท, `components/VideoCut.tsx`) | 574 × 359 | 1148 × 718 วิดีโอวน ~12 วิ |
+| `cut-*.mp4` + `.png` | section "สร้างและตัดวิดีโอ" (ห้องตัดต่อข้างแชท, `src/lib/components/VideoCut.svelte`) | 574 × 359 | 1148 × 718 วิดีโอวน ~12 วิ |
 
 วิดีโอเข้ารหัส H.264 ~1.5 Mbit/s (ไฟล์ละ 1–2 MB) เล่นเองแบบปิดเสียง และหยุดอยู่ที่ poster เมื่อ `prefers-reduced-motion`
-— `components/ui/Frame.tsx` รับ `shot.video` · `components/Modes.tsx` สลับวิดีโอตามแท็บ
+— `src/lib/components/ui/Frame.svelte` รับ `shot.video` · `src/lib/components/Modes.svelte` สลับวิดีโอตามแท็บ
 
 **ถ่ายใหม่** (ต้องมี Chrome และ ffmpeg ที่มี `h264_nvenc`; สคริปต์ชี้ไปที่ตัวของ CapCut):
 
@@ -97,7 +99,7 @@ node landing/shoot-cards.mjs M1             # การ์ดห้องปร�
 sh landing/cli/shoot.sh 64 21 && node landing/cli/shoot-term.mjs 64 21   # การ์ดเทอร์มินัล (ต้องมี Go)
 ```
 
-ไฟล์ออกที่ `output/shots/` แล้วก๊อปเข้า `public/assets/` ตามชื่อในตาราง บทของแต่ละช็อตอยู่ใน `promo/src/scenes/landing-*.ts`
+ไฟล์ออกที่ `output/shots/` แล้วก๊อปเข้า `static/assets/` ตามชื่อในตาราง บทของแต่ละช็อตอยู่ใน `promo/src/scenes/landing-*.ts`
 
 **ห้องตัดต่อ** (`cut-*`) เปิดไฟล์ `.cut` ที่ engine จริงทำไว้ ไม่ได้เขียนมือ: `promo/tools/cutshot` (Go) เปิดทัวร์หน้าจอที่มีเสียงพากย์ด้วย `cutroom.Open`
 (ถอดเสียงด้วย whisper.cpp ในเครื่อง) แล้วส่ง ops ใน `tools/cutshot/ops/` ผ่าน journal ทีละชุด ฝั่งเอเจนก่อน ฝั่งคนทีหลัง
@@ -109,7 +111,7 @@ sh landing/cli/shoot.sh 64 21 && node landing/cli/shoot-term.mjs 64 21   # ก�
 `shoot-term.mjs` เล่นไบต์นั้นใน xterm.js (สี Campbell ของ Windows Terminal, Consolas) แล้ววาดทีละคำตามคอลัมน์ให้ภาษาไทยต่อกันเป็นคำ ·
 ตัวคอนโซลมีแต่ภาษาไทย คู่ EN จึงต่างกันแค่ข้อความที่พิมพ์และคำตอบ
 
-**ยังไม่มีภาพ** (กรอบว่างที่บอกเลขช่อง ผ่าน `components/ui/Slot.tsx`): S08 n8n (การ์ดออโตเมชั่นและการ์ดงานจริง — ต้องมี n8n จริง) ·
+**ยังไม่มีภาพ** (กรอบว่างที่บอกเลขช่อง ผ่าน `src/lib/components/ui/Slot.svelte`): S08 n8n (การ์ดออโตเมชั่นและการ์ดงานจริง — ต้องมี n8n จริง) ·
 S13 poster ของวิดีโอ YouTube
 
 ## ข้อตกลง
@@ -118,5 +120,5 @@ S13 poster ของวิดีโอ YouTube
   และที่อยู่ของแต่ละตัวเลขอยู่ที่ [docs/PUBLISHED-NUMBERS.md](https://github.com/Mikedev115/Aetox/blob/main/docs/PUBLISHED-NUMBERS.md) ของรีโปแอป
 - **เลขรุ่นไม่ต้องแก้ที่นี่** — build อ่านจาก Releases ล่าสุด · build ออฟไลน์ตั้ง `AETOX_VERSION=1.5.28`
 - **นโยบายความเป็นส่วนตัวอยู่ที่รีโปแอป** (`https://mikedev115.github.io/Aetox-Harness/privacy.html`; the old `/Aetox/` path is a 404 since the repo rename) เพราะ URL นั้นจดไว้กับ Microsoft Store — ห้ามย้ายมาที่นี่
-- ข้อความใน `lib/i18n` ใช้มาร์กอัปย่อได้: `**หนา**` `` `โค้ด` `` `[ข้อความ](url)` — เรนเดอร์โดย `components/ui/Rich.tsx`
+- ข้อความใน `src/lib/i18n` ใช้มาร์กอัปย่อได้: `**หนา**` `` `โค้ด` `` `[ข้อความ](url)` — เรนเดอร์โดย `src/lib/components/ui/Rich.svelte`
 - ปล่อยรุ่นแอปแล้วอยากให้ป้ายเวอร์ชันอัปเดตทันที: `gh api repos/Mikedev115/aetox-landing/dispatches -f event_type=aetox-release`

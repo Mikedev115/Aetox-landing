@@ -1,0 +1,17 @@
+/* The site's stylesheet: the two typefaces the design is set in, then the one
+   the page has always used. globals.css is unchanged from the Next version —
+   it reads its family stacks from the two variables below. */
+@import "@fontsource/ibm-plex-sans-thai/400.css";
+@import "@fontsource/ibm-plex-sans-thai/500.css";
+@import "@fontsource/ibm-plex-sans-thai/600.css";
+@import "@fontsource/ibm-plex-sans-thai/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "./globals.css";
+
+:root {
+  --font-sans: "IBM Plex Sans Thai";
+  --font-latin: "Inter";
+}
