@@ -12,25 +12,15 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "serve": "npx serve build",
-    "dev:next": "next dev",
-    "build:next": "next build",
-    "typecheck:next": "tsc --noEmit -p tsconfig.next.json"
-  },
-  "dependencies": {
-    "next": "16.3.4",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "serve": "npx serve build"
   },
   "devDependencies": {
-    "@fontsource/ibm-plex-sans-thai": "^5.3.0",
-    "@fontsource/inter": "^5.3.0",
+    "@fontsource/ibm-plex-sans-thai": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
     "@sveltejs/adapter-static": "^4.0.1",
     "@sveltejs/kit": "^3.4.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.2",
     "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
     "svelte": "^5.59.1",
     "svelte-check": "^4.7.8",
     "typescript": "^6.0.3",
