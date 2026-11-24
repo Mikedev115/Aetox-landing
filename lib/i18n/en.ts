@@ -86,7 +86,7 @@ export const en = {
       { k: "Teams", n: "{CTX_HELPERS}", vs: "vs {CTX_ALONE}, the same job without helpers", cond: "Main agent's context only, in one real session, not a controlled test · cost down {HELPER_SAVE}% on non-OpenAI prices" },
       { k: "Video", n: "{CUT_TO} s", vs: "from {CUT_FROM} s, the raw take", cond: "Four silences folded, one filler cut · a real file you keep editing" },
     ],
-    note: "Same model on both sides of every card, public OpenAI models: [GPT-6 Luna](MODEL_LUNA) and [GPT-5.6 Terra](MODEL_TERRA). The highest number measured is CWEval func-sec@1 93.3%, and that gap comes from the security skill it ships with. [Method and every round](REPORTS)",
+    note: "Same model on both sides of every card: [GPT-6 Luna](MODEL_LUNA) and [GPT-5.6 Terra](MODEL_TERRA). The highest number measured, CWEval func-sec@1 93.3%, comes from the security skill it ships with. [Method and every round](REPORTS)",
   },
   why: {
     h2: "The model thinks. The harness does the rest.",
