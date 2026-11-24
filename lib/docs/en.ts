@@ -301,6 +301,11 @@ export const docsEn: DocsDict = {
           { k: "Ways in", v: "Add a whole set from the library · install from a URL or a `.zip` · ask the assistant to write one and approve the card" },
           { k: "How it is used", v: "The model sees the names on the shelf and opens one with `skill_view` only when the job needs it — fifty skills cost what five cost" },
         ] },
+        { t: "ul", items: [
+          "**47 ship with it**, and every one is a plain `SKILL.md` — open it in the app and read the whole thing.",
+          "A folder of yours with the same name replaces a shipped skill, so tuning one never means editing the program.",
+          "A skill can be ticked onto the desks that need it, or kept in one agent's own `skills\\` folder — the tax-invoice spec is then read by that agent and not by the deck writer.",
+        ] },
         { t: "note", kind: "tip", title: "A skill is measured, not assumed", text: "Every skill shipped with Aetox was run on the same model with it on and off. Ones that did not help were taken out — so a skill in the library is there because it earned the place." },
         { t: "h2", text: "MCP: tools someone else wrote" },
         { t: "p", text: "An MCP server adds tools Aetox does not ship: your own database, a tracker, a service you use. Add one in **Capabilities › MCP servers** — an address or a command, a key if it needs one — then press **Test**, which connects, initialises and lists the tools that came back." },

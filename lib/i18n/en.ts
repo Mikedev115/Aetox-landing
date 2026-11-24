@@ -160,6 +160,10 @@ export const en = {
     title: "Build an environment of your own",
     items: [
       { k: "Add your own tools", s: "have the agent build a new one to your need" },
+      { k: "Teach it a skill", s: "a folder with a SKILL.md, ticked onto the desks that need it" },
+      { k: "Keep your prompts", s: "a .md in prompts/ becomes a /name, arguments included" },
+      { k: "Hire a worker", s: "it brings its own skills, MCP servers and opening line" },
+      { k: "Ship it as one pack", s: "skills, prompts, agents, teams, hooks, MCP servers and rooms in one install" },
       { k: "Build your own work room", s: "design the 3D space on the right as you like" },
       { k: "Make the system look like yours", s: "set the background to your own style" },
     ],
@@ -169,7 +173,8 @@ export const en = {
       "A specialised tool is kept as an index; the real detail loads only when it is called",
       "A tool's token cost drops by up to 10×",
       "Tools can be added freely, without swelling the context",
-      "Skills and specialised commands: the system names them, and the agent opens the one the job needs",
+      "Skills and specialised commands: 47 skills and 37 /commands ship with it, and the system names them — a line each in the prompt, the body only when a job opens it",
+      "152 MCP servers wait on a shelf, half of them labelled with what they cost in tokens before you install one; a server adds names, not a whole set of schemas",
       "Memory is split by category and by detail, so the agent reaches what it needs without loading all of it at once",
     ],
     teaser: {
@@ -373,8 +378,8 @@ export const en = {
     note: "**No need to decide yet.** Open the app and its guide right after install. When you want it to do the work, connect a model: an account or key you already have, or a local model through Ollama or LM Studio.",
   },
   weight: {
-    h2: "Light enough to leave open all day",
-    p: "An assistant you close because it slows your machine is one you do not use. Aetox is two files, {DISK_MB} MB together (the window and its engine), drawn with the WebView2 that Windows already ships.",
+    h2: "Nothing is loaded that the job doesn't use.",
+    p: "Your profile is kept in parts, and the part your message points at is the part that loads. Skills and tools stay as names until something opens one. A helper reads in its own context. All of it under one rule: nothing is loaded that the job doesn't use. What comes back is an answer about what you asked, not a recital of everything it knows.",
     benchLabel: "Disk used after install, shorter is better",
     aetoxType: "AI agent",
     cometType: "AI assistant",
@@ -382,7 +387,7 @@ export const en = {
     kpis: [
       { unit: "MB", k: "Disk on your machine", s: "Two files · installer {INSTALLER_MB} MB" },
       { unit: "tests", k: "Pass before release", s: "Go {TESTS_GO} · UI {TESTS_UI}" },
-      { unit: "ms", k: "One turn assembled", s: "174.9 KB memory · 13 Aug 2026" },
+      { unit: "107k", k: "Context at the end of a real session", s: "190k when the main agent reads it all · 4 Oct 2026" },
       { unit: "tools", k: "In the model's hands from install", s: "About {TOKENS_PER_REQUEST} tokens per request" },
     ],
   },
