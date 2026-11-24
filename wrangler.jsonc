@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers static assets: the prerendered site is the whole worker,
+  // and a request for a page that does not exist is answered with build/404.html
+  // — the same file GitHub Pages uses.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aetox-landing",
+  "compatibility_date": "2026-11-24",
+  "assets": {
+    "directory": "./build",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
