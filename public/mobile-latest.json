@@ -1,8 +1,8 @@
 {
-  "version": "0.3.19",
-  "versionCode": 22,
-  "apk": "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.3.19/Aetox-Mobile-Android-Test.apk",
-  "sha256": "4809aed2352bb406db3cbcd36a96d95e3f040de246ffe33960c243bb44d89145",
-  "bytes": 8056577,
+  "version": "0.3.20",
+  "versionCode": 23,
+  "apk": "https://github.com/Mikedev115/Aetox-Harness/releases/download/mobile-v0.3.20/Aetox-Mobile-Android-Test.apk",
+  "sha256": "142ca65ec314d6a1c3e33af97e4e623f7291cb20a52b31ffefcd1d236dff4d35",
+  "bytes": 8059345,
   "published": "2026-11-24"
 }
