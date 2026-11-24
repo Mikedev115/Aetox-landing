@@ -22,7 +22,11 @@
 <Hero t={t.hero} {lang} />
 <Doors t={t.doors} {lang} />
 <Why t={t.why} />
-<Weight t={t.weight} />
+<section id="weight">
+  <div class="wrap">
+    <Weight t={t.weight} />
+  </div>
+</section>
 <OwnTeaser t={t.own.teaser} {lang} />
 <Demo t={t.demo} {lang} />
 <Documents t={t.docs} />
