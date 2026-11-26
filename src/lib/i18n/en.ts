@@ -10,7 +10,7 @@ export const en = {
   meta: {
     title: "Aetox · Hand it over. We'll run it.",
     description:
-      "Say what you want and Aetox runs the work: a company of agents on your computer for everyday jobs, and a coding system that gets more out of the model you already use. Free, for Windows.",
+      "Say what you want and Aetox runs the work: a company of agents on your computer for everyday jobs, and a coding system that gets more out of the model you already use. Free, for Windows and Linux.",
     ogDescription: "Build a company on your computer. An ordinary model can do more than you think.",
     ogAlt: "Aetox: Hand it over. We'll run it. Build a company on your computer. An ordinary model can do more than you think: secure code 93.3% vs 68.9% on the same model",
   },
@@ -500,8 +500,9 @@ export const en = {
       {
         q: "Does it support Mac or Linux",
         a: [
-          "Not yet. Right now it does Windows first and well, because there is one person writing it and they use Windows every day for real work.",
-          "The engine already compiles on Linux and macOS, but the browser part and the key encryption are not done there yet. Other systems are the plan after this.",
+          "Linux, yes: Ubuntu 22.04+ and Debian 12+, 64-bit. Take `aetox_<version>_amd64.deb` from Releases and run `sudo apt install ./aetox_*.deb`, or unpack the portable tarball anywhere you can write — both update themselves from a new release, inside the app.",
+          "Not everything has crossed over. Computer use, read-aloud, meeting recording, the second window, the desktop companion and the clipboard file list are Windows-only for now; [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) keeps that list exact.",
+          "macOS is still a port in progress — there is no build to download.",
         ],
       },
     ],
@@ -580,10 +581,10 @@ export const en = {
       metaDescription: "Answers on how Aetox differs from a web AI, whether you need to code, how safe your data is, what it can access, what it costs, what machine it needs, and how to uninstall.",
     },
     download: {
-      title: "Download Aetox for Windows",
-      sub: "One installer file from GitHub. Install, connect a model you already use or a local one, and run your first job. No card, no account of ours.",
-      metaTitle: "Download Aetox harness for Windows: installer, Aetox CLI, Microsoft Store",
-      metaDescription: "Download the Aetox installer from GitHub ({INSTALLER_MB} MB, {DISK_MB} MB on disk), the Aetox CLI for your terminal, or get it from the Microsoft Store with one winget command. Uninstalls in one click.",
+      title: "Download Aetox for Windows or Linux",
+      sub: "One file from GitHub, installed the way each system expects. Connect a model you already use or a local one, and run your first job. No card, no account of ours.",
+      metaTitle: "Download Aetox harness for Windows and Linux: installer, .deb, Aetox CLI, Microsoft Store",
+      metaDescription: "Download the Aetox installer for Windows ({INSTALLER_MB} MB, {DISK_MB} MB on disk), the Debian package for Ubuntu 22.04+ and Debian 12+, the Aetox CLI for your terminal, or get it from the Microsoft Store with one winget command.",
       setup: "Download the installer",
       cliSetup: "Aetox CLI",
       store: "Microsoft Store",
@@ -594,7 +595,7 @@ export const en = {
       facts: [
         { k: "Current version", s: "Read from GitHub Releases at build time" },
         { k: "Installer", s: "{DISK_MB} MB on disk after install, two files" },
-        { k: "Runs on Windows", s: "Draws with the WebView2 that Windows already ships" },
+        { k: "Runs on Windows and Linux", s: "WebView2 on Windows, the WebKitGTK your Linux already ships" },
       ],
       ways: [
         {
@@ -615,6 +616,12 @@ export const en = {
         body: "The Code desk as a full-screen console: type `aetox` in any project folder, watch the work land above the input, answer approvals in place. A separate installer from the app: it goes into your own user folder, adds itself to PATH, needs no administrator rights, and is not in the Microsoft Store.",
         button: "Download Aetox CLI",
         note: "Open a new terminal after installing and type `aetox` · remove it from Settings → Apps → Aetox CLI · not code-signed yet, so SmartScreen asks once",
+      },
+      linux: {
+        title: "Linux: the Debian package or a portable folder",
+        body: "Ubuntu 22.04+ and Debian 12+, 64-bit. The `.deb` installs to `/opt/aetox` with a menu entry; the portable tarball unpacks anywhere and updates itself. Both draw with the WebKitGTK your system already ships, so the download stays around 40 MB.",
+        button: "Download the portable tarball",
+        note: "The `.deb` is on [GitHub Releases](RELEASES) — its file name carries the version · computer use, read-aloud, meeting recording, the second window, the desktop companion and the clipboard file list are Windows-only for now",
       },
       oneChannel: {
         title: "Pick one channel and stay with it",

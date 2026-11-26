@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Dict } from "#lib/i18n/index.ts";
   import { NUMBERS } from "#lib/numbers.ts";
-  import { APP_SETUP_URL, CLI_SETUP_URL, STORE_URL } from "#lib/site.ts";
+  import { APP_SETUP_URL, CLI_SETUP_URL, LINUX_TARBALL_URL, RELEASES, STORE_URL } from "#lib/site.ts";
   import Pill from "#lib/components/ui/Pill.svelte";
   import Reveal from "#lib/components/ui/Reveal.svelte";
   import Rich from "#lib/components/ui/Rich.svelte";
@@ -12,7 +12,7 @@
   // the labels come from the dictionary.
   let { t, version }: { t: Dict["pages"]["download"]; version: string } = $props();
 
-  const values = $derived([`v${version}`, `${NUMBERS.INSTALLER_MB} MB`, "Windows"]);
+  const values = $derived([`v${version}`, `${NUMBERS.INSTALLER_MB} MB`, "Windows · Linux"]);
 </script>
 
 <div class="wrap">
@@ -43,6 +43,13 @@
       <Rich text={t.cli.body} />
       <div class="cli-get"><Pill variant="ghost" trail="arrow" href={CLI_SETUP_URL}>{t.cli.button}</Pill></div>
       <Rich className="cli-note" text={t.cli.note} />
+    </Reveal>
+    <Reveal className="scard uninstall">
+      <span id="linux" class="anchor"></span>
+      <h3>{t.linux.title}</h3>
+      <Rich text={t.linux.body} />
+      <div class="cli-get"><Pill variant="ghost" trail="arrow" href={LINUX_TARBALL_URL}>{t.linux.button}</Pill></div>
+      <Rich className="cli-note" text={t.linux.note} />
     </Reveal>
     <Reveal className="scard uninstall"><h3>{t.uninstallTitle}</h3><p>{t.uninstallBody}</p></Reveal>
   </div>

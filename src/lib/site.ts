@@ -58,6 +58,12 @@ export const MOBILE_APK = `https://github.com/Mikedev115/Aetox-Harness/releases/
 // The console's own installer (app repo DECISIONS §333): a separate download
 // from the app, never in the Store. Named off the app updater's suffixes.
 export const CLI_SETUP_URL = `${GITHUB}/releases/latest/download/aetox-cli-setup.exe`;
+// Linux ships out of the same release since v1.11.40: a Debian package whose
+// file name carries the version, and a portable tarball whose name never
+// changes. The tarball is linked straight; the .deb is picked from the release
+// page, because a URL built from the version 404s on every build made before
+// that release was published.
+export const LINUX_TARBALL_URL = `${GITHUB}/releases/latest/download/aetox-linux-amd64-portable.tar.gz`;
 export const ISSUES = `${GITHUB}/issues`;
 // The measurement shelf moved under docs/reports/ on 2026-09-20; ARCHITECTURE.md
 // is a private record since 2026-09-19 and has no public address any more.
