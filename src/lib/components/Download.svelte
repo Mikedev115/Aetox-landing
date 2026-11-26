@@ -2,6 +2,7 @@
   import type { Dict } from "#lib/i18n/index.ts";
   import { NUMBERS } from "#lib/numbers.ts";
   import { APP_SETUP_URL, CLI_SETUP_URL, LINUX_TARBALL_URL, RELEASES, STORE_URL } from "#lib/site.ts";
+  import OsIcon from "#lib/components/ui/OsIcon.svelte";
   import Pill from "#lib/components/ui/Pill.svelte";
   import Reveal from "#lib/components/ui/Reveal.svelte";
   import Rich from "#lib/components/ui/Rich.svelte";
@@ -13,6 +14,11 @@
   let { t, version }: { t: Dict["pages"]["download"]; version: string } = $props();
 
   const values = $derived([`v${version}`, `${NUMBERS.INSTALLER_MB} MB`, "Windows · Linux"]);
+
+  // The mark each way-in belongs to: the installer card is the Windows file the
+  // way the .deb card is the Linux one. Store, winget and Scoop are Windows
+  // conveniences rather than a file of their own, so they carry no mark.
+  const WAY_OS = ["windows", "", ""] as const;
 </script>
 
 <div class="wrap">
@@ -32,8 +38,11 @@
       {/each}
     </div>
     <div class="three ways">
-      {#each t.ways as w (w.title)}
-        <Reveal as="article" className="scard"><h3>{w.title}</h3><Rich text={w.body} /></Reveal>
+      {#each t.ways as w, i (w.title)}
+        <Reveal as="article" className="scard">
+          <h3 class={WAY_OS[i] ? "with-os" : ""}>{#if WAY_OS[i]}<OsIcon name={WAY_OS[i]} />{/if}{w.title}</h3>
+          <Rich text={w.body} />
+        </Reveal>
       {/each}
     </div>
     <Reveal className="scard uninstall"><h3>{t.oneChannel.title}</h3><p>{t.oneChannel.body}</p></Reveal>
@@ -46,7 +55,7 @@
     </Reveal>
     <Reveal className="scard uninstall">
       <span id="linux" class="anchor"></span>
-      <h3>{t.linux.title}</h3>
+      <h3 class="with-os"><OsIcon name="linux" />{t.linux.title}</h3>
       <Rich text={t.linux.body} />
       <div class="cli-get"><Pill variant="ghost" trail="arrow" href={LINUX_TARBALL_URL}>{t.linux.button}</Pill></div>
       <Rich className="cli-note" text={t.linux.note} />

@@ -43,7 +43,11 @@ export const en = {
     download: "Download for Windows",
     other: "All ways to install",
     fine: "One {INSTALLER_MB} MB installer · bring your own model, or run one locally for free",
-    linuxBeta: "Also on Linux — in beta: Ubuntu 22.04+ and Debian 12+",
+    osWin: "Windows 10/11",
+    osLinux: "Linux",
+    osBeta: "beta",
+    osWinAria: "Download Aetox for Windows 10 and 11",
+    osLinuxAria: "Download Aetox for Linux, in beta",
   },
   // The two doors under the hero, each selling one thing (AGENTS.md § Product direction):
   // the assistant lets you delegate more, Code lets the model finish more.

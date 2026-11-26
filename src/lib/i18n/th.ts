@@ -40,7 +40,11 @@ export const th: Dict = {
     download: "ดาวน์โหลดสำหรับ Windows",
     other: "ดูวิธีติดตั้งทั้งหมด",
     fine: "ตัวติดตั้งไฟล์เดียว {INSTALLER_MB} MB · ใช้โมเดลที่คุณมี หรือรันโมเดลในเครื่องฟรี",
-    linuxBeta: "มีบน Linux ด้วย แบบเบต้า: Ubuntu 22.04+ และ Debian 12+",
+    osWin: "Windows 10/11",
+    osLinux: "Linux",
+    osBeta: "เบต้า",
+    osWinAria: "ดาวน์โหลด Aetox สำหรับ Windows 10 และ 11",
+    osLinuxAria: "ดาวน์โหลด Aetox สำหรับ Linux แบบเบต้า",
   },
   doors: {
     ceo: {

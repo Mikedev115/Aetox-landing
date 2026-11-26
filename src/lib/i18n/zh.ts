@@ -43,7 +43,11 @@ export const zh = {
     download: "下载 Windows 版",
     other: "查看全部安装方式",
     fine: "单个安装包 {INSTALLER_MB} MB · 用你已有的模型，或在本地免费运行一个",
-    linuxBeta: "Linux 也能用，目前是 beta：Ubuntu 22.04+ 与 Debian 12+",
+    osWin: "Windows 10/11",
+    osLinux: "Linux",
+    osBeta: "beta",
+    osWinAria: "下载 Windows 10 和 11 版 Aetox",
+    osLinuxAria: "下载 Linux（beta）版 Aetox",
   },
   doors: {
     ceo: {
