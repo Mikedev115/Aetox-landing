@@ -7,7 +7,7 @@ export const th: Dict = {
   meta: {
     title: "Aetox · ให้เราจัดการงานของคุณ",
     description:
-      "บอกว่าอยากได้อะไร แล้ว Aetox จัดการงานให้ มีบริษัทของเอเจนต์ในคอมพิวเตอร์ของคุณสำหรับงานประจำวัน และระบบโค้ดที่ดึงฝีมือจากโมเดลที่คุณใช้อยู่ได้มากขึ้น ใช้ฟรี บน Windows และ Linux",
+      "บอกว่าอยากได้อะไร แล้ว Aetox จัดการงานให้ มีบริษัทของเอเจนต์ในคอมพิวเตอร์ของคุณสำหรับงานประจำวัน และระบบโค้ดที่ดึงฝีมือจากโมเดลที่คุณใช้อยู่ได้มากขึ้น ใช้ฟรี บน Windows และ Linux (เบต้า)",
     ogDescription: "สร้างบริษัทในคอมพิวเตอร์ของคุณ โมเดลธรรมดาอาจเก่งกว่าที่คุณคิด",
     ogAlt: "Aetox: ให้เราจัดการงานของคุณ สร้างบริษัทในคอมพิวเตอร์ของคุณ โมเดลธรรมดาอาจเก่งกว่าที่คุณคิด โค้ดปลอดภัย 93.3% เทียบ 68.9% บนโมเดลเดียวกัน",
   },
@@ -40,6 +40,7 @@ export const th: Dict = {
     download: "ดาวน์โหลดสำหรับ Windows",
     other: "ดูวิธีติดตั้งทั้งหมด",
     fine: "ตัวติดตั้งไฟล์เดียว {INSTALLER_MB} MB · ใช้โมเดลที่คุณมี หรือรันโมเดลในเครื่องฟรี",
+    linuxBeta: "มีบน Linux ด้วย แบบเบต้า: Ubuntu 22.04+ และ Debian 12+",
   },
   doors: {
     ceo: {
@@ -487,8 +488,8 @@ export const th: Dict = {
       {
         q: "รองรับ Mac หรือ Linux ไหม",
         a: [
-          "Linux รองรับแล้ว: Ubuntu 22.04+ และ Debian 12+ แบบ 64-bit โหลด `aetox_<เลขรุ่น>_amd64.deb` จาก Releases แล้วสั่ง `sudo apt install ./aetox_*.deb` หรือแตก tarball พกพาไว้ที่ไหนก็ได้ที่เขียนได้ — ทั้งสองทางอัปเดตตัวเองจากรุ่นใหม่ในแอป",
-          "ยังมีบางอย่างที่เป็นของ Windows อย่างเดียว: computer use, อ่านออกเสียง, อัดประชุม, หน้าต่างที่สอง, ตัว companion และรายการไฟล์จาก clipboard — [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) เก็บรายการนี้ให้ตรงเสมอ",
+          "Linux รองรับแล้ว แบบเบต้า: Ubuntu 22.04+ และ Debian 12+ แบบ 64-bit โหลด `aetox_<เลขรุ่น>_amd64.deb` จาก Releases แล้วสั่ง `sudo apt install ./aetox_*.deb` หรือแตก tarball พกพาไว้ที่ไหนก็ได้ที่เขียนได้ — ทั้งสองทางอัปเดตตัวเองจากรุ่นใหม่ในแอป",
+          "เบต้าคือ: งานประจำวันเสร็จแล้ว — แชท เซสชัน MCP สกิล ไฟล์ เทอร์มินัล และแท็บเบราว์เซอร์ — ที่ยังขาดคือ computer use, อ่านออกเสียง, อัดประชุม, หน้าต่างที่สอง, ตัว companion และรายการไฟล์จาก clipboard ซึ่งยังเป็นของ Windows อย่างเดียว และ [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) เก็บรายการนี้ให้ตรงเสมอ",
           "macOS ยังอยู่ระหว่างพอร์ต ยังไม่มีไฟล์ให้ดาวน์โหลด",
         ],
       },
@@ -567,8 +568,8 @@ export const th: Dict = {
     download: {
       title: "ดาวน์โหลด Aetox สำหรับ Windows และ Linux",
       sub: "ไฟล์เดียวจาก GitHub ติดตั้งตามวิธีของแต่ละระบบ เชื่อมโมเดลที่คุณใช้อยู่หรือโมเดลในเครื่อง แล้วสั่งงานแรกได้เลย ไม่ต้องผูกบัตร ไม่ต้องมีบัญชีของเรา",
-      metaTitle: "ดาวน์โหลด Aetox harness สำหรับ Windows และ Linux: ตัวติดตั้ง, .deb, Aetox CLI, Microsoft Store",
-      metaDescription: "ดาวน์โหลดตัวติดตั้ง Aetox สำหรับ Windows ({INSTALLER_MB} MB บนดิสก์ {DISK_MB} MB) แพ็กเกจ .deb สำหรับ Ubuntu 22.04+ และ Debian 12+ หรือ Aetox CLI สำหรับเทอร์มินัล หรือรับจาก Microsoft Store ด้วยคำสั่ง winget บรรทัดเดียว",
+      metaTitle: "ดาวน์โหลด Aetox harness สำหรับ Windows และ Linux (เบต้า): ตัวติดตั้ง, .deb, Aetox CLI, Microsoft Store",
+      metaDescription: "ดาวน์โหลดตัวติดตั้ง Aetox สำหรับ Windows ({INSTALLER_MB} MB บนดิสก์ {DISK_MB} MB) แพ็กเกจ .deb เบต้าสำหรับ Ubuntu 22.04+ และ Debian 12+ หรือ Aetox CLI สำหรับเทอร์มินัล หรือรับจาก Microsoft Store ด้วยคำสั่ง winget บรรทัดเดียว",
       setup: "ดาวน์โหลดตัวติดตั้ง",
       cliSetup: "Aetox CLI",
       store: "Microsoft Store",
@@ -579,7 +580,7 @@ export const th: Dict = {
       facts: [
         { k: "รุ่นปัจจุบัน", s: "อ่านจาก GitHub Releases ตอน build" },
         { k: "ตัวติดตั้ง", s: "ติดตั้งแล้วใช้ดิสก์ {DISK_MB} MB รวมสองไฟล์" },
-        { k: "ใช้บน Windows และ Linux", s: "Windows วาดด้วย WebView2 ส่วน Linux ใช้ WebKitGTK ที่ระบบมีอยู่แล้ว" },
+        { k: "ใช้บน Windows และ Linux", s: "Windows วาดด้วย WebView2 ส่วน Linux ใช้ WebKitGTK ที่ระบบมีอยู่แล้ว · Linux เป็นเบต้า" },
       ],
       ways: [
         {
@@ -602,8 +603,8 @@ export const th: Dict = {
         note: "ติดตั้งเสร็จแล้วเปิดเทอร์มินัลใหม่ พิมพ์ `aetox` · ถอนได้จาก ตั้งค่า → แอป → Aetox CLI · ยังไม่มีใบเซ็นโค้ด SmartScreen จะถามหนึ่งครั้ง",
       },
       linux: {
-        title: "Linux: แพ็กเกจ .deb หรือโฟลเดอร์พกพา",
-        body: "Ubuntu 22.04+ และ Debian 12+ แบบ 64-bit `.deb` ลงที่ `/opt/aetox` พร้อมเมนูในระบบ ส่วน tarball พกพาแตกไว้ที่ไหนก็ได้แล้วอัปเดตตัวเอง ทั้งคู่วาดหน้าจอด้วย WebKitGTK ที่ระบบมีอยู่แล้ว ไฟล์ดาวน์โหลดจึงราว 40 MB",
+        title: "Linux (เบต้า): แพ็กเกจ .deb หรือโฟลเดอร์พกพา",
+        body: "Ubuntu 22.04+ และ Debian 12+ แบบ 64-bit `.deb` ลงที่ `/opt/aetox` พร้อมเมนูในระบบ ส่วน tarball พกพาแตกไว้ที่ไหนก็ได้แล้วอัปเดตตัวเอง ทั้งคู่วาดหน้าจอด้วย WebKitGTK ที่ระบบมีอยู่แล้ว ไฟล์ดาวน์โหลดจึงราว 40 MB **เบต้า** เพราะงานประจำวันเสร็จแล้ว เหลือมุมที่เป็นของ Windows อยู่อีกไม่กี่จุดที่กำลังพอร์ต",
         button: "ดาวน์โหลด tarball พกพา",
         note: "`.deb` อยู่ใน [GitHub Releases](RELEASES) — ชื่อไฟล์มีเลขรุ่นอยู่ · computer use, อ่านออกเสียง, อัดประชุม, หน้าต่างที่สอง, ตัว companion และรายการไฟล์จาก clipboard ยังเป็นของ Windows อย่างเดียว",
       },

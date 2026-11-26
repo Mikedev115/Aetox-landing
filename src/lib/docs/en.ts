@@ -68,7 +68,7 @@ export const docsEn: DocsDict = {
     {
       slug: "install",
       title: "Install Aetox",
-      sub: "Five ways in — four on Windows and one on Linux. Pick one channel and stay with it: the Store build and the installer build keep separate settings, chats and keys.",
+      sub: "Five ways in — four on Windows, and Linux in beta. Pick one channel and stay with it: the Store build and the installer build keep separate settings, chats and keys.",
       metaTitle: "Install Aetox on Windows or Linux — docs",
       metaDescription: "Install Aetox on Windows from the Microsoft Store, the installer, the console's own setup or Scoop, or on Linux from the .deb or the portable tarball — and uninstall it cleanly.",
       blocks: [
@@ -78,24 +78,24 @@ export const docsEn: DocsDict = {
           ["**Installer**", "You want the newest build the day it ships.", "In the app: **Download the update → Restart to update**"],
           ["**CLI**", "You want the code desk in a terminal, sharing the app's keys and memory.", "Runs beside the app; per user, no admin rights"],
           ["**Scoop**", "You already keep your tools in Scoop.", "`scoop update aetox`"],
-          ["**Linux**", "Ubuntu 22.04+ or Debian 12+, 64-bit. No Store listing and no apt repository — the file is the install.", "Install the next `.deb` the same way; the app links to it"],
+          ["**Linux (beta)**", "Ubuntu 22.04+ or Debian 12+, 64-bit. No Store listing and no apt repository — the file is the install.", "Install the next `.deb` the same way; the app links to it"],
         ] },
         { t: "cmds", items: [
           { label: "Microsoft Store", text: "Or open the Store page and press Install.", code: "winget install --id=9N4KKBRRSCZZ --source=msstore" },
           { label: "Installer", text: "Downloads aetox-amd64-installer.exe from the latest release.", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-amd64-installer.exe" },
           { label: "CLI", text: "A separate program that drives the same engine from a terminal.", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-cli-setup.exe" },
           { label: "Scoop", text: "Installs from the manifest in the public repository.", code: "scoop install https://raw.githubusercontent.com/Mikedev115/Aetox-Harness/main/scoop/aetox.json" },
-          { label: "Linux .deb", text: "From the latest release — the file name carries the version.", code: "sudo apt install ./aetox_<version>_amd64.deb" },
-          { label: "Linux portable", text: "Unpack anywhere you can write; it updates itself from inside the app.", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-linux-amd64-portable.tar.gz" },
+          { label: "Linux .deb (beta)", text: "From the latest release — the file name carries the version.", code: "sudo apt install ./aetox_<version>_amd64.deb" },
+          { label: "Linux portable (beta)", text: "Unpack anywhere you can write; it updates itself from inside the app.", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-linux-amd64-portable.tar.gz" },
         ] },
         { t: "note", kind: "warn", title: "\"Windows protected your PC\"", text: "The installer is not code-signed yet, so SmartScreen asks once. Choose **More info → Run anyway**, or install from the Store, which Microsoft signs. Aetox will not ask you to turn off your antivirus." },
         { t: "h2", text: "What it needs" },
         { t: "ul", items: [
-          "**Windows 10+, 64-bit** — or **Linux, 64-bit**: Ubuntu 22.04+ or Debian 12+. macOS is still a port in progress; [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) says exactly how far each one is.",
+          "**Windows 10+, 64-bit** — or **Linux, 64-bit, in beta**: Ubuntu 22.04+ or Debian 12+. macOS is still a port in progress; [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) says exactly how far each one is.",
           "**A model to talk to** — an account, an API key, or LM Studio / Ollama on the same machine. Nothing else is required to start.",
           "**Disk** — the installer is about 49 MB; the app keeps its chats, its database and its logs under your Windows profile.",
         ] },
-        { t: "note", kind: "tip", title: "What Linux does not have yet", text: "Computer use, read-aloud, meeting recording, the second window, the desktop companion and the clipboard file list are Windows-only for now. Everything else — chat, sessions, MCP, skills, files, the terminal and the browser tab — runs on Linux, and [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) keeps that list current." },
+        { t: "note", kind: "tip", title: "Linux is in beta: what it does not have yet", text: "The everyday work is finished — chat, sessions, MCP, skills, files, the terminal and the browser tab. Computer use, read-aloud, meeting recording, the second window, the desktop companion and the clipboard file list are Windows-only for now. Everything else — chat, sessions, MCP, skills, files, the terminal and the browser tab — runs on Linux, and [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) keeps that list current." },
         { t: "h2", text: "Where it keeps things" },
         { t: "dl", items: [
           { k: "Settings, keys, chat database", v: "`%APPDATA%\\Aetox` — `aetox.db` (SQLite) and one JSON file per setting group" },

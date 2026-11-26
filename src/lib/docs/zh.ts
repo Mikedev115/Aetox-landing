@@ -66,7 +66,7 @@ export const docsZh: DocsDict = {
     {
       slug: "install",
       title: "安装 Aetox",
-      sub: "五条安装路 —— Windows 四条，Linux 一条。选一条渠道然后留在上面：商店版和安装包版各自保留设置、聊天和密钥。",
+      sub: "五条安装路 —— Windows 四条，Linux 一条（beta）。选一条渠道然后留在上面：商店版和安装包版各自保留设置、聊天和密钥。",
       metaTitle: "在 Windows 或 Linux 上安装 Aetox — 文档",
       metaDescription: "在 Windows 上从 Microsoft Store、安装包、控制台自带的安装程序或 Scoop 安装 Aetox，或在 Linux 上用 .deb 或免安装 tarball 安装，以及如何干净地卸载。",
       blocks: [
@@ -76,24 +76,24 @@ export const docsZh: DocsDict = {
           ["**安装包**", "想在发布当天就用上最新版。", "在应用内：**下载更新 → 重启以更新**"],
           ["**CLI**", "想在终端里用代码桌子，共用应用的密钥和记忆。", "可与应用并存；按用户安装，不需要管理员权限"],
           ["**Scoop**", "你的工具本来就都放在 Scoop 里。", "`scoop update aetox`"],
-          ["**Linux**", "Ubuntu 22.04+ 或 Debian 12+，64 位。商店里没有，也没有 apt 源 —— 文件本身就是安装包。", "用同样方式装下一个 `.deb`；应用里有链接"],
+          ["**Linux（beta）**", "Ubuntu 22.04+ 或 Debian 12+，64 位。商店里没有，也没有 apt 源 —— 文件本身就是安装包。", "用同样方式装下一个 `.deb`；应用里有链接"],
         ] },
         { t: "cmds", items: [
           { label: "Microsoft Store", text: "或打开商店页面点安装。", code: "winget install --id=9N4KKBRRSCZZ --source=msstore" },
           { label: "安装包", text: "从最新版本下载 aetox-amd64-installer.exe。", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-amd64-installer.exe" },
           { label: "CLI", text: "一个独立的程序，在终端里驱动同一个引擎。", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-cli-setup.exe" },
           { label: "Scoop", text: "从公开仓库里的清单安装。", code: "scoop install https://raw.githubusercontent.com/Mikedev115/Aetox-Harness/main/scoop/aetox.json" },
-          { label: "Linux .deb", text: "来自最新版本 —— 文件名带版本号。", code: "sudo apt install ./aetox_<版本>_amd64.deb" },
-          { label: "Linux 免安装", text: "解压到任何可写位置；在应用里自己更新。", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-linux-amd64-portable.tar.gz" },
+          { label: "Linux .deb（beta）", text: "来自最新版本 —— 文件名带版本号。", code: "sudo apt install ./aetox_<版本>_amd64.deb" },
+          { label: "Linux 免安装（beta）", text: "解压到任何可写位置；在应用里自己更新。", code: "https://github.com/Mikedev115/Aetox-Harness/releases/latest/download/aetox-linux-amd64-portable.tar.gz" },
         ] },
         { t: "note", kind: "warn", title: "“Windows 已保护你的电脑”", text: "安装包还没有代码签名，所以 SmartScreen 会问一次。选择 **更多信息 → 仍要运行**，或者从商店安装（微软签名的那个）。Aetox 不会要求你关闭杀毒软件。" },
         { t: "h2", text: "需要什么" },
         { t: "ul", items: [
-          "**Windows 10 以上，64 位** —— 或 **Linux，64 位**：Ubuntu 22.04+ 或 Debian 12+。macOS 仍在移植中，[PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) 写明了各自进行到哪一步。",
+          "**Windows 10 以上，64 位** —— 或 **Linux，64 位（beta）**：Ubuntu 22.04+ 或 Debian 12+。macOS 仍在移植中，[PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) 写明了各自进行到哪一步。",
           "**一个可以对话的模型** —— 账号、API 密钥，或同一台机器上的 LM Studio / Ollama。除此之外没有别的要求。",
           "**磁盘空间** —— 安装包约 49 MB；应用把聊天、数据库和日志放在你的 Windows 用户目录下。",
         ] },
-        { t: "note", kind: "tip", title: "Linux 上还没有什么", text: "computer use、朗读、会议录音、第二窗口、桌面 companion、剪贴板文件列表目前只在 Windows 上。其余 —— 聊天、会话、MCP、技能、文件、终端和浏览器标签 —— 在 Linux 上都能用，[PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) 一直更新这份清单。" },
+        { t: "note", kind: "tip", title: "Linux 是 beta：还缺什么", text: "日常的活已经完成 —— 聊天、会话、MCP、技能、文件、终端、浏览器标签。computer use、朗读、会议录音、第二窗口、桌面 companion、剪贴板文件列表目前只在 Windows 上。其余 —— 聊天、会话、MCP、技能、文件、终端和浏览器标签 —— 在 Linux 上都能用，[PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md) 一直更新这份清单。" },
         { t: "h2", text: "东西都放在哪" },
         { t: "dl", items: [
           { k: "设置、密钥、聊天数据库", v: "`%APPDATA%\\Aetox` —— `aetox.db`（SQLite）以及每组设置一个 JSON 文件" },

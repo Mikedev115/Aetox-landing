@@ -220,6 +220,8 @@ section{padding:clamp(5rem,10vw,7.5rem) 0}
 .eyebrow{font-size:13px;color:var(--dim);letter-spacing:.01em;margin-bottom:.75rem}
 .hero-eyebrow{font-family:var(--mono);margin:0 auto 1rem}
 
+.hero-linux a{text-decoration:underline;text-underline-offset:2px;color:var(--muted)}
+.hero-linux a:hover{color:var(--text)}
 .hero-fine{padding-bottom:clamp(3rem,6vw,4.5rem)}
 
 /* ── two doors under the hero: the CEO side in gold, Code in the one blue ── */

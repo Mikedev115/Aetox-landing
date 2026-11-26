@@ -10,7 +10,7 @@ export const zh = {
   meta: {
     title: "Aetox · 交给它，就有人做",
     description:
-      "说出你要什么，Aetox 把活干完：一台属于你的智能体公司处理日常事务，加上一套让现有模型发挥更好的编码系统。免费，适用于 Windows 和 Linux。",
+      "说出你要什么，Aetox 把活干完：一台属于你的智能体公司处理日常事务，加上一套让现有模型发挥更好的编码系统。免费，适用于 Windows，以及 beta 阶段的 Linux。",
     ogDescription: "在你的电脑上组建一家公司。普通模型也能做到超出你想象的事。",
     ogAlt: "Aetox：交给它，就有人做。在你的电脑上组建一家公司。同一个模型下，安全代码 93.3% 对 68.9%",
   },
@@ -43,6 +43,7 @@ export const zh = {
     download: "下载 Windows 版",
     other: "查看全部安装方式",
     fine: "单个安装包 {INSTALLER_MB} MB · 用你已有的模型，或在本地免费运行一个",
+    linuxBeta: "Linux 也能用，目前是 beta：Ubuntu 22.04+ 与 Debian 12+",
   },
   doors: {
     ceo: {
@@ -491,8 +492,8 @@ export const zh = {
       {
         q: "支持 Mac 或 Linux 吗",
         a: [
-          "Linux 已经支持：Ubuntu 22.04+ 与 Debian 12+，64 位。从 Releases 取 `aetox_<版本>_amd64.deb`，运行 `sudo apt install ./aetox_*.deb`；或者把免安装 tarball 解压到任何可写位置——两种方式都能在应用里自己更新到新版本。",
-          "还有些功能只在 Windows 上：computer use、朗读、会议录音、第二窗口、桌面 companion、剪贴板文件列表，确切清单写在 [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md)。",
+          "Linux 已经支持，目前是 beta：Ubuntu 22.04+ 与 Debian 12+，64 位。从 Releases 取 `aetox_<版本>_amd64.deb`，运行 `sudo apt install ./aetox_*.deb`；或者把免安装 tarball 解压到任何可写位置——两种方式都能在应用里自己更新到新版本。",
+          "beta 的意思是日常的活已经能跑 —— 聊天、会话、MCP、技能、文件、终端、浏览器标签 —— 还缺几样：computer use、朗读、会议录音、第二窗口、桌面 companion、剪贴板文件列表目前只在 Windows 上，确切清单写在 [PLATFORM-SUPPORT.md](https://github.com/Mikedev115/Aetox-Harness/blob/main/PLATFORM-SUPPORT.md)。",
           "macOS 仍在移植中，还没有可下载的构建。",
         ],
       },
@@ -574,8 +575,8 @@ export const zh = {
     download: {
       title: "下载 Windows 与 Linux 版 Aetox",
       sub: "一个来自 GitHub 的文件，按各自系统的方式安装。接上你在用的模型或本地模型，就能跑第一件活。不用绑卡，没有我们的账号。",
-      metaTitle: "下载 Windows 与 Linux 版 Aetox harness：安装包、.deb、Aetox CLI、Microsoft Store",
-      metaDescription: "从 GitHub 下载 Windows 安装包（{INSTALLER_MB} MB，磁盘上 {DISK_MB} MB）、Ubuntu 22.04+ 与 Debian 12+ 的 .deb、终端用的 Aetox CLI，或用一行 winget 从 Microsoft Store 装。",
+      metaTitle: "下载 Windows 与 Linux（beta）版 Aetox harness：安装包、.deb、Aetox CLI、Microsoft Store",
+      metaDescription: "从 GitHub 下载 Windows 安装包（{INSTALLER_MB} MB，磁盘上 {DISK_MB} MB）、Ubuntu 22.04+ 与 Debian 12+ 的 beta 版 .deb、终端用的 Aetox CLI，或用一行 winget 从 Microsoft Store 装。",
       setup: "下载安装包",
       cliSetup: "Aetox CLI",
       store: "Microsoft Store",
@@ -586,7 +587,7 @@ export const zh = {
       facts: [
         { k: "当前版本", s: "构建时从 GitHub Releases 读取" },
         { k: "安装包", s: "装好后占磁盘 {DISK_MB} MB，两个文件" },
-        { k: "运行在 Windows 与 Linux", s: "Windows 用 WebView2，Linux 用系统自带的 WebKitGTK" },
+        { k: "运行在 Windows 与 Linux", s: "Windows 用 WebView2，Linux 用系统自带的 WebKitGTK · Linux 为 beta" },
       ],
       ways: [
         {
@@ -609,8 +610,8 @@ export const zh = {
         note: "装好后开一个新的终端输入 `aetox` · 卸载在 设置 → 应用 → Aetox CLI · 还没有代码签名，SmartScreen 会问一次",
       },
       linux: {
-        title: "Linux：.deb 安装包或免安装目录",
-        body: "Ubuntu 22.04+ 与 Debian 12+，64 位。`.deb` 装到 `/opt/aetox` 并在菜单里留一项；免安装 tarball 解压到任何可写位置，并自己更新。两者都用系统自带的 WebKitGTK 绘制，所以下载约 40 MB。",
+        title: "Linux（beta）：.deb 安装包或免安装目录",
+        body: "Ubuntu 22.04+ 与 Debian 12+，64 位。`.deb` 装到 `/opt/aetox` 并在菜单里留一项；免安装 tarball 解压到任何可写位置，并自己更新。两者都用系统自带的 WebKitGTK 绘制，所以下载约 40 MB。**beta** 是因为日常的活已经完成，还剩几个只在 Windows 上的角落正在移植。",
         button: "下载免安装 tarball",
         note: "`.deb` 在 [GitHub Releases](RELEASES) 上，文件名带版本号 · computer use、朗读、会议录音、第二窗口、桌面 companion、剪贴板文件列表目前只在 Windows 上",
       },

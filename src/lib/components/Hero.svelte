@@ -19,6 +19,7 @@
       <Pill href={APP_SETUP_URL}>{t.download}</Pill>
       <Pill variant="soft" href={pagePath(lang, "download")}>{t.other}</Pill>
     </div>
+    <p class="fine hero-linux"><a href={`${pagePath(lang, "download")}#linux`}>{t.linuxBeta}</a></p>
     <p class="fine hero-fine">{t.fine}</p>
   </div>
 </div>
